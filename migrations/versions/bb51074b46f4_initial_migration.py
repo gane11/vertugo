@@ -28,13 +28,6 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email')
     )
-    op.create_table('club_pictures',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('picture_url', sa.String(), nullable=False),
-    sa.Column('club_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['club_id'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('id')
-    )
     op.create_table('clubs',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=60), nullable=False),
@@ -45,6 +38,13 @@ def upgrade():
     sa.Column('club_cover_pic', sa.String(), nullable=False),
     sa.Column('owner_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('club_pictures',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('picture_url', sa.String(), nullable=False),
+    sa.Column('club_id', sa.Integer(), nullable=False),
+    sa.ForeignKeyConstraint(['club_id'], ['clubs.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('parties',
@@ -68,6 +68,7 @@ def upgrade():
     )
     op.create_table('tickets',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('expired', sa.Boolean()),
     sa.Column('start_date', sa.DateTime(), nullable=False),
     sa.Column('end_date', sa.DateTime(), nullable=False),
     sa.Column('qr_code', sa.String(), nullable=True),

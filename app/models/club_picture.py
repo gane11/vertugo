@@ -8,7 +8,7 @@ class Club_picture(db.Model):
 
     id = Column(Integer, primary_key=True)
     picture_url = Column(String, nullable=False)
-    club_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    club_id = Column(Integer, ForeignKey("clubs.id"), nullable=False)
 
     def to_dict(self):
         return {

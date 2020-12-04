@@ -31,71 +31,71 @@ def upgrade():
     [   {
             'owner': False,
             'first_name': 'Demo',
-            'last_username': 'User',
+            'last_name': 'User',
             'email': 'demo@user.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Demo',
-            'last_username': 'Owner',
+            'last_name': 'Owner',
             'email': 'demo@owner.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Valeria',
-            'last_username': 'Weil',
+            'last_name': 'Weil',
             'email': 'valeria@weil.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {   
             'owner': True,
             'first_name': 'Aleksandar',
-            'last_username': 'Dordevic',
+            'last_name': 'Dordevic',
             'email': 'aleksandar@dordevic.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Dragoljub',
-            'last_username': 'Dordevic',
+            'last_name': 'Dordevic',
             'email': 'dragoljub@dordevic.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
             {
             'owner': True,
             'first_name': 'Despot',
-            'last_username': 'Djuric',
+            'last_name': 'Djuric',
             'email': 'despot@djuric.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Vera',
-            'last_username': 'Franseze',
+            'last_name': 'Franseze',
             'email': 'vera@franseze.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Nev',
-            'last_username': 'Roy',
+            'last_name': 'Roy',
             'email': 'nev@roy.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Dzile',
-            'last_username': 'Dzile',
+            'last_name': 'Dzile',
             'email': 'dzile@dzile.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         },
         {
             'owner': True,
             'first_name': 'Nevenka',
-            'last_username': 'Gospavic',
-            'email': 'demo@user.com',
+            'last_name': 'Gospavic',
+            'email': 'nevenka@gospavic.com',
             'hashed_password': 'pbkdf2:sha256:150000$0Y70Jx11$5170eba1cde3b4481c1a289401d7273375faa4691e3ff10e8bd1ac4e9784a5c6'
         }
     ])

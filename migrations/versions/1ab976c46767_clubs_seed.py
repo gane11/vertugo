@@ -34,7 +34,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'San Francisco',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/1015folsom/1015folsomSfCover.jpeg',
         'owner_id': 2
     },
@@ -43,7 +43,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'San Francisco',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/harlot/harlotCover.jpeg',
         'owner_id': 2
     },
@@ -52,7 +52,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'San Francisco',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/loveandprop/loveandpropSfCover.png',
         'owner_id': 2
     },
@@ -61,7 +61,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'San Francisco',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/temple/templeCover.png',
         'owner_id': 2
     },
@@ -79,7 +79,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Los Angeles',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/clubdb/clubdbLaCover.jpeg',
         'owner_id': 2
     },
@@ -88,7 +88,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Los Angeles',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/exxhange/exchangeLaCover.jpeg',
         'owner_id': 2
     },
@@ -97,7 +97,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Los Angeles',
         'state': 'California',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLaCover.jpg',
         'owner_id': 2
     },
@@ -106,7 +106,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Miami',
         'state': 'Florida',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/wynwoodfactory/wynwoodfactoryCover.jpeg',
         'owner_id': 2
     },
@@ -115,7 +115,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Miami',
         'state': 'Florida',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/e11even/e11evenMiCover.jpeg',
         'owner_id': 2
     },
@@ -124,7 +124,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Miami',
         'state': 'Florida',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/liv/livMiCover.jpeg',
         'owner_id': 2
     },
@@ -133,7 +133,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Miami',
         'state': 'Florida',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/space/spaceMiCover1.jpeg',
         'owner_id': 2
     },
@@ -142,7 +142,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'New York',
         'state': 'New York',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/houseofyes/houseofyesNyCover.jpg',
         'owner_id': 2
     },
@@ -151,7 +151,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'New York',
         'state': 'New York',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/lavo/lavoNyCover.jpg',
         'owner_id': 2
     },
@@ -160,7 +160,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'New York',
         'state': 'New York',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/marquee/marqueeNyCover.jpeg',
         'owner_id': 2
     },
@@ -169,7 +169,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'New York',
         'state': 'New York',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/thestandard/thestandardNy2.jpeg',
         'owner_id': 2
     },
@@ -178,16 +178,16 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Austin',
         'state': 'Texas',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/antones/antonesAuCover1.jpeg',
         'owner_id': 2
     },
         {
-        'name': 'Rio'
+        'name': 'Rio',
         'description': 'Best Nightclub in the area',
         'city': 'Austin',
         'state': 'Texas',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/rio/rioAuCover.jpeg',
         'owner_id': 2
     },
@@ -196,7 +196,7 @@ def upgrade():
         'description': 'Best Nightclub in the area',
         'city': 'Austin',
         'state': 'Texas',
-        'address': '',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/theroseroom/theroseroomAuCover.jpeg',
         'owner_id': 2
     },
@@ -204,8 +204,8 @@ def upgrade():
         'name': 'The Rosevelt',
         'description': 'Best Nightclub in the area',
         'city': 'Austin',
-        'state': 'Texas,
-        'address': '',
+        'state': 'Texas',
+        'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/therosevelt/theroseveltAuCover.jpeg',
         'owner_id': 2
     }
