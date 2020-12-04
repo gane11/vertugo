@@ -12,7 +12,7 @@ class Party(db.Model):
     end_date = Column(DateTime, nullable=False)
     club_id = Column(Integer, ForeignKey("clubs.id"), nullable=False)
     ticket_count = Column(Integer, nullable=False)
-    party_cover_pic = Column(String, nullable=False)
+    party_cover_pic = Column(String)
 
     tickets = db.relationship('Ticket', cascade='all, delete', backref='Party')
 

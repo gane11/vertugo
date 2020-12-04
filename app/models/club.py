@@ -7,6 +7,7 @@ class Club(db.Model):
     __tablename__ = 'clubs'
 
     id = Column(Integer, primary_key=True)
+    name = Column(String(60), nullable=False)
     description = Column(Text)
     city = Column(String(60), nullable=False)
     state = Column(String(50), nullable=False)
@@ -17,6 +18,7 @@ class Club(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
+            "name": self.name,
             "description": self.description,
             "city": self.city,
             "state": self.state,

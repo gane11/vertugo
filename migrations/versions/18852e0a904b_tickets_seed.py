@@ -43,7 +43,7 @@ def upgrade():
         'start_date': datetime(2020, 12, 10),
         'end_date': datetime(2020, 12, 11),
         'qr_code': 'sdad',
-        'party_id': 1,
+        'party_id': 2,
         'user_id': 1
     },
         {
@@ -51,11 +51,16 @@ def upgrade():
         'start_date': datetime(2020, 12, 10),
         'end_date': datetime(2020, 12, 11),
         'qr_code': 'sdad',
-        'party_id': 1,
+        'party_id': 3,
         'user_id': 1
     }
     ])
 
 
 def downgrade():
-    pass
+    op.drop_table('tickets')
+    op.drop_table('saved_parties')
+    op.drop_table('parties')
+    op.drop_table('clubs')
+    op.drop_table('club_pictures')
+    op.drop_table('users')

@@ -26,191 +26,196 @@ def upgrade():
 
     op.bulk_insert(club_picture,
         [{
-            'picture_url': '',
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 1,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
             'club_id': 2,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 3,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 4,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 5,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 6,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 7,
+        },
+        {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 8,
+        },
+        {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 9,
         },
             {
-            'picture_url': '',
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 10,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 11,
+        },
+        {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 12,
+        },
+        {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 13,
+        },
+        {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 14,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 15,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 16,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 17,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 18,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 19,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 20,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 1,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 1,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
             'club_id': 2,
         },
         {
-            'picture_url': '',
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
             'club_id': 2,
         },
         {
-            'picture_url': '',
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 1,
+        },
+            {
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
             'club_id': 2,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
             'club_id': 2,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 3,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 3,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 4,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 4,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 3,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 5,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 5,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 1,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
-        },
-        {
-            'picture_url': '',
-            'club_id': 2,
-        },
-        {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 5,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 4,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 6,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 6,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 6,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 7,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 7,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 8,
         },
         {
-            'picture_url': '',
-            'club_id': 2,
-        },
-        {
-            'picture_url': '',
-            'club_id': 2,
-        },
-        {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 8,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 8,
         },
             {
-            'picture_url': '',
-            'club_id': 2,
-        },
-        {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
-        },
-            {
-            'picture_url': '',
-            'club_id': 2,
+            'picture_url': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLa2.jpeg',
+            'club_id': 9,
         }
         ])
 
 
 def downgrade():
-    pass
+    op.drop_table('tickets')
+    op.drop_table('saved_parties')
+    op.drop_table('parties')
+    op.drop_table('clubs')
+    op.drop_table('club_pictures')
+    op.drop_table('users')

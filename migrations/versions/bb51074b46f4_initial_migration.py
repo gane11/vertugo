@@ -37,6 +37,7 @@ def upgrade():
     )
     op.create_table('clubs',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('name', sa.String(length=60), nullable=False),
     sa.Column('description', sa.Text(), nullable=True),
     sa.Column('city', sa.String(length=60), nullable=False),
     sa.Column('state', sa.String(length=50), nullable=False),
