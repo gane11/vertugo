@@ -8,6 +8,8 @@ from flask_login import LoginManager
 from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
+from .api.club_routes import club_routes
+from .api.party_routes import party_routes
 
 
 from .config import Config
@@ -28,6 +30,10 @@ def load_user(id):
 app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
+app.register_blueprint(club_routes, url_prefix='/api/clubs')
+app.register_blueprint(party_routes, url_prefix='/api/parties')
+app.register_blueprint(ticket_routes, url_prefix='/api/tickets')
+
 db.init_app(app)
 Migrate(app, db)
 

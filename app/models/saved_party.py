@@ -3,7 +3,7 @@ from sqlalchemy.types import Integer
 from sqlalchemy.schema import Column, ForeignKey
 
 
-class Saved_party(db.Model):
+class SavedParty(db.Model):
     __tablename__ = 'saved_parties'
 
     id = Column(Integer, primary_key=True)

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../services/auth';
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
+  const [owner, setOwner] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,6 +41,10 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateIsOwner = (e) => {
+    setOwner(e.target.value);
+  }
+
   if (authenticated) {
     return <Redirect to="/" />;
   }
@@ -47,12 +52,31 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   return (
     <form onSubmit={onSignUp}>
       <div>
-        <label>User Name</label>
+        <label>Owner</label>
+        <select
+        type="checkbox"
+        name="owner"
+        onChange={updateIsOwner}
+        value={owner}
+        >
+        </select>
+      </div>
+      <div>
+        <label>First Name</label>
         <input
           type="text"
-          name="username"
-          onChange={updateUsername}
-          value={username}
+          name="first_name"
+          onChange={updateFirstName}
+          value={firstName}
+        ></input>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type="text"
+          name="last_name"
+          onChange={updateLastName}
+          value={lastName}
         ></input>
       </div>
       <div>

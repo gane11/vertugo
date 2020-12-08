@@ -3,7 +3,7 @@ from sqlalchemy.types import Integer, String
 from sqlalchemy.schema import Column, ForeignKey
 
 
-class Club_picture(db.Model):
+class ClubPicture(db.Model):
     __tablename__ = 'club_pictures'
 
     id = Column(Integer, primary_key=True)
