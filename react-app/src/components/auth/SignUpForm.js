@@ -9,14 +9,22 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-  
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = await signUp(username, email, password);
-      if (!user.errors) {
+      let user = new FormData();
+      user.append('owner', owner);
+      user.append('firstName', firstName);
+      user.append('lastName', lastName);
+      user.append('email', email);
+      user.append('password', password);
+      user = await dispatch(signupUser(user));
+
+      if (user && !user.errors) {
         setAuthenticated(true);
+        history.push("/")
       }
     }
   };

@@ -216,6 +216,6 @@ def downgrade():
     op.drop_table('tickets')
     op.drop_table('saved_parties')
     op.drop_table('parties')
-    op.drop_table('clubs')
     op.drop_table('club_pictures')
+    op.drop_table('clubs')
     op.drop_table('users')

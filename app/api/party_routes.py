@@ -38,11 +38,11 @@ def party():
 def delete_party():
     party = Party.query.get(id)
     try:
-    db.session.delete(party)
-    db.session.commit()
-    return {'message': "Successfully removed a party"}, 200
-  except:
-    return {'errors':'Error deleting Party'}, 400
+        db.session.delete(party)
+        db.session.commit()
+        return {'message': "Successfully removed a party"}, 200
+    except:
+        return {'errors':'Error deleting Party'}, 400
 
 
 
@@ -58,23 +58,22 @@ def buying_ticket(id,uid):
     form = NewTicketForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-            ticket = Ticket(
-                expired=form.data['expired'],
-                start_date=form.data['startDate'],
-                end_date=form.data['endDate'],
-                qr_code=form.data['qrCode']
-                party_id=id
-                user_id=uid
-            )
-            db.session.add(ticket)
-            db.session.commit()
+        ticket = Ticket(
+            expired=form.data['expired'],
+            start_date=form.data['startDate'],
+            end_date=form.data['endDate'],
+            qr_code=form.data['qrCode'],
+            party_id=id,
+            user_id=uid
+        )
+        db.session.add(ticket)
+        db.session.commit()
         return party.to_dict()
 
 
 @party_routes.route('/<int:id>/users/<int:uid>/save', methods=['POST'])
 @login_required
 def save_party(id, uid):
-    if()
     saved_party = SavedParty(
         party_id=id,
         user_id=uid
