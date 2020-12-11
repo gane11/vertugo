@@ -23,10 +23,10 @@ function App() {
         setLoaded(true);
       }
       const userId = localStorage.getItem('user_id');
-      // (async() => {
-      //   await dispatch(loadUser(userId));
-      //   setLoaded(true);
-      // })()
+      (async() => {
+        await dispatch(loadUser(userId));
+        setLoaded(true);
+      })()
     })();
   }, []);
 
@@ -50,9 +50,9 @@ function App() {
       <Route path="/sign-up" exact={true}>
         <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
       </Route>
-      <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
+      <Route path="/users" exact={true} authenticated={authenticated}>
         <UsersList/>
-      </ProtectedRoute>
+      </Route>
       <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
         <User />
       </ProtectedRoute>

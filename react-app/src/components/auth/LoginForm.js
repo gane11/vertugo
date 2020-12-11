@@ -46,16 +46,14 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
-  const dispatch = useDispatch()
 
 
   const onLogin = async (e) => {
     e.preventDefault();
     const user = await login(email, password);
     if (!user.errors) {
+      localStorage.setItem('user_id', user.id);
       setAuthenticated(true);
-      dispatch(loadUser(user.id))
     } else {
       setErrors(user.errors);
     }
