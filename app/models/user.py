@@ -6,7 +6,7 @@ class User(db.Model, UserMixin):
   __tablename__ = 'users'
 
   id = db.Column(db.Integer, primary_key = True)
-  owner = db.Column(db.Boolean, nullable = False)
+  owner = db.Column(db.Boolean)
   first_name = db.Column(db.String(80), nullable = False)
   last_name = db.Column(db.String(80), nullable = False)
   email = db.Column(db.String(255), nullable=False, unique=True)

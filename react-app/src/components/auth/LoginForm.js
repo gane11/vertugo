@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from "../../services/auth";
+import { login } from '../../services/auth'
 import { Redirect, useHistory } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
+import {loadUser} from '../../store/actions/signupAction'
 
 //material ui
 import Avatar from '@material-ui/core/Avatar';
@@ -45,7 +46,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let history = useHistory();
+  const history = useHistory();
+  const dispatch = useDispatch()
 
 
   const onLogin = async (e) => {
@@ -53,7 +55,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const user = await login(email, password);
     if (!user.errors) {
       setAuthenticated(true);
-      history.push("/")
+      dispatch(loadUser(user.id))
     } else {
       setErrors(user.errors);
     }
@@ -136,9 +138,9 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
                 onClick={handleClik}
                 > Sign Up
                 </Button> */}
-              <Link href="/sign-up" variant="body2">
+              <NavLink to="/sign-up" exact={true} activeClassName="active" variant="body2">
                 {"Don't have an account? Sign Up"}
-              </Link>
+              </NavLink>
             </Grid>
           </Grid>
         </form>

@@ -26,13 +26,13 @@ export const signupUser = (user) => {
 }
 
 export const loadUser = (id) => async (dispatch) => {
-    const response = await fetch(`/api/${id}`)
+    const response = await fetch(`/api/users/${id}`)
 
     if (response.ok) {
         const data = await response.json();
         dispatch({
             type: LOAD_USER,
-            ...data.artist[0]
+            ...data
         });
     }
 }

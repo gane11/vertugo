@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory, Redirect, NavLink } from 'react-router-dom';
 import { signupUser } from '../../store/actions/signupAction';
 // material-ui
 
@@ -57,8 +57,8 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
     if (password === confirmPassword) {
       let user = new FormData();
       user.append('owner', owner);
-      user.append('firstName', firstName);
-      user.append('lastName', lastName);
+      user.append('first_name', firstName);
+      user.append('last_name', lastName);
       user.append('email', email);
       user.append('password', password);
       user = await dispatch(signupUser(user));
@@ -71,13 +71,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
   }
 
 
-  const updateOwner = (e) => {
-    if(owner === true) {
-      setOwner(false)
-    } else {
-      setOwner(true)
-    }
-  }
+  
 
   const updateProperty = (callback) => (e) => {
     callback(e.target.value);
@@ -104,14 +98,13 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                   autoComplete="fname"
                   name="owener"
                   variant="outlined"
-                  required
                   fullWidth
                   id="owner"
                   label="Owner"
                   autoFocus
                   type="checkbox"
                   value={owner}
-                  onClick={updateOwner(setOwner)}
+                  onClick={()=>setOwner(!owner)}
                   />
             </Grid>
             </Grid>
@@ -200,9 +193,9 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="/login" variant="body2">
+              <NavLink to='login' variant="body2">
                 Already have an account? Sign in
-                </Link>
+                </NavLink>
             </Grid>
           </Grid>
         </form>
