@@ -99,8 +99,9 @@ const NavBar = ({setAuthenticated, user }) => {
       {user.id ? (
         <div className='header__right'>
           <p className="welcome_letters">Welcome</p>
+        
           <NavLink className="navbar__menu" to={`/users/${user.id}`}>
-            <div>{user.first_name}</div>
+            {user.firstName}
           </NavLink>
           <LogoutButton setAuthenticated={setAuthenticated} />
         </div>
