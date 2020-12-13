@@ -1,3 +1,4 @@
+import merge from 'lodash/merge'
 export const LOAD_CLUBS = 'LOAD_CLUBS'
 
 export default function reducer(state = [], action) {
@@ -5,12 +6,10 @@ export default function reducer(state = [], action) {
 
     switch(action.type) {
         case LOAD_CLUBS: {
-            return {
-                ...state,
-                clubs: action.clubs
-            }
+            const clubs = action.clubs.map((club)=> ({[club.id]: club}))
+              return merge({}, state, ...clubs)
+
         }
-        
         default: return state;
     }
 }

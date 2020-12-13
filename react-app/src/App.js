@@ -8,7 +8,9 @@ import User from "./components/User";
 import { authenticate } from "./services/auth";
 import { useDispatch } from "react-redux";
 import { loadUser } from "./store/actions/signupAction";
-import NavBarContainer from "./components/NavBar";
+import NavBar from "./components/NavBar";
+import Home from './components/Home'
+import ClubProfile from './components/ClubProfile'
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -38,9 +40,12 @@ function App() {
     <BrowserRouter>
     <Switch>
       <Route path="/" exact={true}>
-          <NavBarContainer authenticate={authenticate} setAuthenticated={setAuthenticated}/>
-        <h1>My Home Page</h1>
+          <Home authenticate={authenticate} setAuthenticated={setAuthenticated}/>
       </Route> 
+        <Route exact path='/clubs/:id'>
+          <NavBar />
+          <ClubProfile />
+        </Route>
       <Route path="/login" exact={true}>
         <LoginForm
           authenticated={authenticated}

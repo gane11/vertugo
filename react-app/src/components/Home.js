@@ -5,15 +5,18 @@ import HomePartiesContainer from './HomeParties';
 
 
 
-const Home = ({getAllParties}) => {
-
+const Home = ({ authenticate, setAuthenticated}) => {
+    
 
     return (
     <div> 
-        <NavBarContainer />
+        <NavBarContainer authenticate={authenticate} setAuthenticated={setAuthenticated}/>
         <HomePartiesContainer />
-        <Footer />
+        {/* <Footer /> */}
     </div>
     )
 
 }
+
+
+export default Home

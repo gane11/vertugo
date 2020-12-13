@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { getAllParties } from '../store/actions/partiesAction'
 import {getAllClubs} from '../store/actions/clubsAction'
 import { useSelector, useDispatch } from 'react-redux';
+import Card from './Card'
 
 
 
@@ -11,13 +12,12 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
         getAllParties();
     }, [])
 
-    useDispatch(() => {
+    useEffect(() => {
         getAllClubs()
     }, [])
 
 
-
-    if(!party) return null
+    if(!parties) return null
 
     return(
         <div>
@@ -25,7 +25,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
                 {parties.map((party) => {
                     
                     return(
-                    <Card party={party} />
+                    <Card party={party} clubs={clubs}/>
                     )
                     })}
             </div>

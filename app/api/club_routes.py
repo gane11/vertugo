@@ -30,7 +30,10 @@ def clubs():
 @club_routes.route('/<int:id>', methods=['GET'])
 def club(id):
     club = Club.query.get(id)
-    return jsonify(club=[club.to_dict()])
+    if club:
+        return club.to_dict()
+    else:
+        return jsonify(error='This Club doesnt exist')
 
 
 @club_routes.route('/<int:id>/parties', methods=['GET'])
