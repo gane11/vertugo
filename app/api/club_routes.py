@@ -45,6 +45,7 @@ def parties():
         return jsonify(error='No Parties')
 
 
+
 @club_routes.route('/<int:id>/parties', methods=['POST'])
 @login_required
 def create_party(id):

@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import './Card.css'
 import { NavLink } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import {getClub} from '../store/actions/clubAction'
 import { Button } from '@material-ui/core'
 
 
@@ -70,7 +68,11 @@ const Card = ({ party, clubs }) => {
                     <div>
                         <NavLink to="/" exact={true} activeClassName="active">
                             <Button variant="contained" color="secondary"
-                            >Login</Button>
+                            >SAVE</Button>
+                        </NavLink>
+                        <NavLink to="/" exact={true} activeClassName="active">
+                            <Button variant="contained" color="secondary"
+                            >BUY</Button>
                         </NavLink>
                         <Button />
                     </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllClubs } from '../store/actions/clubsAction'
+import { NavLink } from 'react-router-dom'
+import { Button } from '@material-ui/core'
 
 function User({ clubs, getAllClubs}) {
   const [user, setUser] = useState({});
@@ -34,6 +36,10 @@ function User({ clubs, getAllClubs}) {
     {user.owner ? (
     <>
     <div>Alex</div>
+          <NavLink to={`/users/${user.id}/clubs`} exact={true} activeClassName="active">
+            <Button variant="contained" color="secondary"
+            >Create a new club page</Button>
+          </NavLink>
     <div>{user.first_name}</div>
         <div className="club__section">
           {clubs.map((club) => {

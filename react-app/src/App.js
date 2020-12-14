@@ -48,6 +48,9 @@ function App() {
           <ClubProfile />
         </Route>
       <Route exact path='/search' component={SearchResult}/>
+      <Route exact path='users/:userId/clubs'>
+        <CreateClubForm />
+      </Route>
       <Route path="/login" exact={true}>
         <LoginForm
           authenticated={authenticated}
