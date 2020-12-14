@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect, Link } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
 import './NavBar.css'
-
+import SearchResult from './SearchResult'
 
 ///material UI
 
 import InputBase from '@material-ui/core/InputBase';
 // import { Avatar } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import vertugologo from './images/vertugologo.jpg'
@@ -61,6 +60,8 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = ({setAuthenticated, user }) => {
   const [searchValue, setSearchValue] = useState('')
 
+
+
   const updateSearch = (e) => {
     setSearchValue(e.target.value)
   }
@@ -90,9 +91,15 @@ const NavBar = ({setAuthenticated, user }) => {
             inputProps={{ 'aria-label': 'search' }}
           />
           <div className="date_picker">
-            <Button color="secondary"
-              // onClick={() => setShowDatePicker(!showDatePicker)}
-            >SEARCH</Button>
+            <Link to={{
+              pathname:'/search',
+              aboutProps:{
+                searchValue:{searchValue}
+              }
+            }}>
+              <Button color="secondary"
+              >SEARCH</Button>
+            </Link>
           </div>
         </div>
       </div>

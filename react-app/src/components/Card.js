@@ -57,7 +57,6 @@ const Card = ({ party, clubs }) => {
 
     const classes = useStyles();
 
-    console.log(clubs)
     return (
         <>
             <NavLink to={`/clubs/${party.club_id}`}>

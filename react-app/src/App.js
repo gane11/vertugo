@@ -11,6 +11,7 @@ import { loadUser } from "./store/actions/signupAction";
 import NavBar from "./components/NavBar";
 import Home from './components/Home'
 import ClubProfile from './components/ClubProfile'
+import SearchResult from "./components/SearchResult";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -46,6 +47,7 @@ function App() {
           <NavBar />
           <ClubProfile />
         </Route>
+      <Route exact path='/search' component={SearchResult}/>
       <Route path="/login" exact={true}>
         <LoginForm
           authenticated={authenticated}

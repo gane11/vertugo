@@ -36,7 +36,7 @@ def upgrade():
         'state': 'California',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/1015folsom/1015folsomSfCover.jpeg',
-        'owner_id': 2
+        'owner_id': 3
     },
         {
         'name': 'Harlot',
@@ -54,7 +54,7 @@ def upgrade():
         'state': 'California',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/loveandprop/loveandpropSfCover.png',
-        'owner_id': 2
+        'owner_id': 3
     },
         {
         'name': 'Temple',
@@ -63,7 +63,7 @@ def upgrade():
         'state': 'California',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/san+francisco/temple/templeCover.png',
-        'owner_id': 2
+        'owner_id': 4
     },
         {
         'name': 'The Academy',
@@ -72,7 +72,7 @@ def upgrade():
         'state': 'California',
         'address': '',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/academy/academyLaCover.jpeg',
-        'owner_id': 2
+        'owner_id': 5
     },
         {
         'name': 'Club DB',
@@ -81,7 +81,7 @@ def upgrade():
         'state': 'California',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/clubdb/clubdbLaCover.jpeg',
-        'owner_id': 2
+        'owner_id': 4
     },
         {
         'name': 'Exchange',
@@ -90,7 +90,7 @@ def upgrade():
         'state': 'California',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/exxhange/exchangeLaCover.jpeg',
-        'owner_id': 2
+        'owner_id': 5
     },
         {
         'name': 'Sound LA',
@@ -99,7 +99,7 @@ def upgrade():
         'state': 'California',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Los+Angeles/sound/soundLaCover.jpg',
-        'owner_id': 2
+        'owner_id': 6
     },
         {
         'name': 'Wynwood Fear Factory',
@@ -108,7 +108,7 @@ def upgrade():
         'state': 'Florida',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/wynwoodfactory/wynwoodfactoryCover.jpeg',
-        'owner_id': 2
+        'owner_id': 6
     },
         {
         'name': 'E11even',
@@ -117,7 +117,7 @@ def upgrade():
         'state': 'Florida',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/e11even/e11evenMiCover.jpeg',
-        'owner_id': 2
+        'owner_id': 7
     },
         {
         'name': 'LIV',
@@ -126,7 +126,7 @@ def upgrade():
         'state': 'Florida',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/liv/livMiCover.jpeg',
-        'owner_id': 2
+        'owner_id': 7
     },
         {
         'name': 'Space',
@@ -135,7 +135,7 @@ def upgrade():
         'state': 'Florida',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Miami/space/spaceMiCover1.jpeg',
-        'owner_id': 2
+        'owner_id': 8
     },
         {
         'name': 'House Of YES',
@@ -144,7 +144,7 @@ def upgrade():
         'state': 'New York',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/houseofyes/houseofyesNyCover.jpg',
-        'owner_id': 2
+        'owner_id': 8
     },
         {
         'name': 'Lavo',
@@ -153,7 +153,7 @@ def upgrade():
         'state': 'New York',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/lavo/lavoNyCover.jpg',
-        'owner_id': 2
+        'owner_id': 9
     },
         {
         'name': 'Marquee',
@@ -162,7 +162,7 @@ def upgrade():
         'state': 'New York',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/marquee/marqueeNyCover.jpeg',
-        'owner_id': 2
+        'owner_id': 9
     },
         {
         'name': 'The Standard',
@@ -171,7 +171,7 @@ def upgrade():
         'state': 'New York',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/New+York/thestandard/thestandardNy2.jpeg',
-        'owner_id': 2
+        'owner_id': 8
     },
         {
         'name': 'Antones',
@@ -180,7 +180,7 @@ def upgrade():
         'state': 'Texas',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/antones/antonesAuCover1.jpeg',
-        'owner_id': 2
+        'owner_id': 9
     },
         {
         'name': 'Rio',
@@ -189,7 +189,7 @@ def upgrade():
         'state': 'Texas',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/rio/rioAuCover.jpeg',
-        'owner_id': 2
+        'owner_id': 8
     },
         {
         'name': 'The Rose Room',
@@ -198,7 +198,7 @@ def upgrade():
         'state': 'Texas',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/theroseroom/theroseroomAuCover.jpeg',
-        'owner_id': 2
+        'owner_id': 9
     },
         {
         'name': 'The Rosevelt',
@@ -207,7 +207,7 @@ def upgrade():
         'state': 'Texas',
         'address': '2 sumadijske brigade',
         'club_cover_pic': 'https://vertugo.s3.amazonaws.com/Austin/therosevelt/theroseveltAuCover.jpeg',
-        'owner_id': 2
+        'owner_id': 8
     }
     ])
 
