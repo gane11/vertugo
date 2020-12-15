@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { useHistory, Redirect, NavLink } from 'react-router-dom';
-import { signupUser } from '../../store/actions/signupAction';
+import { useHistory, Redirect, NavLink, useParams} from 'react-router-dom';
+// import { signupUser } from '../../store/actions/signupAction';
 // material-ui
 
 import Avatar from '@material-ui/core/Avatar';
@@ -41,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 const CreateClubForm = () => {
+    const { userId } = useParams();
+
     const dispatch = useDispatch();
     const classes = useStyles();
     const [name, setName] = useState('');
@@ -54,7 +56,7 @@ const CreateClubForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(user) {
+        if(userId) {
             let club = new FormData();
             club.append('name', name);
             club.append('description',description);
@@ -62,21 +64,22 @@ const CreateClubForm = () => {
             club.append('state', state);
             club.append('address', address);
             club.append('club_cover_pic', club_cover_pic);
-            club = await dispatch(signupUser(club));
+            // club = await dispatch(createClub(club));
             history.push('/home')
             //allert to let them know it worked
         }
         }
-    }
 
-
+        const updateClubCoverPic = (e) => {
+            setClubCoverPic(e.target.files[0])
+        }
 
 
     const updateProperty = (callback) => (e) => {
         callback(e.target.value);
     }
 
-    if (!user) {
+    if (!userId) {
         return <Redirect to="/" />
     }
     return (
@@ -93,32 +96,32 @@ const CreateClubForm = () => {
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                autoComplete="fname"
-                                name="firstName"
+                                autoComplete="name"
+                                name="name"
                                 variant="outlined"
                                 required
                                 fullWidth
-                                id="firstName"
-                                label="First Name"
+                                id="clubName"
+                                label="Club Name"
                                 autoFocus
                                 type="text"
-                                value={firstName}
-                                onChange={updateProperty(setFirstName)}
+                                value={name}
+                                onChange={updateProperty(setName)}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                autoComplete="fname"
-                                name="firstName"
+                                autoComplete="description"
+                                name="description"
                                 variant="outlined"
                                 required
                                 fullWidth
-                                id="firstName"
-                                label="First Name"
+                                id="description"
+                                label="Description"
                                 autoFocus
                                 type="text"
-                                value={firstName}
-                                onChange={updateProperty(setFirstName)}
+                                value={description}
+                                onChange={updateProperty(setDescription)}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -126,13 +129,13 @@ const CreateClubForm = () => {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                id="lastName"
-                                label="Last Name"
-                                name="lastName"
-                                autoComplete="lname"
+                                id="city"
+                                label="City"
+                                name="city"
+                                autoComplete="city"
                                 type="text"
-                                value={lastName}
-                                onChange={updateProperty(setLastName)}
+                                value={city}
+                                onChange={updateProperty(setCity)}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -140,13 +143,13 @@ const CreateClubForm = () => {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
+                                id="state"
+                                label="State"
+                                name="state"
+                                autoComplete="state"
                                 type="text"
-                                value={email}
-                                onChange={updateProperty(setEmail)}
+                                value={state}
+                                onChange={updateProperty(setState)}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -154,27 +157,28 @@ const CreateClubForm = () => {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="password"
-                                autoComplete="current-password"
-                                value={password}
-                                onChange={updateProperty(setPassword)}
+                                name="address"
+                                label="Address"
+                                type="text"
+                                id="address"
+                                autoComplete="address"
+                                value={address}
+                                onChange={updateProperty(setAddress)}
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
+                                type="file"
+                                className="file-upload"
                                 variant="outlined"
                                 required
                                 fullWidth
-                                name="password"
-                                label="Confirm Password"
-                                type="password"
-                                id="confirmPassword"
-                                autoComplete="current-password"
-                                value={confirmPassword}
-                                onChange={updateProperty(setConfirmPassword)}
+                                name="clubCoverPic"
+                                label="Club Cover Image"
+                                id="clubCoverPic"
+                                autoComplete="clubCoverPic"
+                                value={club_cover_pic}
+                                onChange={updateClubCoverPic}
                             />
                         </Grid>
                         <Grid item xs={12}>

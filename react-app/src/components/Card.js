@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import './Card.css'
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
+import { compareAsc, format } from 'date-fns'
+
 
 
 ///material UI
@@ -54,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 const Card = ({ party, clubs }) => {
 
     const classes = useStyles();
+    console.log(party.start_date)
 
     return (
         <>
@@ -64,6 +67,7 @@ const Card = ({ party, clubs }) => {
                         <h2>{party.description}</h2>
                         {/* <h4>{home.description}</h4> */}
                         <h3>{`${party.start_date}`}</h3>
+                        <h4>{clubs[party.club_id - 1].city}</h4>
                     </div>
                     <div>
                         <NavLink to="/" exact={true} activeClassName="active">

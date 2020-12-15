@@ -12,6 +12,7 @@ import NavBar from "./components/NavBar";
 import Home from './components/Home'
 import ClubProfile from './components/ClubProfile'
 import SearchResult from "./components/SearchResult";
+import CreateClubForm from './components/CreateClubForm'
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);

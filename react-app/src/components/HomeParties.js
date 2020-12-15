@@ -16,6 +16,14 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
         getAllClubs()
     }, [])
 
+    let ids = []
+    for(let i = 0; i < clubs.length; i++) {
+        let currentClub = clubs[i]
+        if(currentClub.city === searchValue) {
+            ids.push(i +1)
+        }
+    }
+
 
     if(!parties) return null
 
@@ -23,11 +31,11 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
         <div>
             <div className="party__section">
                 {parties.map((party) => {
-                    
+                    if (ids.includes(party.club_id)) {
                     return(
                     <Card party={party} clubs={clubs}/>
                     )
-                    })}
+                }})}
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 from .db import db
-from sqlalchemy.types import Integer, String, Text, DateTime
+from sqlalchemy.types import Integer, String, Text, DateTime, Date
 from sqlalchemy.schema import Column, ForeignKey
 
 
@@ -8,8 +8,8 @@ class Party(db.Model):
 
     id = Column(Integer, primary_key=True)
     description = Column(Text)
-    start_date = Column(DateTime, nullable=False)
-    end_date = Column(DateTime, nullable=False)
+    start_date = Column(Date, nullable=False)
+    end_date = Column(Date, nullable=False)
     club_id = Column(Integer, ForeignKey("clubs.id"), nullable=False)
     ticket_count = Column(Integer, nullable=False)
     party_cover_pic = Column(String)

@@ -1,5 +1,5 @@
 from .db import db
-from sqlalchemy.types import Integer, String, Text, DateTime, Boolean
+from sqlalchemy.types import Integer, String, Text, Date, Boolean
 from sqlalchemy.schema import Column, ForeignKey
 
 
@@ -8,8 +8,8 @@ class Ticket(db.Model):
 
     id = Column(Integer, primary_key=True)
     expired = (Boolean)
-    start_date = Column(DateTime, nullable=False)
-    end_date = Column(DateTime, nullable=False)
+    start_date = Column(Date, nullable=False)
+    end_date = Column(Date, nullable=False)
     qr_code = Column(String)
     party_id = Column(Integer, ForeignKey("parties.id"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
