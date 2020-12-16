@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, redirect
 from flask_login import login_required
-from app.models import db, User, Club, Ticket
+from app.models import db, User, Club, Ticket, Party
 from app.forms import NewClubForm
 import json
 
@@ -86,4 +86,10 @@ def all_tickets(id):
         return jsonify(error='No Clubs yet')
 
 
-
+@user_routes.route('/<int:userId>/parties/<int:partyId>/save', methods=['POST'])
+def save_party(userId, partyId):
+    try:
+        user = User.query.get(userId)
+        party = Party.query.get(partyId)
+        
+        if 

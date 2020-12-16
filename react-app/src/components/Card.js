@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './Card.css'
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
-import { compareAsc, format } from 'date-fns'
+import {saveParty} from '../store/actions/saveParty'
 
 
 
@@ -54,8 +54,13 @@ const useStyles = makeStyles((theme) => ({
 //material UI
 
 const Card = ({ party, clubs }) => {
-
+    let userId = localStorage.getItem("user_id");
     const classes = useStyles()
+
+    const handleSave = (e) => {
+        e.preventDefaulet()
+        dispatchEvent(saveParty(userId,party.id))
+    }
 
     return (
         <>
@@ -65,14 +70,12 @@ const Card = ({ party, clubs }) => {
                     <div className="card__info">
                         <h2>{party.description}</h2>
                         {/* <h4>{home.description}</h4> */}
-                        <h3>{`${party.start_date}`}</h3>
+                        <h3>{new Date(party.start_date).toDateString()}</h3>
                         <h4>{clubs[party.club_id - 1].city}</h4>
                     </div>
                     <div>
-                        <NavLink to="/" exact={true} activeClassName="active">
-                            <Button variant="contained" color="secondary"
+                            <Button variant="contained" color="secondary" onClick={handleSave}
                             >SAVE</Button>
-                        </NavLink>
                         <NavLink to="/" exact={true} activeClassName="active">
                             <Button variant="contained" color="secondary"
                             >BUY</Button>

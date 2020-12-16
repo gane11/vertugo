@@ -13,6 +13,7 @@ import Home from './components/Home'
 import ClubProfile from './components/ClubProfile'
 import SearchResult from "./components/SearchResult";
 import CreateClubForm from './components/CreateClubForm'
+import SearchResultContainer from "./components/SearchResult";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -45,10 +46,13 @@ function App() {
           <Home authenticate={authenticate} setAuthenticated={setAuthenticated}/>
       </Route> 
         <Route exact path='/clubs/:id'>
-          <NavBar />
+          <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
           <ClubProfile />
         </Route>
-      <Route exact path='/search' component={SearchResult}/>
+      <Route exact path='/search/:searchValue'>
+        <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
+        <SearchResult />
+      </Route>
       <Route path='/users/:userId/clubs'>
         <CreateClubForm />
       </Route>

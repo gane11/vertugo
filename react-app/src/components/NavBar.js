@@ -92,7 +92,7 @@ const NavBar = ({setAuthenticated, user }) => {
           />
           <div className="date_picker">
             <Link to={{
-              pathname:'/search',
+              pathname:`/search/${searchValue}`,
               aboutProps:{
                 searchValue:{searchValue}
               }

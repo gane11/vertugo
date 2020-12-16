@@ -3,7 +3,7 @@ import { CREATE_CLUB } from '../reducers/createClubReducer';
 export const createClub = (club) => {
     return async dispatch => {
         try {
-            const res = await fetch(`/api/clubs`, {
+            const res = await fetch(`/api/clubs/`, {
                 method: 'POST',
                 body: club
             });
