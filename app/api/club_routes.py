@@ -45,34 +45,35 @@ def parties():
         return jsonify(error='No Parties')
 
 
-@club_routes.route('/<int:id>/clubs', methods=['POST'])
+@club_routes.route('/', methods=['POST'])
 # @login_required
 def new_club():
-    form = NewClubForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        key_list = request.files.keys()
-        if request.files:
-            if "club_cover_pic" in key_list:
-                cover_image_data = request.files["club_cover_pic"]
-                cover_image_key = f"newClubs/{cover_image_data.filename}_{uuid.uuid4()}"
-                client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
-                                ContentType=cover_image_data.mimetype, ACL="public-read")
+    try:
+        form = NewClubForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            key_list = request.files.keys()
+            if request.files:
+                if "club_cover_pic" in key_list:
+                    cover_image_data = request.files["club_cover_pic"]
+                    cover_image_key = f"newClubs/{uuid.uuid4()}_{cover_image_data.filename}"
+                    client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
+                                    ContentType=cover_image_data.mimetype, ACL="public-read")
 
-                club = Club(
-                    name=form.data['name'],
-                    description=form.data['description'],
-                    city=form.data['city'],
-                    state=form.data['state'],
-                    address=form.data['address'],
-                    club_cover_pic=f"https://vertugo.s3.amazonaws.com/{cover_image_key}",
-                    owner_id=form.data['owner_id']
-                )
-                db.session.add(club)
-                db.session.commit()
-                return club.to_dict()
-
-    return {'errors': 'error while creating a club page'}, 404
+            club = Club(
+                name=form.data['name'],
+                description=form.data['description'],
+                city=form.data['city'],
+                state=form.data['state'],
+                address=form.data['address'],
+                club_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
+                owner_id=form.data['owner_id']
+            )
+            db.session.add(club)
+            db.session.commit()
+            return club.to_dict()
+    except Exception as error:
+        return jsonify(error=repr(error))
 
 
 @club_routes.route('/<int:id>/parties', methods=['POST'])

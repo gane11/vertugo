@@ -65,6 +65,7 @@ function App() {
         <UsersList/>
       </Route>
       <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+          <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
         <User />
       </ProtectedRoute>
       </Switch>

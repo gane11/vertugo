@@ -35,7 +35,7 @@ function User({ clubs, getAllClubs}) {
     <div>
     {user.owner ? (
     <>
-    <div>Alex</div>
+    <div>==</div>
           <NavLink to={`/users/${user.id}/clubs`} exact={true} activeClassName="active">
             <Button variant="contained" color="secondary"
             >Create a new club page</Button>

@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Checkbox from '@material-ui/core/Checkbox';
+import LocalBarIcon from '@material-ui/icons/LocalBar';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -68,7 +68,7 @@ const CreateClubForm = () => {
             club.append('club_cover_pic', club_cover_pic);
             club.append('owner_id', id)
             await dispatch(createClub(club));
-            history.push('/home')
+            // history.push('/home')
             //allert to let them know it worked
         }
         }
@@ -90,10 +90,10 @@ const CreateClubForm = () => {
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon />
+                    <LocalBarIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign up
+                    New Club Form
         </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
@@ -193,12 +193,12 @@ const CreateClubForm = () => {
                         color="primary"
                         className={classes.submit}
                     >
-                        Sign Up
+                        Create the club
             </Button>
                     <Grid container justify="flex-end">
                         <Grid item>
-                            <NavLink to='login' variant="body2">
-                                Already have an account? Sign in
+                            <NavLink to={`/users/${userId}`} variant="body2">
+                                go back to your profile
                 </NavLink>
                         </Grid>
                     </Grid>

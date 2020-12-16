@@ -5,7 +5,7 @@ export default function reducer(state = {}, action){
     switch (action.type) {
         case CREATE_CLUB:
             return {
-                ...state.type,
+                ...state,
                 id: action.id,
                 name: action.name,
                 description: action.description,

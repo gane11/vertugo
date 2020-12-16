@@ -14,7 +14,7 @@ export const createClub = (club) => {
                     type: CREATE_CLUB,
                     ...data
                 });
-                // return data;
+                return data;
             }
 
             // return await res.json();
