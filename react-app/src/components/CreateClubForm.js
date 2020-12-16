@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory, Redirect, NavLink, useParams} from 'react-router-dom';
-// import { signupUser } from '../../store/actions/signupAction';
+import {createClub} from '../store/actions/createClubAction'
 // material-ui
 
 import Avatar from '@material-ui/core/Avatar';
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CreateClubForm = () => {
     const { userId } = useParams();
+    const id = Number(userId)
 
     const dispatch = useDispatch();
     const classes = useStyles();
@@ -53,10 +54,11 @@ const CreateClubForm = () => {
     const [club_cover_pic, setClubCoverPic] = useState('')
 
     const history = useHistory();
+    console.log(id)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(userId) {
+        if(id) {
             let club = new FormData();
             club.append('name', name);
             club.append('description',description);
@@ -64,7 +66,8 @@ const CreateClubForm = () => {
             club.append('state', state);
             club.append('address', address);
             club.append('club_cover_pic', club_cover_pic);
-            // club = await dispatch(createClub(club));
+            club.append('owner_id', id)
+            await dispatch(createClub(club));
             history.push('/home')
             //allert to let them know it worked
         }
@@ -79,9 +82,9 @@ const CreateClubForm = () => {
         callback(e.target.value);
     }
 
-    if (!userId) {
-        return <Redirect to="/" />
-    }
+    // if (!userId) {
+    //     return <Redirect to="/" />
+    // }
     return (
         <Container component="main" maxWidth="xs">
             <CssBaseline />
@@ -177,7 +180,6 @@ const CreateClubForm = () => {
                                 label="Club Cover Image"
                                 id="clubCoverPic"
                                 autoComplete="clubCoverPic"
-                                value={club_cover_pic}
                                 onChange={updateClubCoverPic}
                             />
                         </Grid>

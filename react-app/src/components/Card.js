@@ -55,8 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Card = ({ party, clubs }) => {
 
-    const classes = useStyles();
-    console.log(party.start_date)
+    const classes = useStyles()
 
     return (
         <>

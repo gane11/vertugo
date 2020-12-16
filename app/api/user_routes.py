@@ -46,34 +46,34 @@ def owner_clubs(id):
 
 
 
-@user_routes.route('/<int:id>/clubs', methods=['POST'])
-@login_required
-def new_album(id):
-    form = NewClubForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        key_list = request.files.keys()
+# @user_routes.route('/<int:id>/clubs', methods=['POST'])
+# @login_required
+# def new_album(id):
+#     form = NewClubForm()
+#     form['csrf_token'].data = request.cookies['csrf_token']
+#     if form.validate_on_submit():
+#         key_list = request.files.keys()
 
-        if "clubCoverPic" in key_list:
-            cover_image_data = request.files["clubCoverPic"]
-            cover_image_key = f"newClubs/{cover_image_data.filename}_{uuid.uuid4()}"
-            client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
-                            ContentType=cover_image_data.mimetype, ACL="public-read")
+#         if "clubCoverPic" in key_list:
+#             cover_image_data = request.files["clubCoverPic"]
+#             cover_image_key = f"newClubs/{cover_image_data.filename}_{uuid.uuid4()}"
+#             client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
+#                             ContentType=cover_image_data.mimetype, ACL="public-read")
 
-            club = Club(
-                name=form.data['name'],
-                description=form.data['description'],
-                city=form.data['city'],
-                state=form.data['state'],
-                address=form.data['address'],
-                club_cover_pic=f"https://vertugo.s3.amazonaws.com/{cover_image_key}",
-                owner_id= id
-            )
-            db.session.add(club)
-            db.session.commit()
-        return club.to_dict()
+#             club = Club(
+#                 name=form.data['name'],
+#                 description=form.data['description'],
+#                 city=form.data['city'],
+#                 state=form.data['state'],
+#                 address=form.data['address'],
+#                 club_cover_pic=f"https://vertugo.s3.amazonaws.com/{cover_image_key}",
+#                 owner_id= id
+#             )
+#             db.session.add(club)
+#             db.session.commit()
+#         return club.to_dict()
 
-    return {'errors': 'error while creating a club page'},404
+#     return {'errors': 'error while creating a club page'},404
 
 
 @user_routes.route('/<int:id>/tickets', methods=['GET'])
