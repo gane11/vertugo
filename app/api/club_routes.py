@@ -60,18 +60,18 @@ def new_club():
                     client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
                                     ContentType=cover_image_data.mimetype, ACL="public-read")
 
-            club = Club(
-                name=form.data['name'],
-                description=form.data['description'],
-                city=form.data['city'],
-                state=form.data['state'],
-                address=form.data['address'],
-                club_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
-                owner_id=form.data['owner_id']
-            )
-            db.session.add(club)
-            db.session.commit()
-            return club.to_dict()
+                club = Club(
+                    name=form.data['name'],
+                    description=form.data['description'],
+                    city=form.data['city'],
+                    state=form.data['state'],
+                    address=form.data['address'],
+                    club_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
+                    owner_id=form.data['owner_id']
+                )
+                db.session.add(club)
+                db.session.commit()
+                return club.to_dict()
     except Exception as error:
         return jsonify(error=repr(error))
 
