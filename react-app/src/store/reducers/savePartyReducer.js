@@ -6,9 +6,7 @@ export default function reducer(state = {}, action) {
         case SAVE_PARTY:
             return {
                 ...state,
-                id: action.id,
-                user_id: action.user_id,
-                party_id: action.party_id
+                saved_party: action.saved_party
             }
         default:
             return state;
