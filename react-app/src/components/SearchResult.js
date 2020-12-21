@@ -5,6 +5,7 @@ import { getAllClubs } from '../store/actions/clubsAction'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card'
 import { useParams } from 'react-router-dom';
+import { getSavedParties } from '../store/actions/savePartyAction'
 
 
 
@@ -51,6 +52,7 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
 const SearchResultContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state) => Object.values(state.clubs))
+    const savePartyAction
     const dispatch = useDispatch()
     return (
         <SearchResult
