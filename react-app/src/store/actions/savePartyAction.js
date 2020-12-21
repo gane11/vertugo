@@ -4,8 +4,7 @@ export const saveParty = (user_id, party_id) => async (dispatch) => {
     try{
         const res = await fetch(`/api/users/${user_id}/parties/${party_id}/save/`, {
             method: 'POST',
-            user_id: user_id,
-            party_id: party_id
+            user_id, party_id
         });
 
     if (res.ok) {
