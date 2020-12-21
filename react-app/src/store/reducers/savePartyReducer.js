@@ -12,13 +12,15 @@ export default function reducer(state = {}, action) {
             }
 
         case LOAD_SAVED_PARTY:
-            return action.load_saved_party
+            return{
+                ...state,
+                saved_parties: action.saved_parties
+            }
 
         case REMOVE_SAVED_PARTY:
-            return {
-            ...state,
-                
-            }
+            return Object.assign({}, state, {
+                saved_party: [...state.saved_party.filter(saved_party_r => saved_party_r.user_id !== action.user_id && saved_party_r.party_id !== action.party_id)]
+            })
 
         default:
             return state;

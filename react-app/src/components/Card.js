@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Card.css'
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
-import {saveParty, removeSaved} from '../store/actions/savePartyAction'
+import {saveParty, removeSavedParty} from '../store/actions/savePartyAction'
 
 
 
@@ -67,9 +67,9 @@ const Card = ({ party, clubs }) => {
         saved = true
     }
 
-    const handleSave = async (e) => {
+    const handleRemove = async (e) => {
         e.preventDefault();
-        await dispatch(removeSaved(party.id))
+        await dispatch(removeSavedParty(party.id))
         saved = false
     }
 

@@ -53,7 +53,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,
 const HomePartiesContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state)=> Object.values(state.clubs))
-    const saved_parties = useSelector((state) => state.saved_party)
+    const saved_parties = useSelector((state) => Object.values(state.saved_party))
     const dispatch = useDispatch()
 
     return (
@@ -63,7 +63,7 @@ const HomePartiesContainer = () => {
             parties={parties}
             getAllParties={()=> dispatch(getAllParties())}
             saved_parties={saved_parties}
-            getSavedParties={() => dispatch(getSavedParties())}
+            getSavedParties={(id) => dispatch(getSavedParties(id))}
         />
     )
 }
