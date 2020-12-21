@@ -89,7 +89,7 @@ def all_tickets(id):
 @user_routes.route('/<int:userId>/parties/<int:partyId>/save', methods=['POST'])
 def save_party(userId, partyId):
     try:
-        # user = User.query.get(userId)
+        # user s= User.query.get(userId)
         # party = Party.query.get(partyId)
 
         saved_party = SavedParty(user_id=userId, party_id=partyId)
