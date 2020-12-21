@@ -21,8 +21,8 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,
     }, [])
 
     useEffect(() => {
-        getSavedParties(userId)
-    }, [userId])
+        getSavedParties(1)
+    }, [])
 
     let ids = []
     for(let i = 0; i < clubs.length; i++) {

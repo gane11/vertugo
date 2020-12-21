@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 //material UI
 
 const Card = ({ party, clubs }) => {
+    let saved = false;
     let userId = localStorage.getItem("user_id");
     const dispatch = useDispatch()
 
@@ -63,6 +64,13 @@ const Card = ({ party, clubs }) => {
     const handleSave = async (e) => {
         e.preventDefault();
         await dispatch(saveParty(userId,party.id))
+        saved = true
+    }
+
+    const handleSave = async (e) => {
+        e.preventDefault();
+        await dispatch(saveParty(userId, party.id))
+        saved = true
     }
 
     return (
@@ -77,8 +85,13 @@ const Card = ({ party, clubs }) => {
                         <h4>{clubs[party.club_id - 1].city}</h4>
                     </div>
                     <div>
+                        {saved ? (
+                        <Button variant="contained" color="secondary" onClick={handleRemove}
+                        >REMOVE</Button>
+                        ):(
                             <Button variant="contained" color="secondary" onClick={handleSave}
                             >SAVE</Button>
+                        ) } 
                         <NavLink to="/" exact={true} activeClassName="active">
                             <Button variant="contained" color="secondary"
                             >BUY</Button>
