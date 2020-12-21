@@ -3,13 +3,15 @@ import { getAllParties } from '../store/actions/partiesAction'
 import {getAllClubs} from '../store/actions/clubsAction'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card'
-import { getSavedParties } from '../store/actions/savePartyAction'
+import { getSavedParties} from '../store/actions/savePartyAction'
 
 
 
 
-const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
+const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,getSavedParties}) => {
    let searchValue = 'San Francisco'
+    let userId = localStorage.getItem("user_id");
+
     useEffect(() => {
         getAllParties();
     }, [])
@@ -17,6 +19,10 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
     useEffect(() => {
         getAllClubs()
     }, [])
+
+    useEffect(() => {
+        getSavedParties(userId)
+    }, [userId])
 
     let ids = []
     for(let i = 0; i < clubs.length; i++) {
@@ -47,7 +53,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs}) => {
 const HomePartiesContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state)=> Object.values(state.clubs))
-    const saved_parties = useSelector((state) => Object.values(state.saved_party))
+    const saved_parties = useSelector((state) => state.saved_party)
     const dispatch = useDispatch()
 
     return (
@@ -56,6 +62,8 @@ const HomePartiesContainer = () => {
             getAllClubs={() => dispatch(getAllClubs())}
             parties={parties}
             getAllParties={()=> dispatch(getAllParties())}
+            saved_parties={saved_parties}
+            getSavedParties={() => dispatch(getSavedParties())}
         />
     )
 }

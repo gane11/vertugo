@@ -101,3 +101,13 @@ def save_party(userId, partyId):
         return save_party_one.to_dict()
     except:
         return jsonify(error='No Saved Parties')
+
+
+@user_routes.route('/<int:userId>/parties/save', methods=['GET'])
+def saved_party(userId):
+    saved_parties = SavedParty.query.filter(SavedParty.user_id == id).all()
+    if len(saved_parties) > 0:
+        return jsonify([saved_parties.to_dict() for saved_party in saved_parties])
+    else:
+        return jsonify(error='There is no saved parties')
+

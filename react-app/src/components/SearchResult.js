@@ -52,7 +52,7 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
 const SearchResultContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state) => Object.values(state.clubs))
-    const savePartyAction
+    // const savePartyAction
     const dispatch = useDispatch()
     return (
         <SearchResult
