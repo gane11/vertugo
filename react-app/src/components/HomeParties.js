@@ -8,7 +8,7 @@ import { getSavedParties} from '../store/actions/savePartyAction'
 
 
 
-const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,getSavedParties}) => {
+const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,getSavedParties}) => {
    let searchValue = 'San Francisco'
     let userId = localStorage.getItem("user_id");
   
@@ -25,7 +25,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,
         getSavedParties(userId)
     }, [userId])
 
-    console.log(saved_parties)
+    console.log(savedParties)
 
     let ids = []
     for(let i = 0; i < clubs.length; i++) {
@@ -56,7 +56,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,
 const HomePartiesContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state)=> Object.values(state.clubs))
-    const saved_parties = useSelector((state) => (state.saved_parties))
+    const savedParties = useSelector((state) => (state.saved_parties))
     const dispatch = useDispatch()
 
     return (
@@ -65,7 +65,7 @@ const HomePartiesContainer = () => {
             getAllClubs={() => dispatch(getAllClubs())}
             parties={parties}
             getAllParties={()=> dispatch(getAllParties())}
-            saved_parties={saved_parties}
+            savedParties={savedParties}
             getSavedParties={(id) => dispatch(getSavedParties(id))}
         />
     )

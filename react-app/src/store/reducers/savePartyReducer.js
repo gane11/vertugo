@@ -14,8 +14,11 @@ export default function reducer(state = [], action) {
                 saved_party: action.saved_party
             }
 
-        case LOAD_SAVED_PARTY: 
-           return action.saved_parties
+        case LOAD_SAVED_PARTY: {
+            const saved_parties = action.saved_parties.map((saved_party) => ({ [saved_party.id]: saved_party}))
+            return merge({}, state, ...saved_parties)
+
+        }
         case REMOVE_SAVED_PARTY:
            return state.filter(saved_parties => {
                return saved_parties.id !== action.id

@@ -26,9 +26,9 @@ export const loadSavedParties = (saved_parties) => ({type:LOAD_SAVED_PARTY, ...s
 export const getSavedParties = (user_id) =>  {
     return async dispatch => {
         try{
-            const res = await fetch(`/api/users/${user_id}/parties/save/`)
+            const res = await fetch(`/api/users/${user_id}/parties/save`)
             if(res.ok) {
-                const saved_parties = await res.json()
+                const {saved_parties} = await res.json()
                 dispatch(loadSavedParties(saved_parties))
             }
         } catch (e) {
