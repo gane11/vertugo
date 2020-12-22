@@ -21,14 +21,14 @@ return async dispatch => {
 }
 }
 
-export const loadSavedParties = (saved_parties) => ({type:LOAD_SAVED_PARTY, saved_parties})
+export const loadSavedParties = (saved_parties) => ({type:LOAD_SAVED_PARTY, ...saved_parties})
 
 export const getSavedParties = (user_id) =>  {
     return async dispatch => {
         try{
             const res = await fetch(`/api/users/${user_id}/parties/save/`)
             if(res.ok) {
-                const {saved_parties} = await res.json()
+                const saved_parties = await res.json()
                 dispatch(loadSavedParties(saved_parties))
             }
         } catch (e) {
@@ -50,8 +50,9 @@ export const removeSavedParty = (user_id, party_id) => {
             });
             if(res.ok) {
                 const data = await res.json()
+                const saved_party_id = data.id
                 return dispatch({type: REMOVE_SAVED_PARTY,
-                    saved_party: data})
+                    id: saved_party_id})
             }
         } catch(e) {
             console.log(e)

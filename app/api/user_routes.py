@@ -111,3 +111,15 @@ def saved_party(userId):
     else:
         return jsonify(error='There is no saved parties')
 
+
+@user_routes.route('/<int:user_id>/parties/<int:party_id>/save', methods=["DELETE"])
+def delete_saved_party(user_id, party_id):
+    try:
+        saved_party = SavedParty.query.filter(SavedParty.user_id == user_id).filter(
+            SavedParty.party_id == party_id).first()
+        db.session.delete(saved_party)
+        db.session.commit()
+        return saved_party.to_dict()
+    except Exception as error:
+        return jsonify(error=repr(error))
+

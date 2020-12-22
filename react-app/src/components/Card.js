@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import './Card.css'
 import { NavLink } from 'react-router-dom'
@@ -55,22 +55,22 @@ const useStyles = makeStyles((theme) => ({
 //material UI
 
 const Card = ({ party, clubs }) => {
-    let saved = false;
-    let userId = localStorage.getItem("user_id");
+    const [saved, setSaved] = useState(false)
+    let user_id = localStorage.getItem("user_id");
     const dispatch = useDispatch()
 
     const classes = useStyles()
 
     const handleSave = async (e) => {
         e.preventDefault();
-        await dispatch(saveParty(userId,party.id))
-        saved = true
+        await dispatch(saveParty(user_id,party.id))
+        setSaved(true)
     }
 
     const handleRemove = async (e) => {
         e.preventDefault();
-        await dispatch(removeSavedParty(party.id))
-        saved = false
+        await dispatch(removeSavedParty(user_id,party.id))
+        setSaved(false)
     }
 
     return (
