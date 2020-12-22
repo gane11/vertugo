@@ -24,6 +24,8 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,
         getSavedParties(1)
     }, [])
 
+    console.log(saved_parties)
+
     let ids = []
     for(let i = 0; i < clubs.length; i++) {
         let currentClub = clubs[i]
@@ -53,7 +55,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, saved_parties,
 const HomePartiesContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state)=> Object.values(state.clubs))
-    const saved_parties = useSelector((state) => Object.values(state.saved_party))
+    const saved_parties = useSelector((state) => Object.values(state.saved_parties))
     const dispatch = useDispatch()
 
     return (

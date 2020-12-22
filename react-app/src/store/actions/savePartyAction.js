@@ -21,7 +21,7 @@ return async dispatch => {
 }
 }
 
-export const loadSavedParty = (saved_parties) => ({type:LOAD_SAVED_PARTY, saved_parties})
+export const loadSavedParties = (saved_parties) => ({type:LOAD_SAVED_PARTY, saved_parties})
 
 export const getSavedParties = (user_id) =>  {
     return async dispatch => {
@@ -29,7 +29,7 @@ export const getSavedParties = (user_id) =>  {
             const res = await fetch(`/api/users/${user_id}/parties/save/`)
             if(res.ok) {
                 const {saved_parties} = await res.json()
-                dispatch(loadSavedParty(saved_parties))
+                dispatch(loadSavedParties(saved_parties))
             }
         } catch (e) {
         console.log(e)
