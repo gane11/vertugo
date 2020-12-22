@@ -4,7 +4,7 @@ export const LOAD_SAVED_PARTY = 'LOAD_SAVED_PARTY'
 export const REMOVE_SAVED_PARTY = 'REMOVE_SAVED_PARTY'
 
 
-export default function reducer(state = {}, action) {
+export default function reducer(state = [], action) {
     Object.freeze(state)
 
     switch (action.type) {
