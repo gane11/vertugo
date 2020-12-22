@@ -55,7 +55,8 @@ const useStyles = makeStyles((theme) => ({
 //material UI
 
 const Card = ({ party, clubs }) => {
-    const [saved, setSaved] = useState(false)
+    const [saved, setSaved] = useState()
+
     let user_id = localStorage.getItem("user_id");
     const dispatch = useDispatch()
 
@@ -65,6 +66,7 @@ const Card = ({ party, clubs }) => {
         e.preventDefault();
         await dispatch(saveParty(user_id,party.id))
         setSaved(true)
+
     }
 
     const handleRemove = async (e) => {

@@ -4,12 +4,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllClubs } from '../store/actions/clubsAction'
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
+import { getSavedParties } from "../store/actions/savePartyAction";
 
-function User({ clubs, getAllClubs}) {
+function User({ clubs, getAllClubs, savedParties, getSavedParties}) {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   let id = Number(userId)
-
+  useEffect(() => {
+    getSavedParties(id)
+  }, [id])
   
 
   useEffect(() => {
@@ -54,6 +57,7 @@ function User({ clubs, getAllClubs}) {
         </div>
       </>
     ): (
+      <>
           <ul>
             <li>
               <strong>User Id</strong> {userId}
@@ -65,6 +69,18 @@ function User({ clubs, getAllClubs}) {
               <strong>Email</strong> {user.email}
             </li>
           </ul>
+          <div>
+            <div className="saved_party__section">
+              {/* {savedParties.map((savedParty) => {
+                return (
+                  <>
+                    <li>{savedParty.party_id}</li>
+                  </>
+                )
+              })} */}
+            </div>
+          </div>
+          </>
     )}
     </div>
   );
@@ -73,11 +89,14 @@ function User({ clubs, getAllClubs}) {
 
 const UserContainer = () => {
   const clubs = useSelector((state) => Object.values(state.clubs))
+  const saved_parties = useSelector((state) => (state.saved_parties))
   const dispatch = useDispatch()
   return (
     <User 
       clubs={clubs}
       getAllClubs={() => dispatch(getAllClubs())}
+      savedParties={saved_parties}
+      getSavedParties={(id) => dispatch(getSavedParties(id))}
     />
   )
 
