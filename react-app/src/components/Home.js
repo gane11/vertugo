@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import NavBarContainer from './NavBar';
 import HomePartiesContainer from './HomeParties';
 import DatePicker from './DatePicker'
@@ -7,31 +7,10 @@ import DatePicker from './DatePicker'
 
 
 const Home = ({ authenticate, setAuthenticated}) => {
-    // let lng
-    // let lat
-    // function locationSuccess(position) {
-    //     lat = position.coords.latitude;
-    //     lng = position.coords.longitude;
-    //     var altitude = position.coords.altitude;
-    //     // var accuracy = position.coords.accuracy;
-    //     // var altitudeAccuracy = position.coords.altitudeAccuracy;
-    //     // var heading = position.coords.height;
-    //     // var speed = position.coords.speed;
-    //     // var timestamp = position.timestamp;
+    const [lat, setLat] = useState()
+    const [lng, setLng] = useState()
 
-    //     // work with this information however you'd like!
-    // }
-
-    // function locationError(error) {
-    //     var code = error.code;
-    //     var message = error.message;
-
-    //     // read the code and message and decide how you want to handle this!
-    // }
-
-    // navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
-
-
+    let location
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
@@ -41,10 +20,8 @@ const Home = ({ authenticate, setAuthenticated}) => {
     }
 
     function geoSuccess(position) {
-       const lat = position.coords.latitude;
-       const lng = position.coords.longitude;
-        let location = (lat, lng)
-        return location
+       setLat(position.coords.latitude);
+       setLng(position.coords.longitude)
     }
 
 
@@ -53,7 +30,34 @@ const Home = ({ authenticate, setAuthenticated}) => {
     }
 
     getLocation()
-    console.log(location)
+    console.log(lat, lng)
+
+
+    var geocoder;
+    function initialize() {
+        geocoder = new google.maps.Geocoder();
+    }
+
+    function codeLatLng(lat, lng) {
+        var latlng = new google.maps.LatLng(lat, lng);
+        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                console.log(results)
+                if (results[1]) {
+                    //formatted address
+                    var address = results[0].formatted_address;
+                    alert("address = " + address);
+                } else {
+                    alert("No results found");
+                }
+            } else {
+                alert("Geocoder failed due to: " + status);
+            }
+        });
+    }
+
+    console.log(codeLatLng(lat, lng))
+
     return (
     <div> 
         <NavBarContainer authenticate={authenticate} setAuthenticated={setAuthenticated}/>
