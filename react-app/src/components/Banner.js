@@ -2,6 +2,9 @@ import React from 'react';
 import './Banner.css'
 import DatePicker from './DatePicker'
 import sanFran from './images/sanFran.jpeg'
+import la from './images/la.jpeg'
+import austin from './images/austin.jpeg'
+import miami from './images/miami.jpeg'
 
 
 
@@ -16,7 +19,7 @@ const Banner = ({searchValue}) => {
 
 
     return (
-        <div className="banner" >
+        <div className="banner" tyle={{ background: url(sanFran) }} >
             <div className="banner_info">
                 <h1>Pick a date</h1>
                 <h2>
