@@ -40,8 +40,9 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
     if(!parties) return null
 
     return(
+        <>
+            <Banner searchValue={searchValue}/>
         <div>
-            {/* <Banner /> */}
             <div className="party__section">
                 {parties.map((party) => {
                     if (ids.includes(party.club_id)) {
@@ -51,6 +52,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
                 }})}
             </div>
         </div>
+        </>
     )
 }
 

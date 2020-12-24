@@ -10,16 +10,24 @@ import miami from './images/miami.jpeg'
 
 const Banner = ({searchValue}) => {
     let coverPic
-
-    if(searchValue.toLowerCase() === 'san fracisco') coverPic = sanFran
+    if(searchValue) {
+    if(searchValue.toLowerCase() === 'san francisco') coverPic = sanFran
     if (searchValue.toLowerCase() === 'los angeles') coverPic = la
     if (searchValue.toLowerCase() === 'austin') coverPic = austin
     if (searchValue.toLowerCase() === 'miami') coverPic = miami
+    }  
+    
+    let divStyle = {
+        background: `url(${coverPic})` ,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+    }
 
 
 
     return (
-        <div className="banner" tyle={{ background: url(sanFran) }} >
+        <div className="banner" style={divStyle} >
             <div className="banner_info">
                 <h1>Pick a date</h1>
                 <h2>
