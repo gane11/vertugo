@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import NavBarContainer from './NavBar';
 import HomePartiesContainer from './HomeParties';
 import DatePicker from './DatePicker'
+import Banner from './Banner';
 
 
 
@@ -33,35 +34,36 @@ const Home = ({ authenticate, setAuthenticated}) => {
     console.log(lat, lng)
 
 
-    var geocoder;
-    function initialize() {
-        geocoder = new google.maps.Geocoder();
-    }
+    // var geocoder;
+    // function initialize() {
+    //     geocoder = new google.maps.Geocoder();
+    // }
 
-    function codeLatLng(lat, lng) {
-        var latlng = new google.maps.LatLng(lat, lng);
-        geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                console.log(results)
-                if (results[1]) {
-                    //formatted address
-                    var address = results[0].formatted_address;
-                    alert("address = " + address);
-                } else {
-                    alert("No results found");
-                }
-            } else {
-                alert("Geocoder failed due to: " + status);
-            }
-        });
-    }
+    // function codeLatLng(lat, lng) {
+    //     var latlng = new google.maps.LatLng(lat, lng);
+    //     geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+    //         if (status == google.maps.GeocoderStatus.OK) {
+    //             console.log(results)
+    //             if (results[1]) {
+    //                 //formatted address
+    //                 var address = results[0].formatted_address;
+    //                 alert("address = " + address);
+    //             } else {
+    //                 alert("No results found");
+    //             }
+    //         } else {
+    //             alert("Geocoder failed due to: " + status);
+    //         }
+    //     });
+    // }
 
-    console.log(codeLatLng(lat, lng))
+    // console.log(codeLatLng(lat, lng))
 
     return (
     <div> 
         <NavBarContainer authenticate={authenticate} setAuthenticated={setAuthenticated}/>
-        <DatePicker />
+        <Banner />
+        {/* <DatePicker /> */}
         <HomePartiesContainer />
         {/* <Footer /> */}
     </div>

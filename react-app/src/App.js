@@ -13,7 +13,8 @@ import Home from './components/Home'
 import ClubProfile from './components/ClubProfile'
 import SearchResult from "./components/SearchResult";
 import CreateClubForm from './components/CreateClubForm'
-import SearchResultContainer from "./components/SearchResult";
+import Banner from './components/Banner'
+
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);

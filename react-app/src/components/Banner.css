@@ -1,0 +1,24 @@
+.banner {
+  background: url(./images/sanFran.jpeg) center center;
+  background-color: black;
+  max-width: 100%;
+  height: 500px;
+  position: relative;
+  background-size: cover;
+  border-radius: 25px;
+}
+
+.banner_info {
+  /* background-color: white; */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  /* color: lightblue; */
+  color: black;
+  padding-top: 8rem;
+  padding-right: 50rem;
+  padding-left: 50rem;
+  padding-bottom: 10rem;
+  /* box-sizing: border-box; */
+  width: 10rem;
+  border-radius: 25px;
+}

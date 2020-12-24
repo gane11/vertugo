@@ -4,6 +4,7 @@ import {getAllClubs} from '../store/actions/clubsAction'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card'
 import { getSavedParties} from '../store/actions/savePartyAction'
+import Banner from './Banner'
 
 
 
@@ -40,6 +41,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
 
     return(
         <div>
+            {/* <Banner /> */}
             <div className="party__section">
                 {parties.map((party) => {
                     if (ids.includes(party.club_id)) {

@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card'
 import { useParams } from 'react-router-dom';
 import { getSavedParties } from '../store/actions/savePartyAction'
+import Banner from './Banner'
+
 
 
 
@@ -25,14 +27,17 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     let ids = []
     for (let i = 0; i < clubs.length; i++) {
         let currentClub = clubs[i]
-        if (currentClub.city === searchValue) {
+        if (currentClub.city.toLowerCase() === searchValue.toLowerCase()) {
             ids.push(i + 1)
         }
     }
 
+
     if(!parties) return null;
 
     return (
+        <>
+            <Banner searchValue={searchValue}/>
             <div>
                 <div className="party__section">
                     {parties.map((party) => {
@@ -44,6 +49,7 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
                     })}
                 </div>
             </div>
+        </>
     )
 
 }
