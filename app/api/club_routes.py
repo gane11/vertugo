@@ -104,10 +104,10 @@ def create_party(id):
 
     return {'errors': 'error while creating a party'}, 404
 
-@club_routes.route('/<int:id>', methods=['GET'])
+@club_routes.route('/<int:id>/pictures', methods=['GET'])
 def club_pictures(id):
     club_pictures = ClubPicture.query.filter(ClubPicture.club_id == id).all()
     if club_pictures:
-        return club_pictures.to_dict()
+        return {"clubPictures": [club_picture.to_dict() for club_picture in club_pictures]}
     else:
         return jsonify(error='This Club doesnt have pictures yet')

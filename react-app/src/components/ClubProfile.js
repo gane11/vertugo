@@ -24,7 +24,12 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     useEffect(() => {
         getAllParties()
     }, [])
-    console.log(club)
+    console.log(clubPictures)
+
+    useEffect(() => {
+        getAllClubPictures(clubId)
+    }, [clubId])
+
 
     if (!club) return null;
 
@@ -109,7 +114,7 @@ return (
 const ClubProfileContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const club = useSelector((state) => state.club)
-    const clubPictures = useSelector((state) => Object.values(state.clubPictures))
+    const clubPictures = useSelector((state) => (state.clubPictures))
     const dispatch = useDispatch()
 
     return (
@@ -118,7 +123,8 @@ const ClubProfileContainer = () => {
             getClub={(clubId) => dispatch(getClub(clubId))}
             parties={parties}
             getAllParties={() => dispatch(getAllParties())}
-            getAllClubPictures={() => dispatch(getAllClubPictures())}
+            clubPictures={clubPictures}
+            getAllClubPictures={(clubId) => dispatch(getAllClubPictures(clubId))}
         />
     )
 }
