@@ -20,7 +20,7 @@ const Banner = ({searchValue}) => {
     let divStyle = {
         background: `url(${coverPic})` ,
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        // backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
     }
 
