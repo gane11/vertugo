@@ -92,36 +92,36 @@ const NavBar = ({setAuthenticated, user }) => {
           />
           </div>
           <div className="date_picker">
-            <Link to={{
+          <NavLink className="user__name" to={{
               pathname:`/search/${searchValue}`,
               aboutProps:{
                 searchValue:{searchValue}
               }
             }}>
-              <Button color="secondary"
+            <Button variant="contained" color="primary" className="user__name"
               >SEARCH</Button>
-            </Link>
+            </NavLink>
           </div>
       </div>
       {user.id ? (
         <div className='header__right'>
           <p className="welcome_letters">Welcome</p>
         
-          <NavLink className="navbar__menu" to={`/users/${user.id}`}>
+          <NavLink className="user__name" to={`/users/${user.id}`}>
             {user.firstName}
           </NavLink>
-          <LogoutButton variant="contained" color="secondary" setAuthenticated={setAuthenticated}>
+          <LogoutButton setAuthenticated={setAuthenticated}>
             Logout
           </LogoutButton>
         </div>
       ) : (
           <div className='header__right'>
             <NavLink to="/login" exact={true} activeClassName="active">
-              <Button variant="contained" color="secondary"
+              <Button variant="contained" color="primary"
               >Login</Button>
             </NavLink>
             <NavLink to="/sign-up" exact={true} activeClassName="active">
-              <Button variant="contained" color="secondary"
+              <Button variant="contained" color="primary"
               >Sign Up</Button>
             </NavLink>
           </div>
