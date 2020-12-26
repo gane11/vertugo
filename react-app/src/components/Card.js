@@ -1,6 +1,6 @@
 import React, { useEffect , useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import './Card.css'
+// import './Card.css'
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import {saveParty, removeSavedParty} from '../store/actions/savePartyAction'
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 //material UI
 
-const Card = ({ party, clubs }) => {
+const Card = ({ party, clubs ,club}) => {
     const [saved, setSaved] = useState()
 
     let user_id = localStorage.getItem("user_id");
@@ -84,18 +84,23 @@ const Card = ({ party, clubs }) => {
                         <h2>{party.description}</h2>
                         {/* <h4>{home.description}</h4> */}
                         <h3>{new Date(party.start_date).toDateString()}</h3>
+                        {club? (
+                            <h4>{club.city}</h4>
+                        ): (
+                            
                         <h4>{clubs[party.club_id - 1].city}</h4>
+                        )}
                     </div>
                     <div>
                         {saved ? (
-                        <Button variant="contained" color="secondary" onClick={handleRemove}
+                        <Button variant="contained" color="primary" onClick={handleRemove}
                         >REMOVE</Button>
                         ):(
-                            <Button variant="contained" color="secondary" onClick={handleSave}
+                            <Button variant="contained" color="primary" onClick={handleSave}
                             >SAVE</Button>
                         ) } 
                         <NavLink to="/" exact={true} activeClassName="active">
-                            <Button variant="contained" color="secondary"
+                            <Button variant="contained" color="primary"
                             >BUY</Button>
                         </NavLink>
                         <Button />

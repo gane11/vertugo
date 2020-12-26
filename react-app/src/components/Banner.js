@@ -1,5 +1,5 @@
 import React from 'react';
-import './Banner.css'
+// import './Banner.css'
 import DatePicker from './DatePicker'
 import sanFran from './images/sanFran.jpeg'
 import la from './images/la.jpeg'

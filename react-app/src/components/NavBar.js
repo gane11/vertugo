@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { NavLink, Redirect, Link } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux';
-import './NavBar.css'
 import SearchResult from './SearchResult'
 
 ///material UI

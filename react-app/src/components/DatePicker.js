@@ -8,12 +8,13 @@ import {
 } from '@material-ui/pickers';
 
 const DatePicker = ()  =>{
-    // The first commit of Material-UI
+  
     const [selectedDate, setSelectedDate] = React.useState(new Date());
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
+
 
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -21,7 +22,7 @@ const DatePicker = ()  =>{
                 <KeyboardDatePicker
                     margin="normal"
                     id="date-picker-dialog"
-                    label="Date picker dialog"
+                    // label=""
                     format="MM/dd/yyyy"
                     value={selectedDate}
                     onChange={handleDateChange}
