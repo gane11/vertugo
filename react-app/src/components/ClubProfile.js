@@ -114,7 +114,7 @@ return (
 const ClubProfileContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const club = useSelector((state) => state.club)
-    const clubPictures = useSelector((state) => (state.clubPictures))
+    const clubPictures = useSelector((state) => Object.values(state.clubPictures))
     const dispatch = useDispatch()
 
     return (

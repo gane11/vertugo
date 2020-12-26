@@ -10,7 +10,6 @@ export default function reducer(state = [], action) {
             return merge({}, state, ...clubPictures)
 
         }
-        default: 
-        return state;
+        default: return state;
     }
 }
