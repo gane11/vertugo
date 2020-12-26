@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getClub } from '../store/actions/clubAction';
 import { getAllParties } from '../store/actions/partiesAction'
+import { getAllClubPictures} from '../store/actions/clubPicturesAction'
 import { Button } from '@material-ui/core';
 import Card from './Card'
 
@@ -10,7 +11,7 @@ import Card from './Card'
 
 
 
-const ClubProfile = ({ club, getClub, parties, getAllParties }) => {
+const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getAllClubPictures }) => {
     const { id } = useParams();
     const clubId = Number.parseInt(id);
 
@@ -68,7 +69,7 @@ return (
 
                             ) : (
                             <div className="party__container">
-                            <ul>
+                                <div className="party__section"> 
                                 {parties.map((party) => {
                                     if (party.club_id === club.id) {
                                         return (
@@ -76,7 +77,7 @@ return (
                                         )
                                     }
                                 })}
-                            </ul>
+                            </div>
                             </div>
 
                             )}
@@ -108,6 +109,7 @@ return (
 const ClubProfileContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const club = useSelector((state) => state.club)
+    const clubPictures = useSelector((state) => Object.values(state.clubPictures))
     const dispatch = useDispatch()
 
     return (
@@ -116,6 +118,7 @@ const ClubProfileContainer = () => {
             getClub={(clubId) => dispatch(getClub(clubId))}
             parties={parties}
             getAllParties={() => dispatch(getAllParties())}
+            getAllClubPictures={() => dispatch(getAllClubPictures())}
         />
     )
 }

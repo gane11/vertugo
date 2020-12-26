@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, redirect
 from flask_login import login_required
-from app.models import db, User, Club, Ticket, Party
+from app.models import db, User, Club, Ticket, Party, ClubPicture
 from app.forms import NewPartyForm,  NewClubForm
 import json
 
@@ -103,3 +103,11 @@ def create_party(id):
             return party.to_dict()
 
     return {'errors': 'error while creating a party'}, 404
+
+@club_routes.route('/<int:id>', methods=['GET'])
+def club_pictures(id):
+    club_pictures = ClubPicture.query.filter(ClubPicture.club_id == id).all()
+    if club_pictures:
+        return club_pictures.to_dict()
+    else:
+        return jsonify(error='This Club doesnt have pictures yet')
