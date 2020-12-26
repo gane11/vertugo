@@ -77,7 +77,7 @@ const Card = ({ party, clubs ,club}) => {
 
     return (
         <>
-            <NavLink to={`/clubs/${party.club_id}`}>
+            <NavLink className="user__name" to={`/clubs/${party.club_id}`}>
                 <div className="card">
                     <img src={party.party_cover_pic} alt=""></img>
                     <div className="card__info">
@@ -85,10 +85,10 @@ const Card = ({ party, clubs ,club}) => {
                         {/* <h4>{home.description}</h4> */}
                         <h3>{new Date(party.start_date).toDateString()}</h3>
                         {club? (
-                            <h4>{club.city}</h4>
+                            <h4>{club.name}</h4>
                         ): (
                             
-                        <h4>{clubs[party.club_id - 1].city}</h4>
+                        <h4>{clubs[party.club_id - 1].name}</h4>
                         )}
                     </div>
                     <div>
@@ -99,7 +99,7 @@ const Card = ({ party, clubs ,club}) => {
                             <Button variant="contained" color="primary" onClick={handleSave}
                             >SAVE</Button>
                         ) } 
-                        <NavLink to="/" exact={true} activeClassName="active">
+                        <NavLink className="user__name" to="/" exact={true} activeClassName="active">
                             <Button variant="contained" color="primary"
                             >BUY</Button>
                         </NavLink>
