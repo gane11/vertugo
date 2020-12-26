@@ -90,6 +90,7 @@ const NavBar = ({setAuthenticated, user }) => {
             }}
             inputProps={{ 'aria-label': 'search' }}
           />
+          </div>
           <div className="date_picker">
             <Link to={{
               pathname:`/search/${searchValue}`,
@@ -101,7 +102,6 @@ const NavBar = ({setAuthenticated, user }) => {
               >SEARCH</Button>
             </Link>
           </div>
-        </div>
       </div>
       {user.id ? (
         <div className='header__right'>
@@ -110,7 +110,9 @@ const NavBar = ({setAuthenticated, user }) => {
           <NavLink className="navbar__menu" to={`/users/${user.id}`}>
             {user.firstName}
           </NavLink>
-          <LogoutButton setAuthenticated={setAuthenticated} />
+          <LogoutButton variant="contained" color="secondary" setAuthenticated={setAuthenticated}>
+            Logout
+          </LogoutButton>
         </div>
       ) : (
           <div className='header__right'>

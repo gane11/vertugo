@@ -21,7 +21,7 @@ const Banner = ({searchValue}) => {
         background: `url(${coverPic})` ,
         backgroundPosition: 'center',
         // backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
+        backgroundSize: 'cover', 
     }
 
 
