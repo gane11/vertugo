@@ -69,7 +69,11 @@ return (
                         </div>
                             {picturesSelected ? (
                         <div className="party__container">
-                            <div>Alex</div>
+                            {clubPictures.map((clubPicture) => {
+                                return(
+                                    <img src={clubPicture.picture_url} className="club-picture"></img>
+                                )
+                            })}
                         </div>
 
                             ) : (

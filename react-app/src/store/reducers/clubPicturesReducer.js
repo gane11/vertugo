@@ -6,8 +6,9 @@ export default function reducer(state = [], action) {
 
     switch (action.type) {
         case LOAD_CLUB_PICTURES: {
-            const clubPictures = action.clubPictures.map((clubPicture) => ({ [clubPicture.id]: clubPicture }))
+            const clubPictures = action.clubPictures.clubPictures.map((clubPicture) => ({ [clubPicture.id]: clubPicture }))
             return merge({}, state, ...clubPictures)
+           return action.clubPictures
 
         }
         default: return state;
