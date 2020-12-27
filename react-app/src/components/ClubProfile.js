@@ -6,6 +6,7 @@ import { getAllParties } from '../store/actions/partiesAction'
 import { getAllClubPictures} from '../store/actions/clubPicturesAction'
 import { Button } from '@material-ui/core';
 import Card from './Card'
+import Map from './Map'
 
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: 1260,
-        height: 800,
+        height: 400,
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
     },
@@ -146,6 +147,9 @@ return (
                     
                             <li>
                                 <strong>City</strong> {club.city}
+                            </li>
+                            <li>
+                                <strong>Address</strong> <Map newLat={club.lat} newLng={club.lng}/>
                             </li>
                         </ul>
                     </div>
