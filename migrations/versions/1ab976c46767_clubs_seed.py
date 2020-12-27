@@ -26,8 +26,8 @@ def upgrade():
         sa.Column('address', sa.String()),
         sa.Column('club_cover_pic', sa.String()),
         sa.Column('owner_id',sa.Integer()),
-        sa.Column('lat', sa.Integer()),
-        sa.Column('lnh', sa.Integer())
+        sa.Column('lat', sa.Float()),
+        sa.Column('lng', sa.Float())
 
         )
 

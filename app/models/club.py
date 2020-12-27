@@ -1,5 +1,5 @@
 from .db import db
-from sqlalchemy.types import Integer, String, Text
+from sqlalchemy.types import Integer, String, Text, Float
 from sqlalchemy.schema import Column, ForeignKey
 
 
@@ -14,8 +14,8 @@ class Club(db.Model):
     address = Column(String(300), nullable=False)
     club_cover_pic = Column(String, nullable=False)
     owner_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    lat = Column(Integer)
-    lng = Column(Integer)
+    lat = Column(Float)
+    lng = Column(Float)
 
     def to_dict(self):
         return {
