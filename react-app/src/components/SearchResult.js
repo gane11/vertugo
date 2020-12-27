@@ -33,7 +33,13 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     }
 
 
-    if(!parties) return null;
+    if ((searchValue.toLowerCase() !== 'austin' || searchValue.toLowerCase() !== 'los angeles') || (searchValue.toLowerCase() !== 'miami' || searchValue.toLowerCase() !== 'san francisco' )) {
+        return (
+            <>
+            <h1>Sorry not there yet, try Miami , San Francisco , Los Angeles or Austin !</h1>
+            </>
+        )
+    }
 
     return (
         <>
