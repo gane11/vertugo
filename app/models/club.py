@@ -14,6 +14,8 @@ class Club(db.Model):
     address = Column(String(300), nullable=False)
     club_cover_pic = Column(String, nullable=False)
     owner_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    lat = Column(Integer)
+    lng = Column(Integer)
 
     def to_dict(self):
         return {
@@ -24,5 +26,7 @@ class Club(db.Model):
             "state": self.state,
             "address": self.address,
             "club_cover_pic": self.club_cover_pic,
-            "owner_id": self.owner_id
+            "owner_id": self.owner_id,
+            "lat": self.lat,
+            "lng": self.lng
         }
