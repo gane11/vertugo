@@ -46,7 +46,6 @@ const CreatePartyForm = () => {
     const [description, setDescription] = useState('');
     const [start_date, setStartDate] = useState(new Date());
     const [end_date, setEndDate] = useState(new Date());
-    // const [club_id, setClubId] = useState('');
     const [ticket_count, setTicketCount] = useState(100);
     const [party_cover_pic, setPartyCoverPic] = useState('');
 
@@ -59,9 +58,9 @@ const CreatePartyForm = () => {
             party.append('description', description);
             party.append('start_date', start_date);
             party.append('end_date', start_date);
-            party.append('club_id', id)
-            party.append('ticket_count', ticket_count)
-            party.append('party_cover_pic', party_cover_pic)
+            party.append('club_id', id);
+            party.append('ticket_count', ticket_count);
+            party.append('party_cover_pic', party_cover_pic);
             await dispatch(createParty(party));
             // history.push('/')
             //allert to let them know it worked
@@ -88,7 +87,7 @@ const CreatePartyForm = () => {
                     <LocalBarIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    New Club Form
+                    New Party Form
         </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                         <Grid item xs={12} sm={16}>
@@ -144,12 +143,12 @@ const CreatePartyForm = () => {
                                 variant="filled"
                                 required
                                 fullWidth
-                                name="partyCoverPic"
+                                name="party_cover_pic"
                                 // label="Club Cover Image"
-                                id="partyCoverPic"
+                                id="party_cover_pic"
                                 autoComplete="partyCoverPic"
                                 onClick={updatePartyCoverPic}
-                            /> Upload Cover Picture
+                            /> Upload Party Cover Picture
                             {/* </label> */}
                         </Grid>
                         <Grid item xs={12}>

@@ -28,7 +28,7 @@ def parties():
 
 
 @party_routes.route('/', methods=['POST'])
-@login_required
+# @login_required
 def new_party():
     try:
         form = NewTicketForm()
@@ -83,7 +83,7 @@ def delete_party():
 
 
 @party_routes.route('/<int:id>/users/<int:uid>/tickets', methods=['POST'])
-@login_required
+# @login_required
 def buying_ticket(id,uid):
     form = NewTicketForm()
     form['csrf_token'].data = request.cookies['csrf_token']

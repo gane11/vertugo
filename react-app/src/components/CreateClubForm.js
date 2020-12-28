@@ -54,7 +54,6 @@ const CreateClubForm = () => {
     const [lng, setLng] = useState('');
     const [club_cover_pic, setClubCoverPic] = useState('');
     
-    console.log(lat)
     const history = useHistory();
 
     const handleSubmit = async (e) => {

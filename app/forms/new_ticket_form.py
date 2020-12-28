@@ -12,7 +12,7 @@ def user_exists(form, field):
         raise ValidationError("User is already registered.")
 
 
-class NewPartyForm(FlaskForm):
+class NewTicketForm(FlaskForm):
     expired = BooleanField('expired', validators=[DataRequired()])
     start_date = DateTimeField('start_date', validators=[DataRequired()])
     end_date = DateTimeField('end_date', validators=[DataRequired()])
