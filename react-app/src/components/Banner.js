@@ -5,7 +5,7 @@ import sanFran from './images/sanFran.jpeg'
 import la from './images/la.jpeg'
 import austin from './images/austin.jpeg'
 import miami from './images/miami.jpeg'
-
+import newYork from './images/newYork.jpeg'
 
 
 const Banner = ({searchValue}) => {
@@ -15,6 +15,7 @@ const Banner = ({searchValue}) => {
     if (searchValue.toLowerCase() === 'los angeles') coverPic = la
     if (searchValue.toLowerCase() === 'austin') coverPic = austin
     if (searchValue.toLowerCase() === 'miami') coverPic = miami
+        if (searchValue.toLowerCase() === 'new york') coverPic = newYork
     }  
     
     let divStyle = {
