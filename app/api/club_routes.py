@@ -27,6 +27,12 @@ def clubs():
     return {"clubs": [club.to_dict() for club in clubs]}
 
 
+# @club_routes.route('/<str:search_value>', methods=['GET'])
+# def search_clubs(search_value):
+#     clubs = Club.query.filter(Club.city == search_value).all()
+#     return {"clubs": [club.to_dict() for club in clubs]}
+
+
 @club_routes.route('/<int:id>', methods=['GET'])
 def club(id):
     club = Club.query.get(id)

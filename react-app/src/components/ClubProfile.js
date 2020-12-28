@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getClub } from '../store/actions/clubAction';
 import { getAllParties } from '../store/actions/partiesAction'
@@ -13,8 +13,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: 1260,
-        height: 400,
+        height: 800,
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
     },
@@ -125,10 +125,12 @@ return (
                                 )}
                                 <div className="party__container">
                                     <div className={classes.root}>
-                                        <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+                                        <GridList cellHeight={400} spacing={1} className={classes.gridList}>
                                             {clubPictures[0].map((clubPicture) => (
                                                 <GridListTile key={clubPicture.picture_url} cols={1} rows={1}>
-                                                    <img src={clubPicture.picture_url} alt={clubPicture.club_id} />
+                                                    <a href={clubPicture.picture_url}>
+                                                        <img className="club-profile__image" src={clubPicture.picture_url} alt={clubPicture.club_id} href={clubPicture.picture_url} />
+                                                   </a>
                                                     <GridListTileBar
                                                         title={clubPicture.club_id}
                                                         titlePosition="top"

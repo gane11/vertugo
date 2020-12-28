@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import NavBarContainer from './NavBar';
 import { getAllParties } from '../store/actions/partiesAction'
 import { getAllClubs } from '../store/actions/clubsAction'
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,7 +13,8 @@ import Banner from './Banner'
 
 const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     const {searchValue} = useParams()
-    console.log(searchValue)
+    console.log(searchValue.toLowerCase())
+   
 
     useEffect(() => {
         getAllParties();
@@ -33,13 +33,14 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     }
 
 
-    if ((searchValue.toLowerCase() !== 'austin' || searchValue.toLowerCase() !== 'los angeles') || (searchValue.toLowerCase() !== 'miami' || searchValue.toLowerCase() !== 'san francisco' )) {
-        return (
-            <>
-            <h1>Sorry not there yet, try Miami , San Francisco , Los Angeles or Austin !</h1>
-            </>
-        )
-    }
+//     if ((searchValue.toLowerCase() !== 'austin' || searchValue.toLowerCase() !== 'los angeles') || (searchValue.toLowerCase() !== 'miami' || searchValue.toLowerCase() !== 'san francisco' )) {
+//         return (
+//             <>
+//             <h1>Sorry not there yet, try Miami , San Francisco , Los Angeles or Austin !</h1>
+//             </>
+//         )
+  
+// }
 
     return (
         <>
