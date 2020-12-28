@@ -12,7 +12,6 @@ import LocalBarIcon from '@material-ui/icons/LocalBar';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.primary.main,
     },
     form: {
         width: '100%', // Fix IE 11 issue.
@@ -51,7 +50,10 @@ const CreateClubForm = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('')
     const [address, setAddress] = useState('');
-    const [club_cover_pic, setClubCoverPic] = useState('')
+    const [lat, setLat] = useState('');
+    const [lng, setLng] = useState('');
+    const [club_cover_pic, setClubCoverPic] = useState('');
+    
 
     const history = useHistory();
     console.log(id)
@@ -65,6 +67,8 @@ const CreateClubForm = () => {
             club.append('city', city);
             club.append('state', state);
             club.append('address', address);
+            club.append['lat', lat];
+            club.append['lng', lng];
             club.append('club_cover_pic', club_cover_pic);
             club.append('owner_id', id)
             await dispatch(createClub(club));
@@ -82,6 +86,13 @@ const CreateClubForm = () => {
         callback(e.target.value);
     }
 
+    const updateLat = (e) => {
+        setLat(e.target.value);
+    };
+    const updateLng = (e) => {
+        setLng(e.target.value);
+    };
+
     // if (!userId) {
     //     return <Redirect to="/" />
     // }
@@ -97,7 +108,7 @@ const CreateClubForm = () => {
         </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} sm={16}>
                             <TextField
                                 autoComplete="name"
                                 name="name"
@@ -112,7 +123,7 @@ const CreateClubForm = () => {
                                 onChange={updateProperty(setName)}
                             />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} sm={16}>
                             <TextField
                                 autoComplete="description"
                                 name="description"
@@ -141,7 +152,7 @@ const CreateClubForm = () => {
                                 onChange={updateProperty(setCity)}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={6}>
                             <TextField
                                 variant="outlined"
                                 required
@@ -169,19 +180,47 @@ const CreateClubForm = () => {
                                 onChange={updateProperty(setAddress)}
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                variant="outlined"
+                                fullWidth
+                                id="lat"
+                                label="Latitude"
+                                name="lat"
+                                autoComplete="lat"
+                                type="number"
+                                value={lat}
+                                onChange={updateLat}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                variant="outlined"
+                                fullWidth
+                                id="lng"
+                                label="Longtitude (-)"
+                                name="lng"
+                                autoComplete="lng"
+                                type="number"
+                                value={lng}
+                                onChange={updateLng}
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={20}>
+                            <label className="file-upload">
                             <TextField
                                 type="file"
-                                className="file-upload"
-                                variant="outlined"
+                                // className="file-upload"
+                                // variant="filled"
                                 required
                                 fullWidth
                                 name="clubCoverPic"
-                                label="Club Cover Image"
+                                // label="Club Cover Image"
                                 id="clubCoverPic"
                                 autoComplete="clubCoverPic"
-                                onChange={updateClubCoverPic}
-                            />
+                                onClick={updateClubCoverPic}
+                            /> Upload Cover Picture
+                            </label>
                         </Grid>
                         <Grid item xs={12}>
                         </Grid>

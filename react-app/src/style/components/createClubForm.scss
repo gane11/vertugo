@@ -1,0 +1,12 @@
+.file-upload {
+     color: white;
+     background-color: $color-blue;
+     border: 1px solid #ccc;
+    display: inline-block;
+    padding: 1rem 8rem;
+    cursor: pointer;
+}
+
+input[type="file"] {
+     display: none;
+}

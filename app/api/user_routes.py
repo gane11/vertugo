@@ -46,35 +46,6 @@ def owner_clubs(id):
 
 
 
-# @user_routes.route('/<int:id>/clubs', methods=['POST'])
-# @login_required
-# def new_album(id):
-#     form = NewClubForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
-#     if form.validate_on_submit():
-#         key_list = request.files.keys()
-
-#         if "clubCoverPic" in key_list:
-#             cover_image_data = request.files["clubCoverPic"]
-#             cover_image_key = f"newClubs/{cover_image_data.filename}_{uuid.uuid4()}"
-#             client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
-#                             ContentType=cover_image_data.mimetype, ACL="public-read")
-
-#             club = Club(
-#                 name=form.data['name'],
-#                 description=form.data['description'],
-#                 city=form.data['city'],
-#                 state=form.data['state'],
-#                 address=form.data['address'],
-#                 club_cover_pic=f"https://vertugo.s3.amazonaws.com/{cover_image_key}",
-#                 owner_id= id
-#             )
-#             db.session.add(club)
-#             db.session.commit()
-#         return club.to_dict()
-
-#     return {'errors': 'error while creating a club page'},404
-
 
 @user_routes.route('/<int:id>/tickets', methods=['GET'])
 @login_required
@@ -103,9 +74,9 @@ def save_party(userId, partyId):
         return jsonify(error='Party was not saved')
 
 
-@user_routes.route('/<int:userId>/parties/save/', methods=['GET'])
-def saved_party(userId):
-    saved_parties = SavedParty.query.filter(SavedParty.user_id == userId).all()
+@user_routes.route('/<int:id>/parties/save/', methods=['GET'])
+def saved_party(id):
+    saved_parties = SavedParty.query.filter(SavedParty.user_id == id).all()
     if len(saved_parties) > 0:
         return {'saved_parties':[saved_party.to_dict() for saved_party in saved_parties] }
     else:

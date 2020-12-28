@@ -20,4 +20,6 @@ class NewClubForm(FlaskForm):
     state = StringField('state', validators=[DataRequired()])
     address = StringField('address', validators=[DataRequired()])
     club_cover_pic = StringField('club_cover_pic', validators=[DataRequired()])
+    lat = IntegerField('lat')
+    lng = IntegerField('lng')
     owner_id = IntegerField('owner_id', validators=[DataRequired()])

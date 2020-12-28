@@ -39,8 +39,8 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties}) {
     {user.owner ? (
     <>
     <div>==</div>
-          <NavLink to={`/users/${user.id}/clubs`} exact={true} activeClassName="active">
-            <Button variant="contained" color="secondary"
+          <NavLink className="user__name" to={`/users/${user.id}/clubs`} exact={true} activeClassName="active">
+            <Button variant="contained" color="primary"
             >Create a new club page</Button>
           </NavLink>
     <div>{user.first_name}</div>

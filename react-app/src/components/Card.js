@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Card = ({ party, clubs ,club}) => {
     const [saved, setSaved] = useState()
+    let partySaved
 
     let user_id = localStorage.getItem("user_id");
     const dispatch = useDispatch()
@@ -66,6 +67,7 @@ const Card = ({ party, clubs ,club}) => {
         e.preventDefault();
         await dispatch(saveParty(user_id,party.id))
         setSaved(true)
+        partySaved = true
 
     }
 
@@ -73,6 +75,7 @@ const Card = ({ party, clubs ,club}) => {
         e.preventDefault();
         await dispatch(removeSavedParty(user_id,party.id))
         setSaved(false)
+        partySaved = false
     }
 
     return (
@@ -92,7 +95,7 @@ const Card = ({ party, clubs ,club}) => {
                         )}
                     </div>
                     <div>
-                        {saved ? (
+                        {saved || partySaved ? (
                         <Button variant="contained" color="primary" onClick={handleRemove}
                         >REMOVE</Button>
                         ):(
