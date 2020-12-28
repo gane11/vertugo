@@ -2,6 +2,7 @@
    background-color: lightgray;
    display: grid;
    grid-template-columns: minmax(0, 1fr) 120rem minmax(0, 1fr);
+     position: relative;
 }
 
 .profile__main {
@@ -9,6 +10,7 @@
    margin: 0 auto;
    background-color: #fff;
    grid-column: 2 / span 1;
+   
 }
 
 .cover-image__container {
@@ -18,12 +20,15 @@ background-position: center center;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-width: 96%;
-      max-width: 100%;
+//   max-width: 100%;
+  width: 96%;
+        position: relative;
    height: 30rem;
    display: flex;
    align-items: center;
    padding: 2rem;
+   border-radius: 5px;
+   
 
 }
 
@@ -73,6 +78,7 @@ width: 96%;
 }
 
 .club-info__container  {
+   border-radius: 5px;
    position: absolute;
    right: 0.8rem;
    top: 2.5rem;
@@ -105,6 +111,6 @@ width: 96%;
    outline: none;
    width: 99.3%;
    height: 2.5rem;
-
+   border-radius: 5px;
   
 }
