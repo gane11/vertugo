@@ -54,9 +54,8 @@ const CreateClubForm = () => {
     const [lng, setLng] = useState('');
     const [club_cover_pic, setClubCoverPic] = useState('');
     
-
+    console.log(lat)
     const history = useHistory();
-    console.log(id)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -67,12 +66,12 @@ const CreateClubForm = () => {
             club.append('city', city);
             club.append('state', state);
             club.append('address', address);
-            club.append['lat', lat];
-            club.append['lng', lng];
+            club.append('lat', lat)
+            club.append('lng', lng)
             club.append('club_cover_pic', club_cover_pic);
             club.append('owner_id', id)
             await dispatch(createClub(club));
-            // history.push('/home')
+            // history.push('/')
             //allert to let them know it worked
         }
         }
@@ -85,13 +84,6 @@ const CreateClubForm = () => {
     const updateProperty = (callback) => (e) => {
         callback(e.target.value);
     }
-
-    const updateLat = (e) => {
-        setLat(e.target.value);
-    };
-    const updateLng = (e) => {
-        setLng(e.target.value);
-    };
 
     // if (!userId) {
     //     return <Redirect to="/" />
@@ -190,7 +182,7 @@ const CreateClubForm = () => {
                                 autoComplete="lat"
                                 type="number"
                                 value={lat}
-                                onChange={updateLat}
+                                onChange={updateProperty(setLat)}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -203,15 +195,15 @@ const CreateClubForm = () => {
                                 autoComplete="lng"
                                 type="number"
                                 value={lng}
-                                onChange={updateLng}
+                                onChange={updateProperty(setLng)}
                             />
                         </Grid>
                         <Grid item xs={12} sm={20}>
-                            <label className="file-upload">
+                            {/* <label className="file-upload"> */}
                             <TextField
                                 type="file"
                                 // className="file-upload"
-                                // variant="filled"
+                                variant="filled"
                                 required
                                 fullWidth
                                 name="clubCoverPic"
@@ -220,7 +212,7 @@ const CreateClubForm = () => {
                                 autoComplete="clubCoverPic"
                                 onClick={updateClubCoverPic}
                             /> Upload Cover Picture
-                            </label>
+                            {/* </label> */}
                         </Grid>
                         <Grid item xs={12}>
                         </Grid>

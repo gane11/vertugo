@@ -46,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
 const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getAllClubPictures }) => {
     const { id } = useParams();
     const clubId = Number.parseInt(id);
+    let userIdString = localStorage.getItem("user_id");
+    let userId = Number(userIdString)
+
+    let owner
 
     const [picturesSelected, setPicturesSelected] = useState(false)
     const classes = useStyles();
@@ -62,7 +66,15 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     useEffect(() => {
         getAllClubPictures(clubId)
     }, [clubId])
-    console.log(clubPictures)
+   
+    if(club) {
+        if(club.owner_id === userId) {
+            owner = true
+        }
+    }
+
+
+
 
     if (!club) return null;
 

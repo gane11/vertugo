@@ -66,9 +66,9 @@ def new_club():
                     city=form.data['city'],
                     state=form.data['state'],
                     address=form.data['address'],
-                    club_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
                     lat=form.data['lat'],
                     lng=form.data['lng'],
+                    club_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
                     owner_id=form.data['owner_id']
                 )
                 db.session.add(club)

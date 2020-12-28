@@ -12,6 +12,8 @@ export default function reducer(state = {}, action){
                 city: action.city,
                 state: action.state,
                 address: action.address,
+                lat: action.lat,
+                lng: action.lng,
                 club_cover_pic: action.club_cover_pic,
                 owner_id: action.owner_id
             }

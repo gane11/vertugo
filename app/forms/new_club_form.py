@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, IntegerField
+from wtforms import StringField, BooleanField, IntegerField, FloatField
 from wtforms.validators import DataRequired, Email, ValidationError
 from app.models import User
 
@@ -19,7 +19,7 @@ class NewClubForm(FlaskForm):
     city = StringField('city', validators=[DataRequired()])
     state = StringField('state', validators=[DataRequired()])
     address = StringField('address', validators=[DataRequired()])
+    lat = FloatField('lat')
+    lng = FloatField('lng')
     club_cover_pic = StringField('club_cover_pic', validators=[DataRequired()])
-    lat = IntegerField('lat')
-    lng = IntegerField('lng')
     owner_id = IntegerField('owner_id', validators=[DataRequired()])

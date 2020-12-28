@@ -8,5 +8,13 @@
 }
 
 input[type="file"] {
-     display: none;
+     // display: none;
+     background-color: $color-blue;
+     color: white;
+
+ 
+}
+
+input[type="file"]-upload-button {
+     background-color: black;
 }
