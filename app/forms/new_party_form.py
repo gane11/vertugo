@@ -12,10 +12,11 @@ def user_exists(form, field):
         raise ValidationError("User is already registered.")
 
 
-class NewPartyForm(FlaskForm):
-    expired= BooleanField('expired', validators=[DataRequired()])
+class NewTicketForm(FlaskForm):
+    description = StringField('description')
     start_date = DateTimeField('start_date', validators=[DataRequired()])
     end_date = DateTimeField('end_date', validators=[DataRequired()])
-    qr_code = StringField('qr_code')
-    party_id = IntegerField('party_id', validators=[DataRequired()])
-    user_id = IntegerField('user_id', validators=[DataRequired()])
+    club_id = IntegerField('club_id', validators=[DataRequired()])
+    ticket_count = IntegerField('ticket_count', validators=[DataRequired()])
+    party_cover_pic = StringField(
+        'party_cover_pic', validators=[DataRequired()])

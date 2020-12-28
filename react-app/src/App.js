@@ -14,6 +14,7 @@ import ClubProfile from './components/ClubProfile'
 import SearchResult from "./components/SearchResult";
 import CreateClubForm from './components/CreateClubForm'
 import Banner from './components/Banner'
+import CreatePartyForm from "./components/CreatePartyForm";
 
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
       </Route>
       <Route path='/users/:userId/clubs'>
         <CreateClubForm />
+      </Route>
+      <Route path='/clubs/:clubId/parties'>
+        <CreatePartyForm />
       </Route>
       <Route path="/login" exact={true}>
         <LoginForm

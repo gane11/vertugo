@@ -27,6 +27,36 @@ def parties():
     return {"parties": [party.to_dict() for party in parties]}
 
 
+@party_routes.route('/', methods=['POST'])
+@login_required
+def new_party():
+    try:
+        form = NewTicketForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
+        if form.validate_on_submit():
+            key_list = request.files.keys()
+            if request.files:
+                if "party_cover_pic" in key_list:
+                    cover_image_data = request.files["party_cover_pic"]
+                    cover_image_key = f"newParty/{uuid.uuid4()}_{cover_image_data.filename}"
+                    client.put_object(Body=cover_image_data, Bucket="vertugo", Key=cover_image_key,
+                                      ContentType=cover_image_data.mimetype, ACL="public-read")
+
+                party = Party(
+                    description=form.data['description'],
+                    start_date=form.data['start_date'],
+                    end_date=form.data['end_date'],
+                    club_id=form.data['club_id'],
+                    ticket_count=form.data['ticket_count'],
+                    party_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
+                )
+                db.session.add(party)
+                db.session.commit()
+                return party.to_dict()
+    except Exception as error:
+        return jsonify(error=repr(error))
+
+
 @party_routes.route('/<int:id>', methods=['GET'])
 def party():
     party= Party.query.get(id)

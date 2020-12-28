@@ -5,6 +5,7 @@ import { getClub } from '../store/actions/clubAction';
 import { getAllParties } from '../store/actions/partiesAction'
 import { getAllClubPictures} from '../store/actions/clubPicturesAction'
 import { Button } from '@material-ui/core';
+import { NavLink } from 'react-router-dom'
 import Card from './Card'
 import Map from './Map'
 
@@ -113,7 +114,15 @@ return (
                             <Button variant="contained" color="primary"  onClick={() => showPictures()}>Pictures</Button>
                         </div>
                             {picturesSelected ? (
-                    
+                            <>
+                                {owner ?(
+                                <div>
+                                    <Button variant="contained" color="primary" >Add Pictures</Button>
+                                </div>
+
+                                ): (
+                                    null
+                                )}
                                 <div className="party__container">
                                     <div className={classes.root}>
                                         <GridList cellHeight={200} spacing={1} className={classes.gridList}>
@@ -131,8 +140,20 @@ return (
                                         </GridList>
                                     </div>
                                 </div>
-
+                            </>                          
                             ) : (
+                                <>
+                                {owner?(
+                                <div>
+                                    <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
+                                        <Button variant="contained" color="primary"
+                                        >Create Party</Button>
+                                    </NavLink>
+                                </div>
+
+                                ): (
+                                    null
+                                )}  
                             <div className="party__container">
                                 <div className="party__section"> 
                                 {parties.map((party) => {
@@ -144,7 +165,7 @@ return (
                                 })}
                             </div>
                             </div>
-
+                                </>
                             )}
                     </div>
 
