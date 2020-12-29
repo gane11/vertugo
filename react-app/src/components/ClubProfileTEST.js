@@ -55,18 +55,13 @@ function a11yProps(index) {
     };
 }
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-    },
-}));
 
 ///tabs
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        flexGrow: 1,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
@@ -100,6 +95,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     let userId = Number(userIdString)
 
     let owner
+    console.log(clubPictures)
 
     // const [picturesSelected, setPicturesSelected] = useState(false)
     const [value, setValue] = useState(0);
@@ -136,15 +132,6 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
 
 
 
-    // const showParties = () => {
-    //     setPicturesSelected(false)
-    // }
-
-    // const showPictures = () => {
-    //     setPicturesSelected(true)
-
-    // }
-
 
     return (
         <div className="profile-main__container">
@@ -164,52 +151,17 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
 
                     <div className="profile__body">
                         <div className="parties__container">
-                            <div className="album-track__btns">
-                                <Button variant="contained" color="primary" onClick={() => showParties()}>Parties</Button>
-                                <Button variant="contained" color="primary" onClick={() => showPictures()}>Pictures</Button>
-                            </div>
                             <div className={classes.root}>
                                 <AppBar position="static">
                                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                                        <Tab label="Item One" {...a11yProps(0)} />
-                                        <Tab label="Item Two" {...a11yProps(1)} />
+                                        <Tab label="Parties" {...a11yProps(0)} />
+                                        <Tab label="Pictures" {...a11yProps(1)} />
                                     </Tabs>
                                 </AppBar>
                                 <TabPanel value={value} index={0}>
                                     <>
                                         {owner ? (
-                                            <div>
-                                                <Button variant="contained" color="primary" >Add Pictures</Button>
-                                            </div>
-
-                                        ) : (
-                                                null
-                                            )}
-                                        <div className="party__container">
-                                            <div className={classes.root}>
-                                                <GridList cellHeight={400} spacing={1} className={classes.gridList}>
-                                                    {clubPictures[0].map((clubPicture) => (
-                                                        <GridListTile key={clubPicture.picture_url} cols={1} rows={1}>
-                                                            <a href={clubPicture.picture_url}>
-                                                                <img className="club-profile__image" src={clubPicture.picture_url} alt={clubPicture.club_id} href={clubPicture.picture_url} />
-                                                            </a>
-                                                            <GridListTileBar
-                                                                title={clubPicture.club_id}
-                                                                titlePosition="top"
-                                                                actionPosition="left"
-                                                                className={classes.titleBar}
-                                                            />
-                                                        </GridListTile>
-                                                    ))}
-                                                </GridList>
-                                            </div>
-                                        </div>
-                                    </>
-                                </TabPanel>
-                                <TabPanel value={value} index={1}>
-                                    <>
-                                        {owner ? (
-                                            <div>
+                                            <div className="upload-picture__button">
                                                 <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
                                                     <Button variant="contained" color="primary"
                                                     >Create Party</Button>
@@ -228,6 +180,37 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                                         )
                                                     }
                                                 })}
+                                            </div>
+                                        </div>
+                                    </>
+                                </TabPanel>
+                                <TabPanel value={value} index={1}>
+                                    <>
+                                        {owner ? (
+                                            <div className="upload-picture__button">
+                                                <Button variant="contained" color="primary" >Add Pictures</Button>
+                                            </div>
+
+                                        ) : (
+                                                null
+                                            )}
+                                        <div className="party__container">
+                                            <div className={classes.root}>
+                                                <GridList cellHeight={400} spacing={1} className={classes.gridList}>
+                                                    {clubPictures.map((clubPicture) => (
+                                                        <GridListTile key={clubPicture.picture_url} cols={1} rows={1}>
+                                                            <a href={clubPicture.picture_url}>
+                                                                <img className="club-profile__image" src={clubPicture.picture_url} alt={clubPicture.club_id} href={clubPicture.picture_url} />
+                                                            </a>
+                                                            <GridListTileBar
+                                                                title={clubPicture.club_id}
+                                                                titlePosition="top"
+                                                                actionPosition="left"
+                                                                className={classes.titleBar}
+                                                            />
+                                                        </GridListTile>
+                                                    ))}
+                                                </GridList>
                                             </div>
                                         </div>
                                     </>

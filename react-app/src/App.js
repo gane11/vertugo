@@ -15,6 +15,7 @@ import SearchResult from "./components/SearchResult";
 import CreateClubForm from './components/CreateClubForm'
 import Banner from './components/Banner'
 import CreatePartyForm from "./components/CreatePartyForm";
+import Foter from "./components/Footer";
 
 
 function App() {
@@ -46,14 +47,17 @@ function App() {
     <Switch>
       <Route path="/" exact={true}>
           <Home authenticate={authenticate} setAuthenticated={setAuthenticated}/>
+          <Foter />
       </Route> 
         <Route exact path='/clubs/:id'>
           <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
           <ClubProfile />
+          <Foter />
         </Route>
       <Route exact path='/search/:searchValue'>
         <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
         <SearchResult />
+        <Foter />
       </Route>
       <Route path='/users/:userId/clubs'>
         <CreateClubForm />
@@ -72,10 +76,12 @@ function App() {
       </Route>
       <Route path="/users" exact={true} authenticated={authenticated}>
         <UsersList/>
+        <Foter />
       </Route>
       <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
         <User />
+        <Foter />
       </ProtectedRoute>
       </Switch>
     </BrowserRouter>

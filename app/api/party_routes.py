@@ -53,6 +53,7 @@ def new_party():
                 db.session.add(party)
                 db.session.commit()
                 return party.to_dict()
+        return jsonify({'test': 'test'})
     except Exception as error:
         return jsonify(error=repr(error))
 

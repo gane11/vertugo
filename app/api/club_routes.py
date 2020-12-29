@@ -80,6 +80,7 @@ def new_club():
                 db.session.add(club)
                 db.session.commit()
                 return club.to_dict()
+        return jsonify({'test': 'test'})
     except Exception as error:
         return jsonify(error=repr(error))
 

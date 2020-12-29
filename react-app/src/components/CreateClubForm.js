@@ -201,7 +201,7 @@ const CreateClubForm = () => {
                             {/* <label className="file-upload"> */}
                             <TextField
                                 type="file"
-                                // className="file-upload"
+                                className="file-upload"
                                 variant="filled"
                                 required
                                 fullWidth
