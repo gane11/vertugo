@@ -56,8 +56,8 @@ const CreatePartyForm = () => {
         if (id) {
             let party = new FormData();
             party.append('description', description);
-            party.append('start_date', start_date);
-            party.append('end_date', start_date);
+            party.append('start_date', new Date(start_date + 'Z'));
+            party.append('end_date', new Date(start_date + 'Z'));
             party.append('club_id', id);
             party.append('ticket_count', ticket_count);
             party.append('party_cover_pic', party_cover_pic);
@@ -70,6 +70,8 @@ const CreatePartyForm = () => {
     const updatePartyCoverPic = (e) => {
         setPartyCoverPic(e.target.files[0])
     }
+
+    console.log(typeof(new Date(start_date)))
 
 
     const updateProperty = (callback) => (e) => {
@@ -147,7 +149,7 @@ const CreatePartyForm = () => {
                                 // label="Club Cover Image"
                                 id="party_cover_pic"
                                 autoComplete="partyCoverPic"
-                                onClick={updatePartyCoverPic}
+                                onChange={updatePartyCoverPic}
                             /> Upload Party Cover Picture
                             {/* </label> */}
                         </Grid>

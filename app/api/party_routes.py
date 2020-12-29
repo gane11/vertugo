@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request, redirect
 from flask_login import login_required
 from app.models import db, User, Club, Ticket, Party, SavedParty
-from app.forms import NewTicketForm, NewPartyForm
+from app.forms import NewPartyForm
 import json
 
 import binascii
@@ -31,9 +31,16 @@ def parties():
 # @login_required
 def new_party():
     try:
-        form = NewTicketForm()
+        form = NewPartyForm()
+        print(form.data['club_id'])
+        print(form.data['description'])
+        print(form.data['start_date'])
+        print(form.data['end_date'])
+        print(form.data['ticket_count'])
+        print(form.data["party_cover_pic"])
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
+            print('VALIDATED')
             key_list = request.files.keys()
             if request.files:
                 if "party_cover_pic" in key_list:

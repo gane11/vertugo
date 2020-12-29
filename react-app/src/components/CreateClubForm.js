@@ -76,6 +76,7 @@ const CreateClubForm = () => {
         }
 
         const updateClubCoverPic = (e) => {
+            console.log(e.target.files[0])
             setClubCoverPic(e.target.files[0])
         }
 
@@ -209,7 +210,7 @@ const CreateClubForm = () => {
                                 // label="Club Cover Image"
                                 id="clubCoverPic"
                                 autoComplete="clubCoverPic"
-                                onClick={updateClubCoverPic}
+                                onChange={updateClubCoverPic}
                             /> Upload Cover Picture
                             {/* </label> */}
                         </Grid>
