@@ -140,7 +140,7 @@ const CreatePartyForm = () => {
                             <TextField
                                 type="file"
                                 // className="file-upload"
-                                variant="filled"
+                                // variant="filled"
                                 required
                                 fullWidth
                                 name="party_cover_pic"
