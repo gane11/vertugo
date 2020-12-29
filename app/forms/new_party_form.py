@@ -15,7 +15,7 @@ from app.models import User
 class NewPartyForm(FlaskForm):
     description = StringField('description')
     start_date = DateField('start_date', validators=[DataRequired()])
-    end_date = DateField'end_date', validators=[DataRequired()])
+    end_date = DateField('end_date', validators=[DataRequired()])
     club_id = IntegerField('club_id', validators=[DataRequired()])
     ticket_count = IntegerField('ticket_count', validators=[DataRequired()])
     party_cover_pic = StringField('party_cover_pic', validators=[DataRequired()])
