@@ -3,14 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../services/auth'
 import { Redirect, useHistory } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import {loadUser, loginUser} from '../../store/actions/signupAction'
+import {loadUser} from '../../store/actions/signupAction'
 
 //material ui
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';

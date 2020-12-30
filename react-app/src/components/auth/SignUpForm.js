@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    margin: theme.spacing(4),
+    backgroundColor: theme.palette.primary.main,
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -93,8 +93,9 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
           <Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={16} sm={16}>
                 <Checkbox
+                color="primary"
                   autoComplete="fname"
                   name="owener"
                   variant="outlined"
@@ -105,10 +106,10 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                   type="checkbox"
                   value={owner}
                   onClick={()=>setOwner(!owner)}
-                  />
+                  /> Night Club Owner
             </Grid>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={20}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
@@ -123,7 +124,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                 onChange={updateProperty(setFirstName)}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={20}>
               <TextField
                 variant="outlined"
                 required

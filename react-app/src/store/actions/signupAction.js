@@ -1,4 +1,4 @@
-import { LOAD_USER, LOGIN_USER } from '../reducers/signupReducer';
+import { LOAD_USER, LOGOUT_USER } from '../reducers/signupReducer';
 
 
 export const signupUser = (user) => {
@@ -38,14 +38,14 @@ export const loadUser = (id) => async (dispatch) => {
     }
 }
 
-// export const loginUser = () => async (dispatch) => {
-//     const response = await fetch('/api/auth/login')
+export const logoutUser = () => async (dispatch,) => {
+    const response = await fetch(`api/auth/logout`)
 
-//     if(response.ok) {
-//         const data = await response.json()
-//         dispatch({
-//             type: LOGIN_USER,
-//             ...data
-//         })
-//         }
-// }
+    if (response.ok) {
+        const data = await response.json()
+        dispatch({
+            type: LOGOUT_USER,
+            ...data
+        });
+    }
+};

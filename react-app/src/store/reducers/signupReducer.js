@@ -1,5 +1,5 @@
 export const LOAD_USER = "LOAD_USER";
-export const LOGIN_USER = "LOGIN_USER"
+export const LOGOUT_USER = "LOGOUT_USER"
 
 const userReducer = (state = {}, action) => {
     switch (action.type) {
@@ -13,11 +13,11 @@ const userReducer = (state = {}, action) => {
                 email: action.email,
             }
 
-        // case LOGIN_USER: 
-        //     return {
-        //         ...state,
-
-        //     }
+        case LOGOUT_USER: {
+                const newState = { ...state }
+                delete newState.user
+                return newState;
+            }
         default:
             return state;
     }
