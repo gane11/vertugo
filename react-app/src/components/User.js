@@ -9,6 +9,7 @@ import { getAllParties } from '../store/actions/partiesAction'
 import Card from './Card'
 import userCover from './images/userCover1.jpg'
 import ownerCover from './images/ownerCover.jpg'
+import ClubCard from './ClubCard'
 
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -60,6 +61,8 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
   useEffect(() => {
     getAllClubs()
   }, [])
+
+  console.log(savedParties)
   
 
   useEffect(() => {
@@ -143,15 +146,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                           if (club.owner_id === id)
                             return (
                               <>
-                              <ul>
-                                <li>
-                                    <NavLink className="user__name" to={`/clubs/${club.id}`} exact={true} activeClassName="active">
-                                      <Button variant="contained" color="primary"
-                                      >{club.name}</Button>
-                                    </NavLink>
-                                </li>
-                              </ul>
-                  
+                              <ClubCard club={club}/>
                               </>
                             )
                         })}
@@ -192,7 +187,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                     }}
                   >
                     <div className="club-name">
-                      <h1>{user.name}</h1>
+                      <h1>{user.first_name}</h1>
                     </div>
                   </div>
 
@@ -205,7 +200,13 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                       {savedPartiesButton ? (
                         <>
                           <div className="party__container">
+                            {savedParties.map((party) => {
+                              let club = clubs[party.club_id]
+                              return (
+                                <Card club={club} party={party}/>
 
+                              )
+                            })}
                           </div>
                         </>
                       ) : (
@@ -220,7 +221,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                     <div className="club-info__container">
                       <ul>
                         <li>
-                          <strong>Name</strong> {user.name}
+                          <strong>Name</strong> {`${user.first_name} ${user.last_name}`}
                         </li>
                         <li className="bio">
                           <strong>About</strong> {user.id}
@@ -246,7 +247,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
 const UserContainer = () => {
   const parties = useSelector((state) => Object.values(state.parties))
   const clubs = useSelector((state) => Object.values(state.clubs))
-  const saved_parties = useSelector((state) => (state.saved_parties))
+  const savedParties = useSelector((state) => Object.values(state.saveParty))
   const dispatch = useDispatch()
   return (
     <User 
@@ -254,7 +255,7 @@ const UserContainer = () => {
       getAllClubs={() => dispatch(getAllClubs())}
       parties={parties}
       getAllParties={() => dispatch(getAllParties())}
-      savedParties={saved_parties}
+      savedParties={savedParties}
       getSavedParties={(id) => dispatch(getSavedParties(id))}
     />
   )

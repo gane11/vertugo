@@ -9,10 +9,9 @@ return async dispatch => {
 
     if (res.ok) {
         const data = await res.json()
-        console.log(data)
         dispatch({
             type: SAVE_PARTY,
-            saved_party: data
+            savedParty: data
         });
         return data
     }
@@ -22,16 +21,15 @@ return async dispatch => {
 }
 }
 
-export const loadSavedParties = (saved_parties) => ({type:LOAD_SAVED_PARTY, saved_parties})
+export const loadSavedParties = (savedParty) => ({type:LOAD_SAVED_PARTY, savedParty})
 
 export const getSavedParties = (id) =>  {
     return async dispatch => {
         try{
             const res = await fetch(`/api/users/${id}/parties/save`)
             if(res.ok) {
-                const savedParties = await res.json()
-                console.log(savedParties)
-                dispatch(loadSavedParties(savedParties))
+                const savedParty = await res.json()
+                dispatch(loadSavedParties(savedParty))
             }
         } catch (e) {
         console.log(e)
