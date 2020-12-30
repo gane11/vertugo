@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import {saveParty, removeSavedParty} from '../store/actions/savePartyAction'
+import { getSavedParties } from "../store/actions/savePartyAction";
 
 
 
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 //material UI
 
-const Card = ({ party, clubs ,club}) => {
+const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const [saved, setSaved] = useState()
     let partySaved
 
@@ -78,8 +79,23 @@ const Card = ({ party, clubs ,club}) => {
         partySaved = false
     }
 
+    useEffect(() => {
+        getSavedParties(user_id)
+    }, [user_id])
+
+
+    if(savedParties) {
+        savedParties.saved_parties.map((savedParty) => {
+            let partyId = savedParty.party_id
+            if (party.id === partyId) partySaved = true
+                
+        })
+    }
+
+
     return (
         <>
+        
             <NavLink className="user__name" to={`/clubs/${party.club_id}`}>
                 <div className="card">
                     <img src={party.party_cover_pic} alt=""></img>
@@ -116,5 +132,19 @@ const Card = ({ party, clubs ,club}) => {
 }
 
 
+const CardContainer = ({ party, clubs, club }) => {
+    const savedParties = useSelector((state) => (state.saveParty[0]))
+    const dispatch = useDispatch()
+    return (
+        <Card 
+            party={party}
+            club={club}
+            clubs={clubs}
+            savedParties={savedParties}
+            getSavedParties={(id) => dispatch(getSavedParties(id))}
+        />
+    )
+}
 
-export default Card
+
+export default CardContainer

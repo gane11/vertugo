@@ -45,6 +45,10 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   let id = Number(userId)
+  if(savedParties) {
+
+    console.log(savedParties.saved_parties)
+  }
 
   const [savedPartiesButton, setSavedPartiesButton] = useState(false)
   const [ownerParties, setOwnerParties] = useState(false)
@@ -62,7 +66,6 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
     getAllClubs()
   }, [])
 
-  console.log(savedParties)
   
 
   useEffect(() => {
@@ -200,10 +203,11 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                       {savedPartiesButton ? (
                         <>
                           <div className="party__container">
-                            {savedParties.map((party) => {
-                              let club = clubs[party.club_id]
+                            {savedParties.saved_parties.map((savedParty) => {
+                              let partyId = savedParty.party_id
+                              let party = parties[partyId]
                               return (
-                                <Card club={club} party={party}/>
+                                <Card clubs={clubs} party={party}/>
 
                               )
                             })}
@@ -247,7 +251,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
 const UserContainer = () => {
   const parties = useSelector((state) => Object.values(state.parties))
   const clubs = useSelector((state) => Object.values(state.clubs))
-  const savedParties = useSelector((state) => Object.values(state.saveParty))
+  const savedParties = useSelector((state) => (state.saveParty[0]))
   const dispatch = useDispatch()
   return (
     <User 
