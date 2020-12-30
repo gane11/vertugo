@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     avatar: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(4),
         backgroundColor: theme.palette.primary.main,
     },
     form: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(3),
     },
     submit: {
-        margin: theme.spacing(3, 0, 2),
+        margin: theme.spacing(2, 0, 2),
     },
 }));
 
@@ -91,6 +91,7 @@ const CreatePartyForm = () => {
                     New Party Form
         </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
+                    <Grid container spacing={2}>
                         <Grid item xs={12} sm={16}>
                             <TextField
                                 autoComplete="description"
@@ -106,8 +107,7 @@ const CreatePartyForm = () => {
                                 onChange={updateProperty(setDescription)}
                             />
                         </Grid>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={16}>
+                        <Grid item xs={12} sm={15}>
                             <TextField
                                 autoComplete="start_date"
                                 name="start_date"
