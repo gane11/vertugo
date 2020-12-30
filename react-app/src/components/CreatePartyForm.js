@@ -56,13 +56,13 @@ const CreatePartyForm = () => {
         if (id) {
             let party = new FormData();
             party.append('description', description);
-            party.append('start_date', new Date(start_date + 'Z'));
-            party.append('end_date', new Date(start_date + 'Z'));
+            party.append('start_date', start_date );
+            party.append('end_date', start_date);
             party.append('club_id', id);
             party.append('ticket_count', ticket_count);
             party.append('party_cover_pic', party_cover_pic);
             await dispatch(createParty(party));
-            // history.push('/')
+            history.push('/')
             //allert to let them know it worked
         }
     }
@@ -71,7 +71,6 @@ const CreatePartyForm = () => {
         setPartyCoverPic(e.target.files[0])
     }
 
-    console.log(typeof(new Date(start_date)))
 
 
     const updateProperty = (callback) => (e) => {

@@ -61,7 +61,6 @@ const Home = ({ authenticate, setAuthenticated}) => {
 
     return (
     <div> 
-        <NavBarContainer authenticate={authenticate} setAuthenticated={setAuthenticated}/>
         {/* <DatePicker /> */}
         <HomePartiesContainer />
         {/* <Footer /> */}

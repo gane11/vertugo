@@ -1,4 +1,5 @@
-import { LOAD_USER } from '../reducers/signupReducer';
+import { LOAD_USER, LOGIN_USER } from '../reducers/signupReducer';
+
 
 export const signupUser = (user) => {
     return async dispatch => {
@@ -36,3 +37,15 @@ export const loadUser = (id) => async (dispatch) => {
         });
     }
 }
+
+// export const loginUser = () => async (dispatch) => {
+//     const response = await fetch('/api/auth/login')
+
+//     if(response.ok) {
+//         const data = await response.json()
+//         dispatch({
+//             type: LOGIN_USER,
+//             ...data
+//         })
+//         }
+// }

@@ -4,20 +4,20 @@ export const LOAD_SAVED_PARTY = 'LOAD_SAVED_PARTY'
 export const REMOVE_SAVED_PARTY = 'REMOVE_SAVED_PARTY'
 
 
-export default function reducer(state = [], action) {
+export default function reducer(state = {}, action) {
     Object.freeze(state)
 
     switch (action.type) {
         case SAVE_PARTY:
             return {
                 ...state,
-                saved_party: action.saved_party
+                saved_party: [...state, action.saved_party]
             }
 
         case LOAD_SAVED_PARTY: {
            return {
             ...state,
-            saved_parties: action.saved_parties
+            saved_party: action.saved_parties
            }
             
 

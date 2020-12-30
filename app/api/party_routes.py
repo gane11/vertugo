@@ -55,7 +55,7 @@ def new_party():
                     end_date=form.data['end_date'],
                     club_id=form.data['club_id'],
                     ticket_count=form.data['ticket_count'],
-                    party_cover_pic=f"https://vertugo.s3-us-east-1.amazonaws.com/{cover_image_key}",
+                    party_cover_pic=f"https://vertugo.s3.amazonaws.com/{cover_image_key}",
                 )
                 db.session.add(party)
                 db.session.commit()

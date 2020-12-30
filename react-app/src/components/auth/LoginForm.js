@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../services/auth'
 import { Redirect, useHistory } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import {loadUser} from '../../store/actions/signupAction'
+import {loadUser, loginUser} from '../../store/actions/signupAction'
 
 //material ui
 import Avatar from '@material-ui/core/Avatar';
@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const classes = useStyles()
+  const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,6 +54,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const user = await login(email, password);
     if (!user.errors) {
       localStorage.setItem('user_id', user.id);
+      dispatch(loadUser(user.id))
       setAuthenticated(true);
     } else {
       setErrors(user.errors);

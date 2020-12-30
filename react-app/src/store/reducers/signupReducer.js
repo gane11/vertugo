@@ -1,4 +1,5 @@
 export const LOAD_USER = "LOAD_USER";
+export const LOGIN_USER = "LOGIN_USER"
 
 const userReducer = (state = {}, action) => {
     switch (action.type) {
@@ -11,6 +12,12 @@ const userReducer = (state = {}, action) => {
                 lastName: action.last_name,
                 email: action.email,
             }
+
+        // case LOGIN_USER: 
+        //     return {
+        //         ...state,
+
+        //     }
         default:
             return state;
     }

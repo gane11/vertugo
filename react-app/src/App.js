@@ -46,7 +46,8 @@ function App() {
     <BrowserRouter>
     <Switch>
       <Route path="/" exact={true}>
-          <Home authenticate={authenticate} setAuthenticated={setAuthenticated}/>
+          <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
+          <Home/>
           <Foter />
       </Route> 
         <Route exact path='/clubs/:id'>

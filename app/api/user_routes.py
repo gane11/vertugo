@@ -68,8 +68,8 @@ def save_party(userId, partyId):
         db.session.add(saved_party)
         db.session.commit()
 
-        save_party_one = SavedParty.query.get(save_party.id)
-        return save_party_one.to_dict()
+        # save_party_one = SavedParty.query.get(save_party.id)
+        return saved_party.to_dict()
     except:
         return jsonify(error='Party was not saved')
 
