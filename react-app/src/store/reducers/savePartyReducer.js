@@ -9,12 +9,18 @@ export default function reducer(state = [], action) {
 
     switch (action.type) {
         case SAVE_PARTY: 
-            return [...state, action.savedParty]
+        return {
+            
+            ...state, 
+            savedParty: action.savedParty
+        }
+        
 
         case LOAD_SAVED_PARTY: 
-            return [...state, action.savedParty]
-           
-            
+        return {
+              ...state,
+            savedParty: action.savedParty
+            }
 
         case REMOVE_SAVED_PARTY:
            return state.filter(savedParty => {

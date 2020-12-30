@@ -6,6 +6,14 @@ import { Button } from '@material-ui/core'
 import {saveParty, removeSavedParty} from '../store/actions/savePartyAction'
 import { getSavedParties } from "../store/actions/savePartyAction";
 
+/////modal
+
+import PropTypes from 'prop-types';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
+
+//modal
 
 
 ///material UI
@@ -50,10 +58,62 @@ const useStyles = makeStyles((theme) => ({
             width: '20ch',
         },
     },
+
+    //modal
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+
+    //modal
 }));
 
 
 //material UI
+
+///modal logic 
+
+const Fade = React.forwardRef(function Fade(props, ref) {
+    const { in: open, children, onEnter, onExited, ...other } = props;
+    const style = useSpring({
+        from: { opacity: 0 },
+        to: { opacity: open ? 1 : 0 },
+        onStart: () => {
+            if (open && onEnter) {
+                onEnter();
+            }
+        },
+        onRest: () => {
+            if (!open && onExited) {
+                onExited();
+            }
+        },
+    });
+
+    return (
+        <animated.div ref={ref} style={style} {...other}>
+            {children}
+        </animated.div>
+    );
+});
+
+Fade.propTypes = {
+    children: PropTypes.element,
+    in: PropTypes.bool.isRequired,
+    onEnter: PropTypes.func,
+    onExited: PropTypes.func,
+};
+
+//modal logic
+
+
 
 const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const [saved, setSaved] = useState()
@@ -74,6 +134,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
 
     const handleRemove = async (e) => {
         e.preventDefault();
+        partySaved = false
         await dispatch(removeSavedParty(user_id,party.id))
         setSaved(false)
         partySaved = false
@@ -84,12 +145,29 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     }, [user_id])
 
 
+    //modal logic 
+
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    //modal logic
+
+
     if(savedParties) {
-        savedParties.saved_parties.map((savedParty) => {
+        if(savedParties.saved_parties) {
+            savedParties.saved_parties.map((savedParty) => {
             let partyId = savedParty.party_id
             if (party.id === partyId) partySaved = true
                 
         })
+    }
     }
 
 
@@ -118,11 +196,31 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                             <Button variant="contained" color="primary" onClick={handleSave}
                             >SAVE</Button>
                         ) } 
-                        <NavLink className="user__name" to="/" exact={true} activeClassName="active">
-                            <Button variant="contained" color="primary"
-                            >BUY</Button>
-                        </NavLink>
-                        <Button />
+                            <Button variant="contained" color="primary" type="button" onClick={handleOpen}
+                                >BUY</Button>
+                            <Button />
+                            <Modal
+                                aria-labelledby="spring-modal-title"
+                                aria-describedby="spring-modal-description"
+                                className={classes.modal}
+                                open={open}
+                                onClose={handleClose}
+                                closeAfterTransition
+                                BackdropComponent={Backdrop}
+                                BackdropProps={{
+                                    timeout: 500,
+                                }}
+                            >
+                                <Fade in={open}>
+                                    <div className={classes.paper}>
+                                        <h2 id="spring-modal-title">1015 Folsom</h2>
+                                        <h4>10/20/2020</h4>
+                                        <p>San Francisco</p>
+                                        <p>Priec: Free </p>
+                                        <Button variant="contained" color="primary">Buy</Button>
+                                    </div>
+                                </Fade>
+                            </Modal>
                     </div>
                 </div>
             </NavLink>
@@ -133,7 +231,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
 
 
 const CardContainer = ({ party, clubs, club }) => {
-    const savedParties = useSelector((state) => (state.saveParty[0]))
+    const savedParties = useSelector((state) => (state.saveParty))
     const dispatch = useDispatch()
     return (
         <Card 
