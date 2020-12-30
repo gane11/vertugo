@@ -20,6 +20,20 @@ import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is requir
 import { fade, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+    //modal
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+
+    //modal
 
     search: {
         position: 'relative',
@@ -59,20 +73,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 
-    //modal
-    modal: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    paper: {
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
-    },
-
-    //modal
 }));
 
 
@@ -117,6 +117,7 @@ Fade.propTypes = {
 
 const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const [saved, setSaved] = useState()
+    const [open, setOpen] = useState(false);
     let partySaved
 
     let user_id = localStorage.getItem("user_id");
@@ -127,6 +128,14 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const handleSave = async (e) => {
         e.preventDefault();
         await dispatch(saveParty(user_id,party.id))
+        setSaved(true)
+        partySaved = true
+
+    }
+
+    const handleBuy = async (e) => {
+        e.preventDefault();
+        await dispatch(buyTicket(party.id, user_id))
         setSaved(true)
         partySaved = true
 
@@ -147,7 +156,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
 
     //modal logic 
 
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
         setOpen(true);
@@ -196,7 +205,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                             <Button variant="contained" color="primary" onClick={handleSave}
                             >SAVE</Button>
                         ) } 
-                            <Button variant="contained" color="primary" type="button" onClick={handleOpen}
+                            <Button variant="contained" color="primary" onClick={handleOpen}
                                 >BUY</Button>
                             <Button />
                             <Modal
@@ -213,11 +222,11 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                             >
                                 <Fade in={open}>
                                     <div className={classes.paper}>
-                                        <h2 id="spring-modal-title">1015 Folsom</h2>
-                                        <h4>10/20/2020</h4>
-                                        <p>San Francisco</p>
+                                        <h2 id="spring-modal-title">{club? club.name : clubs[party.club_id].name}</h2>
+                                        <h4>{party.start_date}</h4>
+                                        <p>{party.city}</p>
                                         <p>Priec: Free </p>
-                                        <Button variant="contained" color="primary">Buy</Button>
+                                        <Button variant="contained" color="primary" onClick={handleBuy}>Buy</Button>
                                     </div>
                                 </Fade>
                             </Modal>
