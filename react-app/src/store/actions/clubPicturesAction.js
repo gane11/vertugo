@@ -5,8 +5,8 @@ export const loadPictures = (clubPictures) => ({ type: LOAD_CLUB_PICTURES, clubP
 export const getAllClubPictures = (id) => async (dispatch) => {
     const res = await fetch(`/api/clubs/${id}/pictures`)
     if (res.ok) {
-        const pictures  = await res.json()
-        dispatch(loadPictures(pictures))
+        const {clubPictures}  = await res.json()
+        dispatch(loadPictures(clubPictures))
     }
 }
 

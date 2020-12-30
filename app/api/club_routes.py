@@ -120,3 +120,5 @@ def club_pictures(id):
         return {"clubPictures": [club_picture.to_dict() for club_picture in club_pictures]}
     else:
         return jsonify(error='This Club doesnt have pictures yet')
+
+

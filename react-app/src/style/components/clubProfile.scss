@@ -93,8 +93,11 @@ background-size: cover;
 }
 .party__container {
    display: flex;
-   justify-content: space-between;
+   justify-content: baseline;
+   flex-wrap: wrap;
    padding: 3rem 0;
+   padding-right: 40rem;
+   // max-width: 60%;
 
    .left-container {
       padding-left: 1rem;

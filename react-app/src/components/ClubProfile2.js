@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getClub } from '../store/actions/clubAction';
 import { getAllParties } from '../store/actions/partiesAction'
-import { getAllClubPictures } from '../store/actions/clubPicturesAction'
+import { getAllClubPictures} from '../store/actions/clubPicturesAction'
 import { Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom'
 import Card from './Card'
@@ -13,6 +13,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
+
 
 //tabs
 import PropTypes from 'prop-types';
@@ -55,13 +56,11 @@ function a11yProps(index) {
     };
 }
 
-
-///tabs
+//tabs
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
@@ -95,17 +94,17 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     let userId = Number(userIdString)
 
     let owner
-    console.log(clubPictures)
 
-    // const [picturesSelected, setPicturesSelected] = useState(false)
-    const [value, setValue] = useState(0);
+    const [picturesSelected, setPicturesSelected] = useState(false)
     const classes = useStyles();
 
+    //tabs
+    const [value, setValue] = useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-
+    //tabs
 
     useEffect(() => {
         getClub(clubId)
@@ -118,9 +117,9 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     useEffect(() => {
         getAllClubPictures(clubId)
     }, [clubId])
-
-    if (club) {
-        if (club.owner_id === userId) {
+   
+    if(club) {
+        if(club.owner_id === userId) {
             owner = true
         }
     }
@@ -132,91 +131,43 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
 
 
 
+const showParties = () => {
+    setPicturesSelected(false)
+}
 
-    return (
-        <div className="profile-main__container">
-            <div className="profile__main">
-                <div className="profile__container">
-                    <div
-                        className="cover-image__container"
-                        style={{
-                            backgroundImage: `url(${club.club_cover_pic})`
-                        }}
-                    >
-                        {/* <img src={club.club_cover_pic} alt={club.club_cover_pic} className="profile_image" /> */}
-                        <div className="club-name">
-                            <h1>{club.name}</h1>
-                        </div>
+const showPictures = () => {
+    setPicturesSelected(true)
+
+}
+
+
+return (
+    <div className="profile-main__container">
+        <div className="profile__main">
+            <div className="profile__container">
+                <div
+                    className="cover-image__container"
+                    style={{
+                        backgroundImage: `url(${club.club_cover_pic})`
+                    }}
+                >
+                    {/* <img src={club.club_cover_pic} alt={club.club_cover_pic} className="profile_image" /> */}
+                    <div className="club-name">
+                        <h1>{club.name}</h1>
                     </div>
+                </div>
 
-                    <div className="profile__body">
-                        <div className="parties__container">
-                            <div className={classes.root}>
-                                <AppBar position="static">
-                                    <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                                        <Tab label="Parties" {...a11yProps(0)} />
-                                        <Tab label="Pictures" {...a11yProps(1)} />
-                                    </Tabs>
-                                </AppBar>
-                                <TabPanel value={value} index={0}>
-                                    <>
-                                        {owner ? (
-                                            <div className="upload-picture__button">
-                                                <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
-                                                    <Button variant="contained" color="primary"
-                                                    >Create Party</Button>
-                                                </NavLink>
-                                            </div>
-
-                                        ) : (
-                                                null
-                                            )}
-                                        <div className="party__container">
-                                            <div className="party__section">
-                                                {parties.map((party) => {
-                                                    if (party.club_id === club.id) {
-                                                        return (
-                                                            <Card party={party} club={club} />
-                                                        )
-                                                    }
-                                                })}
-                                            </div>
-                                        </div>
-                                    </>
-                                </TabPanel>
-                                <TabPanel value={value} index={1}>
-                                    <>
-                                        {owner ? (
-                                            <div className="upload-picture__button">
-                                                <Button variant="contained" color="primary" >Add Pictures</Button>
-                                            </div>
-
-                                        ) : (
-                                                null
-                                            )}
-                                        <div className="party__container">
-                                            <div className={classes.root}>
-                                                <GridList cellHeight={400} spacing={1} className={classes.gridList}>
-                                                    {clubPictures.map((clubPicture) => (
-                                                        <GridListTile key={clubPicture.picture_url} cols={1} rows={1}>
-                                                            <a href={clubPicture.picture_url}>
-                                                                <img className="club-profile__image" src={clubPicture.picture_url} alt={clubPicture.club_id} href={clubPicture.picture_url} />
-                                                            </a>
-                                                            <GridListTileBar
-                                                                title={clubPicture.club_id}
-                                                                titlePosition="top"
-                                                                actionPosition="left"
-                                                                className={classes.titleBar}
-                                                            />
-                                                        </GridListTile>
-                                                    ))}
-                                                </GridList>
-                                            </div>
-                                        </div>
-                                    </>
-                                </TabPanel>
-                            </div>
-                            {/* {picturesSelected ? (
+                <div className="profile__body">
+                    <div className="parties__container">
+                        <div className="album-track__btns">
+                            <AppBar position="static">
+                                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+                                    <Tab label="Parties" {...a11yProps(0)} />
+                                    <Tab label="Pictures" {...a11yProps(1)} />
+                                </Tabs>
+                            </AppBar>
+                        </div>
+                            {picturesSelected ? (
                             <>
                                 {owner ?(
                                 <div>
@@ -271,33 +222,33 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                             </div>
                             </div>
                                 </>
-                            )} */}
-                        </div>
+                            )}
+                    </div>
 
-                        <div className="club-info__container">
-                            <ul>
-                                <li>
-                                    <strong>Name</strong> {club.name}
-                                </li>
-                                <li className="bio">
-                                    <strong>About</strong> {club.description}
-                                </li>
-
-                                <li>
-                                    <strong>City</strong> {club.city}
-                                </li>
-                                <li>
-                                    <strong>Address</strong> <Map newLat={club.lat} newLng={club.lng} />
-                                </li>
-                            </ul>
-                        </div>
+                    <div className="club-info__container">
+                        <ul>
+                            <li>
+                                <strong>Name</strong> {club.name}
+                            </li>
+                            <li className="bio">
+                                <strong>About</strong> {club.description}
+                            </li>
+                    
+                            <li>
+                                <strong>City</strong> {club.city}
+                            </li>
+                            <li>
+                                <strong>Address</strong> <Map newLat={club.lat} newLng={club.lng}/>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
             </div>
-        </div>
 
-    );
+        </div>
+    </div>
+
+);
 }
 
 const ClubProfileContainer = () => {

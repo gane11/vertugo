@@ -2,7 +2,7 @@ import merge from 'lodash/merge'
 export const LOAD_CLUBS = 'LOAD_CLUBS'
 export const LOAD_SEARCH_CLUBS = 'LOAD_SEARCH_CLUBS'
 
-export default function reducer(state = [], action) {
+export default function reducer(state = {}, action) {
     Object.freeze(state)
 
     switch(action.type) {
