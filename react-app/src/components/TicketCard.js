@@ -51,7 +51,19 @@ const useStyles = makeStyles((theme) => ({
 
 //material UI
 
-const Ticket = ({ tickets, getAllTickets }) => {
+let qr = new QRious();
+qr.set({
+    background: 'green',
+    backgroundAlpha: 0.8,
+    foreground: 'blue',
+    foregroundAlpha: 0.8,
+    level: 'H',
+    padding: 25,
+    size: 500,
+    value: ticket.qr_code
+});
+
+const TicketCard = ({ ticket }) => {
 
     const classes = useStyles()
 
@@ -59,9 +71,9 @@ const Ticket = ({ tickets, getAllTickets }) => {
 
     return (
         <>
-            <NavLink className="user__name" to={`/clubs/${club.id}`}>
+            <NavLink className="user__name" to={`/clubs/${clu.id}`}>
                 <div className="card">
-                    <img src={club.club_cover_pic} alt=""></img>
+                    <img src={qr.image} alt=""></img>
                     <div className="card__info">
                         <h2>{club.name}</h2>
                         {/* <h4>{home.description}</h4> */}
@@ -78,4 +90,4 @@ const Ticket = ({ tickets, getAllTickets }) => {
 
 
 
-export default Ticket
+export default TicketCard
