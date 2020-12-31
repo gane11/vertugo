@@ -11,11 +11,16 @@ import userCover from './images/userCover1.jpg'
 import ownerCover from './images/ownerCover.jpg'
 import ClubCard from './ClubCard'
 
+///for show
+import QRious from "qrious";
+//for show
+
 
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
+import TicketCard from "./TicketCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,6 +101,23 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
     setOwnerParties(true)
 
   }
+
+
+
+  //for show
+  let qr = new QRious();
+  qr.set({
+    background: 'white',
+    backgroundAlpha: 0.8,
+    foreground: 'blue',
+    foregroundAlpha: 0.8,
+    level: 'H',
+    padding: 25,
+    size: 500,
+    value: 'https://gane11.github.io/Aleksandar-Dordevic/'
+  });
+
+  //for show
 
   if (!user) {
     return null;
@@ -216,6 +238,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                       ) : (
                           <div className="party__container">
                             <div className="party__section">
+                              <TicketCard ticket={parties[1]}/>
                             </div>
                           </div>
 

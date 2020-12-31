@@ -11,7 +11,7 @@ const LogoutButton = ({setAuthenticated}) => {
     await logout();
     dispatch(logoutUser())
     setAuthenticated(false);
-    
+  
   };
 
   return <Button variant="contained" color="primary" onClick={onLogout}>Logout</Button>;

@@ -56,13 +56,13 @@ const useStyles = makeStyles((theme) => ({
 let qr = new QRious();
 qr.set({
     background: 'white',
-    backgroundAlpha: 0.8,
+    // backgroundAlpha: 0.8,
     foreground: 'blue',
     foregroundAlpha: 0.8,
     level: 'H',
     padding: 25,
     size: 500,
-    value: ticket.qr_code
+    value: 'https://gane11.github.io/Aleksandar-Dordevic/'
 });
 
 qr.toDataURL('image/jpeg');
@@ -77,7 +77,7 @@ const TicketCard = ({ ticket }) => {
 
     return (
         <>
-            <NavLink className="user__name" to={`/clubs/${ticket.party_id}`}>
+            <NavLink className="user__name" to={`/clubs/${ticket.id}`}>
                 <div className="card">
                     <img src={qr.toDataURL('image/jpeg')} alt=""></img>
                     <div className="card__info">
