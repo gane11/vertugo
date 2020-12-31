@@ -13,7 +13,7 @@ def user_exists(form, field):
 
 
 class NewTicketForm(FlaskForm):
-    expired = BooleanField('expired', validators=[DataRequired()])
+    expired = BooleanField('expired')
     start_date = DateTimeField('start_date', validators=[DataRequired()])
     end_date = DateTimeField('end_date', validators=[DataRequired()])
     qr_code = StringField('qr_code')

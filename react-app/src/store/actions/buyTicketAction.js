@@ -3,7 +3,7 @@ import { BUY_TICKET } from '../reducers/buyTicketReducer';
 export const buyTicket = (ticket) => {
     return async dispatch => {
         try {
-            const res = await fetch(`/api/parties/`, {
+            const res = await fetch(`/api/tickets/`, {
                 method: 'POST',
                 body: ticket
             });
