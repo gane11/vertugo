@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { useHistory, NavLink, useParams } from 'react-router-dom';
+import { useHistory, NavLink, useParams, Redirect } from 'react-router-dom';
 import { buyTicket } from '../store/actions/buyTicketAction'
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
 // material-ui
@@ -38,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 const BuyTicketForm = ({start_date, party, user_id}) => {
+    let userIdString = localStorage.getItem("user_id");
+    let userId = Number(userIdString)
 
     const dispatch = useDispatch();
     const classes = useStyles();
@@ -68,9 +70,9 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
     //     callback(e.target.value);
     // }
 
-    // if (!userId) {
-    //     return <Redirect to="/" />
-    // }
+    if (!userId) {
+        return <Redirect to="/login" />
+    }
     return (
         <Container component="main" maxWidth="xs">
             <CssBaseline />
