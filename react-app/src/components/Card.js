@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core'
 import {saveParty} from '../store/actions/savePartyAction'
 import { getSavedParties, removeSavedParty } from "../store/actions/savedPartiesAction";
 import BuyModal from './BuyModal'
-
+// import QRious from 'node-qrious'
 
 ///material UI
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -103,6 +103,18 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
         })
     }
     }
+
+    // let qr = new QRious();
+    // qr.set({
+    //     background: 'green',
+    //     backgroundAlpha: 0.8,
+    //     foreground: 'blue',
+    //     foregroundAlpha: 0.8,
+    //     level: 'H',
+    //     padding: 25,
+    //     size: 500,
+    //     value: 'ticket.qr_code'
+    // });
 
 
     return (
