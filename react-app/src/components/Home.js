@@ -8,6 +8,8 @@ import Banner from './Banner';
 
 
 const Home = ({ authenticate, setAuthenticated}) => {
+    ///getLocation
+
     const [lat, setLat] = useState()
     const [lng, setLng] = useState()
 
@@ -21,8 +23,8 @@ const Home = ({ authenticate, setAuthenticated}) => {
     }
 
     function geoSuccess(position) {
-       setLat(position.coords.latitude);
-       setLng(position.coords.longitude)
+        localStorage.setItem('userLat', position.coords.latitude)
+        localStorage.setItem('userLng', position.coords.longitude)
     }
 
 
@@ -32,6 +34,9 @@ const Home = ({ authenticate, setAuthenticated}) => {
 
     getLocation()
     console.log(lat, lng)
+
+  //getLocation
+
 
 
     // var geocoder;

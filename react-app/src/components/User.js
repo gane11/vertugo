@@ -10,6 +10,7 @@ import Card from './Card'
 import userCover from './images/userCover1.jpg'
 import ownerCover from './images/ownerCover.jpg'
 import ClubCard from './ClubCard'
+import Map from './Map'
 
 ///for show
 import QRious from "qrious";
@@ -71,7 +72,8 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
     getAllClubs()
   }, [])
 
-  
+
+
 
   useEffect(() => {
     if (!userId) {
@@ -101,6 +103,13 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
     setOwnerParties(true)
 
   }
+
+  let userLat = Number(localStorage.getItem('userLat'))
+  let userLng = Number(localStorage.getItem('userLng'))
+  // if(lat && lng) {
+  //   userLat = lat
+  //   userLng = lng
+  // }
 
 
 
@@ -239,6 +248,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                           <div className="party__container">
                             <div className="party__section">
                               <TicketCard ticket={parties[1]}/>
+                              <TicketCard ticket={parties[2]}/>
                             </div>
                           </div>
 
@@ -256,6 +266,9 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
 
                         <li>
                           <strong>City</strong> {user.id}
+                        </li>
+                        <li>
+                          <strong>Address</strong> <Map newLat={userLat} newLng={userLng} />
                         </li>
                       </ul>
                     </div>

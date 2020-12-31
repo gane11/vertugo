@@ -116,7 +116,7 @@ def create_party(id):
 @club_routes.route('/<int:id>/pictures', methods=['GET'])
 def club_pictures(id):
     club_pictures = ClubPicture.query.filter(ClubPicture.club_id == id).all()
-    if club_pictures:
+    if len(club_pictures) > 0:
         return {"clubPictures": [club_picture.to_dict() for club_picture in club_pictures]}
     else:
         return jsonify(error='This Club doesnt have pictures yet')

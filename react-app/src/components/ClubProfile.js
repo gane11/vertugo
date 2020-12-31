@@ -95,7 +95,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     let userId = Number(userIdString)
 
     let owner
-    console.log(clubPictures)
+
 
     // const [picturesSelected, setPicturesSelected] = useState(false)
     const [value, setValue] = useState(0);

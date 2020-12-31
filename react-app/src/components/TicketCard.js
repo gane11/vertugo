@@ -81,6 +81,7 @@ const TicketCard = ({ ticket }) => {
                 <div className="card">
                     <img src={qr.toDataURL('image/jpeg')} alt=""></img>
                     <div className="card__info">
+    
                         <h2>{ticket.start_date}</h2>
                         {/* <h4>{home.description}</h4> */}
                         {/* <h3>{club.city}</h3>
