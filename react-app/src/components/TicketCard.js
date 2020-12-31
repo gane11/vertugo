@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import QRious from "qrious";
 
 
 
@@ -51,9 +52,10 @@ const useStyles = makeStyles((theme) => ({
 
 //material UI
 
+//qr code
 let qr = new QRious();
 qr.set({
-    background: 'green',
+    background: 'white',
     backgroundAlpha: 0.8,
     foreground: 'blue',
     foregroundAlpha: 0.8,
@@ -62,6 +64,10 @@ qr.set({
     size: 500,
     value: ticket.qr_code
 });
+
+qr.toDataURL('image/jpeg');
+
+//qr code
 
 const TicketCard = ({ ticket }) => {
 
