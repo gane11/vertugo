@@ -63,7 +63,7 @@ const CreatePartyForm = () => {
             party.append('party_cover_pic', party_cover_pic);
             await dispatch(createParty(party));
             history.push('/')
-            //allert to let them know it worked
+            alert('Party Was Created')
         }
     }
 

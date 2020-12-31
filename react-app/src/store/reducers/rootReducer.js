@@ -6,6 +6,7 @@ import club from './clubReducer'
 import newClub from './createClubReducer'
 import saveParty from './savePartyReducer'
 import clubPictures from './clubPicturesReducer'
+import savedParties from './savedPartiesReducer'
 
 const rootReducer = combineReducers({
     user,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     club,
     newClub,
     saveParty,
-    clubPictures
+    clubPictures,
+    savedParties
 });
 
 export default rootReducer;

@@ -5,6 +5,11 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
 import { Button } from '@material-ui/core'
+import { buyTicket } from "../store/actions/buyTicketAction";
+import { useSelector, useDispatch } from 'react-redux';
+import BuyTicketForm from './BuyTicketForm';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,9 +57,11 @@ Fade.propTypes = {
     onExited: PropTypes.func,
 };
 
-export default function SpringModal() {
+export default function SpringModal({party, user_id}) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
+    const dispatch = useDispatch()
+
 
     const handleOpen = () => {
         setOpen(true);
@@ -63,6 +70,8 @@ export default function SpringModal() {
     const handleClose = () => {
         setOpen(false);
     };
+
+
 
     return (
         <div>
@@ -83,14 +92,16 @@ export default function SpringModal() {
             >
                 <Fade in={open}>
                     <div className={classes.paper}>
-                        <h2 id="spring-modal-title">1015 Folsom</h2>
+                        {/* <h2 id="spring-modal-title">1015 Folsom</h2>
                         <h4>10/20/2020</h4>
                         <p>San Francisco</p>
                         <p>Priec: Free </p>
-                        <Button variant="contained" color="primary">Buy</Button>
+                        <Button variant="contained" color="primary">Buy</Button> */}
+                        <BuyTicketForm party={party} user_id={user_id} start_date={party.start_date}/>
                     </div>
                 </Fade>
             </Modal>
         </div>
     );
 }
+

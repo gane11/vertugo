@@ -1,10 +1,9 @@
 import merge from 'lodash/merge'
 export const SAVE_PARTY = 'SAVE_PARTY';
-export const LOAD_SAVED_PARTY = 'LOAD_SAVED_PARTY'
-export const REMOVE_SAVED_PARTY = 'REMOVE_SAVED_PARTY'
 
 
-export default function reducer(state = [], action) {
+
+export default function reducer(state = {}, action) {
     
 
     switch (action.type) {
@@ -12,21 +11,11 @@ export default function reducer(state = [], action) {
         return {
             
             ...state, 
-            savedParty: action.savedParty
+            id: action.id,
+            party_id: action.party_id,
+            user_id: action.user_id
         }
         
-
-        case LOAD_SAVED_PARTY: 
-        return {
-              ...state,
-            savedParty: action.savedParty
-            }
-
-        case REMOVE_SAVED_PARTY:
-           return state.filter(savedParty => {
-               return savedParty.id !== action.id
-           })
-
         default:
             return state;
     }

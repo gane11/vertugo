@@ -74,7 +74,7 @@ def save_party(userId, partyId):
         return jsonify(error='Party was not saved')
 
 
-@user_routes.route('/<int:id>/parties/save/', methods=['GET'])
+@user_routes.route('/<int:id>/parties/save', methods=['GET'])
 def saved_party(id):
     saved_parties = SavedParty.query.filter(SavedParty.user_id == id).all()
     if len(saved_parties) > 0:

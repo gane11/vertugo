@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllClubs } from '../store/actions/clubsAction'
 import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
-import { getSavedParties } from "../store/actions/savePartyAction";
+import { getSavedParties } from "../store/actions/savedPartiesAction";
 import { getAllParties } from '../store/actions/partiesAction'
 import Card from './Card'
 import userCover from './images/userCover1.jpg'

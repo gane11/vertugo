@@ -3,7 +3,7 @@ import { getAllParties } from '../store/actions/partiesAction'
 import {getAllClubs} from '../store/actions/clubsAction'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card'
-import { getSavedParties} from '../store/actions/savePartyAction'
+import { getSavedParties} from '../store/actions/savedPartiesAction'
 import Banner from './Banner'
 
 
@@ -60,7 +60,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
 const HomePartiesContainer = () => {
     const parties = useSelector((state) => Object.values(state.parties))
     const clubs = useSelector((state)=> Object.values(state.clubs))
-    const savedParties = useSelector((state) => (state.saveParty))
+    const savedParties = useSelector((state) => Object.values(state.savedParties))
     const dispatch = useDispatch()
 
     return (
