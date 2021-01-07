@@ -24,19 +24,41 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
-      const user = await authenticate();
-      if (!user.errors) {
-        setAuthenticated(true);
+    (async () => {
+      const userId = localStorage.getItem("user_id");
+      if (userId) {
+        const user = await authenticate();
+        if (!user.errors) {
+          setAuthenticated(true);
+        }
+        (async () => {
+          await dispatch(loadUser(userId));
+          setLoaded(true);
+        })()
+      } else {
         setLoaded(true);
       }
-      const userId = localStorage.getItem('user_id');
-      (async() => {
-        await dispatch(loadUser(userId));
-        setLoaded(true);
-      })()
     })();
-  }, []);
+  }, [dispatch, setAuthenticated]);
+
+  if (!loaded) {
+    return null;
+  }
+
+  // useEffect(() => {
+  //   (async() => {
+  //     const user = await authenticate();
+  //     if (!user.errors) {
+  //       setAuthenticated(true);
+  //       setLoaded(true);
+  //     }
+  //     const userId = localStorage.getItem('user_id');
+  //     (async() => {
+  //       await dispatch(loadUser(userId));
+  //       setLoaded(true);
+  //     })()
+  //   })();
+  // }, []);
 
   if (!loaded) {
     return null;
