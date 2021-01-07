@@ -10,7 +10,7 @@ import savedParties from './savedPartiesReducer'
 import buyTicket from './buyTicketReducer'
 import tickets from './ticketsReducer'
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
     user,
     parties,
     clubs,
