@@ -10,6 +10,11 @@ import savedParties from './savedPartiesReducer'
 import buyTicket from './buyTicketReducer'
 import tickets from './ticketsReducer'
 
+const DESTROY_SESSION = "DESTROY_SESSION"
+export const destroySessionAction = () => ({
+    type: DESTROY_SESSION
+})
+
 const appReducer = combineReducers({
     user,
     parties,
