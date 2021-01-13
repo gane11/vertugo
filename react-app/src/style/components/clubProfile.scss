@@ -1,9 +1,12 @@
+.prifile__container {
+   width: 50%;
+}
+
 .profile-main__container {
    background-color: #F3F3F3;
    display: grid;
    grid-template-columns: minmax(0, 1fr) 120rem minmax(0, 1fr);
-     position: relative;
-  
+  width: 50%;
 }
 
 .profile__main {
@@ -20,8 +23,8 @@ background-position: center center;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
-background-size: cover;
-  max-width: 100%;
+background-size: 100% 100%;
+// width: 100%;
 //   width: 96%;
         position: relative;
    height: 30rem;
@@ -97,6 +100,7 @@ background-size: cover;
    flex-wrap: wrap;
    padding: 3rem 0;
    padding-right: 40rem;
+   width: 100%;
    // max-width: 60%;
 
    .left-container {
