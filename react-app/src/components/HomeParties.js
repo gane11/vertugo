@@ -12,6 +12,8 @@ import Banner from './Banner'
 const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,getSavedParties}) => {
    let searchValue = 'San Francisco'
     let userId = localStorage.getItem("user_id");
+    // localStorage.removeItem('date')
+    // localStorage.setItem('date', new Date())
   
 
     useEffect(() => {
