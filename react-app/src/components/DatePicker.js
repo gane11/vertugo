@@ -62,6 +62,7 @@ export default function Example() {
 
     localStorage.removeItem('date')
     localStorage.setItem('date', selectedDay)
+    console.log(localStorage.getItem('date'))
    
 
     return (

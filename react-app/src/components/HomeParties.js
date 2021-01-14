@@ -12,8 +12,11 @@ import Banner from './Banner'
 const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,getSavedParties}) => {
    let searchValue = 'San Francisco'
     let userId = localStorage.getItem("user_id");
-    let selectedDate = localStorage.getItem("date")
-    console.log(selectedDate)
+
+    // const [selectedDate, setSelectedDate] = useState (new Date())
+    // setSelectedDate(localStorage.getItem('date'))
+
+    let selectedDate = localStorage.getItem('date')
   
 
     useEffect(() => {
@@ -47,7 +50,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
         <div>
             <div className="party__section">
                 {parties.map((party) => {
-                    if (ids.includes(party.club_id)) {
+                    if (ids.includes(party.club_id) && party.startDate === selectedDate) {
                     return(
                     <Card party={party} clubs={clubs}/>
                     )
