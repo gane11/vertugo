@@ -9,13 +9,14 @@ import newYork from './images/newYork.jpg'
 
 
 const Banner = ({searchValue}) => {
-    let coverPic
+    let coverPic = false
     if(searchValue) {
     if(searchValue.toLowerCase() === 'san francisco') coverPic = sanFran
     if (searchValue.toLowerCase() === 'los angeles') coverPic = la
     if (searchValue.toLowerCase() === 'austin') coverPic = austin
     if (searchValue.toLowerCase() === 'miami') coverPic = miami
         if (searchValue.toLowerCase() === 'new york') coverPic = newYork
+
     }  
     
     let divStyle = {
@@ -28,7 +29,13 @@ const Banner = ({searchValue}) => {
     }
 
 
-
+    if(!coverPic) {
+        return(
+            <div>
+                <h1>Not there yet, try San francisco, Miami, Austin, New York or Los Angeles</h1>
+            </div>
+        )
+    }
     return (
         <div className="banner" style={divStyle} >
             <div className="banner_info">
