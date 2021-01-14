@@ -53,16 +53,15 @@ export default function Example() {
     // localStorage.setItem('date', today)
     const [selectedDay, setSelectedDay] = useState(new Date())
 
+
     const handleDayClick = (date) => {
         if(date > today) {
             setSelectedDay(date)
-            console.log(selectedDay)
         }
     }
 
     localStorage.removeItem('date')
-    localStorage.setItem('date', selectedDay)
-    console.log(localStorage.getItem('date'))
+    localStorage.setItem('date', new Date(selectedDay))
    
 
     return (

@@ -13,7 +13,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
    let searchValue = 'San Francisco'
     let userId = localStorage.getItem("user_id");
 
-    // const [selectedDate, setSelectedDate] = useState (new Date())
+    // const [selectedDate, setSelectedDate] = useState('')
     // setSelectedDate(localStorage.getItem('date'))
 
     let selectedDate = localStorage.getItem('date')
@@ -31,7 +31,6 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
         getSavedParties(userId)
     }, [userId])
 
-    console.log(savedParties)
 
     let ids = []
     for(let i = 0; i < clubs.length; i++) {
@@ -40,6 +39,11 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
             ids.push(i +1)
         }
     }
+
+    window.addEventListener('storage', function () {
+       selectedDate= localStorage.getItem('date')
+       console.log('hi')
+    });
 
 
     if(!parties) return null
@@ -50,7 +54,8 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
         <div>
             <div className="party__section">
                 {parties.map((party) => {
-                    if (ids.includes(party.club_id) && party.startDate === selectedDate) {
+                    if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
+                        console.log(new Date(party.start_date).toISOString().split('T')[0], new Date(selectedDate).toISOString().split('T')[0])
                     return(
                     <Card party={party} clubs={clubs}/>
                     )

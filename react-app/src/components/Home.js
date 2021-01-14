@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import NavBarContainer from './NavBar';
 import HomePartiesContainer from './HomeParties';
 import DatePicker from './DatePicker'
-import Banner from './Banner';
+// import Banner from './Banner';
 
 
 

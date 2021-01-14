@@ -89,7 +89,6 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
         getSavedParties(user_id)
     }, [user_id])
 
-    console.log(savedParties)
 
 
 
@@ -115,7 +114,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                     <div className="card__info">
                         <h2>{party.description}</h2>
                         {/* <h4>{home.description}</h4> */}
-                        <h3>{new Date(party.start_date).toDateString()}</h3>
+                        <h3>{party.start_date}</h3>
                         {club? (
                             <h4>{club.name}</h4>
                         ): (
