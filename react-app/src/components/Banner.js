@@ -1,11 +1,11 @@
 import React from 'react';
 // import './Banner.css'
 import DatePicker from './DatePicker'
-import sanFran from './images/sanFran.jpeg'
-import la from './images/la.jpeg'
-import austin from './images/austin.jpeg'
-import miami from './images/miami.jpeg'
-import newYork from './images/newYork.jpeg'
+import sanFran from './images/sanFran.jpg'
+import la from './images/la.jpg'
+import austin from './images/austin.jpg'
+import miami from './images/miami.jpg'
+import newYork from './images/newYork.jpg'
 
 
 const Banner = ({searchValue}) => {
@@ -20,9 +20,11 @@ const Banner = ({searchValue}) => {
     
     let divStyle = {
         background: `url(${coverPic})` ,
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover', 
+        width: '100%',
+        height: '40rem',
+        position: 'relative',
     }
 
 

@@ -1,12 +1,12 @@
-.prifile__container {
-   width: 50%;
-}
+// .prifile__container {
+//    width: 50%;
+// }
 
 .profile-main__container {
    background-color: #F3F3F3;
    display: grid;
    grid-template-columns: minmax(0, 1fr) 120rem minmax(0, 1fr);
-  width: 50%;
+//   width: 50%;
 }
 
 .profile__main {
@@ -100,7 +100,7 @@ background-size: 100% 100%;
    flex-wrap: wrap;
    padding: 3rem 0;
    padding-right: 40rem;
-   width: 100%;
+   // width: 100%;
    // max-width: 60%;
 
    .left-container {
@@ -125,7 +125,7 @@ background-size: 100% 100%;
   
 }
 
-.club-profile__image {
-   max-height: 100%;
-   width: 100%;
-}
+// .club-profile__image {
+//    max-height: 100%;
+//    width: 100%;
+// }
