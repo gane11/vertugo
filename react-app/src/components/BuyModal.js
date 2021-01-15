@@ -75,7 +75,7 @@ export default function SpringModal({party, user_id}) {
 
     return (
         <div>
-            <Button variant="contained" color="primary" type="button" onClick={handleOpen}>
+            <Button size="large" variant="contained" color="primary" type="button" onClick={handleOpen}>
                 BUY
             </Button>
             <Modal

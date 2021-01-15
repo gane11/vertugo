@@ -124,13 +124,13 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                     </div>
                     <div className="card__buttons">
                         {saved || partySaved ? (
-                        <Button variant="contained" color="primary" onClick={handleRemove}
+                        <Button size="large" variant="contained" color="primary" onClick={handleRemove}
                         >REMOVE</Button>
                         ):(
-                            <Button variant="contained" color="primary" onClick={handleSave}
+                            <Button size="large" variant="contained" color="primary" onClick={handleSave}
                             >SAVE</Button>
                         ) } 
-                        <BuyModal party={party} user_id={user_id}/>
+                        <BuyModal  party={party} user_id={user_id}/>
                            
                     </div>
                 </div>
