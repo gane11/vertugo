@@ -13,7 +13,8 @@ import Banner from './Banner'
 
 const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     const {searchValue} = useParams()
-    console.log(searchValue.toLowerCase())
+    let selectedDate = localStorage.getItem('date')
+
    
 
     useEffect(() => {
@@ -33,14 +34,7 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     }
 
 
-//     if ((searchValue.toLowerCase() !== 'austin' || searchValue.toLowerCase() !== 'los angeles') || (searchValue.toLowerCase() !== 'miami' || searchValue.toLowerCase() !== 'san francisco' )) {
-//         return (
-//             <>
-//             <h1>Sorry not there yet, try Miami , San Francisco , Los Angeles or Austin !</h1>
-//             </>
-//         )
-  
-// }
+
 
     return (
         <>
@@ -48,7 +42,7 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
             <div>
                 <div className="party__section">
                     {parties.map((party) => {
-                        if (ids.includes(party.club_id)) {
+                        if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
                             return (
                                 <Card party={party} clubs={clubs} />
                             )
