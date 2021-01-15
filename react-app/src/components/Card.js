@@ -1,7 +1,7 @@
 import React, { useEffect , useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 // import './Card.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import {saveParty} from '../store/actions/savePartyAction'
 import { getSavedParties, removeSavedParty } from "../store/actions/savedPartiesAction";
@@ -61,6 +61,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const [saved, setSaved] = useState()
+    const history = useHistory();
+
     let partySaved
 
     let user_id = localStorage.getItem("user_id");
@@ -70,10 +72,14 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
 
     const handleSave = async (e) => {
         e.preventDefault();
+        if(user_id) {
         await dispatch(saveParty(user_id,party.id))
         setSaved(true)
         partySaved = true
+        } else {
+            history.push("/login")
 
+        }
     }
 
 

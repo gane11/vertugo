@@ -12,6 +12,7 @@ const LogoutButton = ({setAuthenticated}) => {
   const onLogout = async (e) => {
     await logout();
     dispatch(destroySessionAction());
+    localStorage.removeItem('user_id')
     setAuthenticated(false);
   
   };

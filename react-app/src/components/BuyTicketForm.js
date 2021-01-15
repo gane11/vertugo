@@ -51,7 +51,7 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (party) {
+        if (party && userIdString) {
             let ticket = new FormData();
             ticket.append('expired', expired);
             ticket.append('start_date', start_date);
@@ -62,6 +62,8 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
             await dispatch(buyTicket(ticket));
             history.push('/')
             alert('Thanks for buying a ticket!')
+        } else {
+            history.push("/login")
         }
     }
 
