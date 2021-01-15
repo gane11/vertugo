@@ -184,6 +184,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             </Grid>
           </Grid>
           <Button
+            size="large"
             type="submit"
             fullWidth
             variant="contained"
