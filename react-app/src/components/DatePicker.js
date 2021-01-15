@@ -35,6 +35,7 @@ import { getDate } from '../store/actions/dateAction';
             initialMonth={new Date()}
             fromMonth={new Date()}
             disabledDays={[
+                new Date(Date.now() - 864e5),
                 {
                     before: today
                     // new Date(Date.now() - 864e5)

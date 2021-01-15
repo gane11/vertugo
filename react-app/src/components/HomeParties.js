@@ -41,10 +41,6 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
         }
     }
 
-    window.addEventListener('storage', function () {
-       selectedDate= localStorage.getItem('date')
-       
-    });
 
 
     if(!parties) return null
