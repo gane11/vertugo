@@ -195,11 +195,11 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                         <strong>
                           Create a new club
                         </strong>  
-                        press on the create a new club page button
+                        press on the create a new club page button and fill out the form
                       </li>
                       <li className="bio">
                         <strong>Create a party</strong> 
-                        press on the parties button then press on create party button
+                        Go to the club page and press the create teh party button
                       </li>
                     </ul>
                   </div>
