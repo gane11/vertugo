@@ -13,8 +13,9 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
    let searchValue = 'San Francisco'
     let userId = localStorage.getItem("user_id");
 
-    // const [selectedDate, setSelectedDate] = useState('')
+    // const [selectedDate, setSelectedDate] = useState(localStorage.getItem('date'))
     // setSelectedDate(localStorage.getItem('date'))
+
 
     let selectedDate = localStorage.getItem('date')
   
@@ -42,7 +43,7 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
 
     window.addEventListener('storage', function () {
        selectedDate= localStorage.getItem('date')
-       console.log('hi')
+       
     });
 
 

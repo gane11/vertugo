@@ -1,53 +1,13 @@
 // import 'date-fns';
-import React, {useState} from 'react';
-// import Grid from '@material-ui/core/Grid';
-// import DateFnsUtils from '@date-io/date-fns';
-// import {
-//     MuiPickersUtilsProvider,
-//     KeyboardDatePicker,
-// } from '@material-ui/pickers';
-
-// const DatePicker = ()  =>{
-  
-//     const [selectedDate, setSelectedDate] = useState(new Date());
-
-//     const handleDateChange = (date) => {
-//         setSelectedDate(date);
-//     };
-
-
-//     return (
-//         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-//             <Grid container justify="space-around">
-//                 <KeyboardDatePicker
-//                     margin="normal"
-//                     id="date-picker-dialog"
-//                     // label=""
-//                     format="MM/dd/yyyy"
-//                     value={selectedDate}
-//                     onChange={handleDateChange}
-//                     KeyboardButtonProps={{
-//                         'aria-label': 'change date',
-//                     }}
-//                 />
-//             </Grid>
-//         </MuiPickersUtilsProvider>
-//     );
-// }
-
-
-// // const  DatePickerContainer = () => {
-
-// // }
-
-
-// export default DatePicker
-
-
+import React, {useState, useEffect} from 'react';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { getDate } from '../store/actions/dateAction';
 
-export default function Example() {
+
+
+ function DatePicker({date, getDate}) {
 
     const today = new Date()
     // localStorage.setItem('date', today)
@@ -55,7 +15,7 @@ export default function Example() {
 
 
     const handleDayClick = (date) => {
-        if(date > today) {
+        if (date > new Date(Date.now() - 864e5)) {
             setSelectedDay(date)
         }
     }
@@ -63,6 +23,9 @@ export default function Example() {
     localStorage.removeItem('date')
     localStorage.setItem('date', new Date(selectedDay))
    
+    useEffect(() => {
+        getDate(selectedDay)
+    }, [selectedDay])
 
     return (
         <div>
@@ -73,7 +36,8 @@ export default function Example() {
             fromMonth={new Date()}
             disabledDays={[
                 {
-                    before: new Date(),
+                    before: today
+                    // new Date(Date.now() - 864e5)
                 }
             
             ]}
@@ -83,3 +47,20 @@ export default function Example() {
         </div>
     );
 }
+
+
+
+ const DatePickerContainer = () => {
+    const date = useSelector((state) => state.date)
+    const dispatch = useDispatch()
+
+    return (
+        <DatePicker
+            date={date}
+            getDate={(date) => dispatch(getDate(date))}
+        />
+    )
+
+}
+
+export default DatePickerContainer

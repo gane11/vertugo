@@ -9,6 +9,7 @@ import clubPictures from './clubPicturesReducer'
 import savedParties from './savedPartiesReducer'
 import buyTicket from './buyTicketReducer'
 import tickets from './ticketsReducer'
+import date from './dateReducer'
 
 const DESTROY_SESSION = "DESTROY_SESSION"
 export const destroySessionAction = () => ({
@@ -25,7 +26,8 @@ const appReducer = combineReducers({
     clubPictures,
     savedParties,
     buyTicket,
-    tickets
+    tickets,
+    date
 });
 
 
