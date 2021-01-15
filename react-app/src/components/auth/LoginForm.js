@@ -60,6 +60,33 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     }
   };
 
+
+  const signInDemoUser = async (e) => {
+    e.preventDefault();
+    const user = await login('demo@user.com', 'password')
+    if(!user.error) {
+      localStorage.setItem('user_id', user.id)
+      dispatch(loadUser(user.id))
+      setAuthenticated(true)
+    } else {
+      setErrors(user.errors)
+    }
+    }
+
+
+const signInDemoOwner = async (e) => {
+  e.preventDefault();
+  const user = await login('demo@owner.com', 'password')
+  if (!user.error) {
+    localStorage.setItem('user_id', user.id)
+    dispatch(loadUser(user.id))
+    setAuthenticated(true)
+  } else {
+    setErrors(user.errors)
+  }
+}
+
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   }
@@ -118,6 +145,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             onChange={updatePassword}
           />
           <Button
+            size="large"
             type="submit"
             fullWidth
             variant="contained"
@@ -125,6 +153,26 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             className={classes.submit}
           >
             Sign In
+          </Button>
+          <Button
+            size="large"
+            onClick={signInDemoUser}
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Demo User
+          </Button>
+          <Button
+          onClick={signInDemoOwner}
+            size="large"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Demo Owner
           </Button>
           <Grid container>
             <Grid item>
