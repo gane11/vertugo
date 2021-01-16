@@ -156,7 +156,7 @@ const CardContainer = ({ party, clubs, club }) => {
             club={club}
             clubs={clubs}
             savedParties={savedParties}
-            getSavedParties={(id) => dispatch(getSavedParties(id))}
+            getSavedParties={(user_id) => dispatch(getSavedParties(user_id))}
         />
     )
 }

@@ -1,20 +1,38 @@
-import {LOAD_SAVED_PARTY, REMOVE_SAVED_PARTY } from '../reducers/savedPartiesReducer';
+import {LOAD_SAVED, REMOVE_SAVED_PARTY } from '../reducers/savedPartiesReducer';
 
-export const loadSavedParties = (savedParties) => ({ type: LOAD_SAVED_PARTY, savedParties })
+// export const loadSavedParties = (savedParties) => ({ type: LOAD_SAVED_PARTY, savedParties })
 
-export const getSavedParties = (id) => {
-    return async dispatch => {
-        try {
-            const res = await fetch(`/api/users/${id}/parties/save`)
-            if (res.ok) {
-                const {savedParties} = await res.json()
-                dispatch(loadSavedParties(savedParties))
+// export const getSavedParties = (id) => {
+//     return async dispatch => {
+//         try {
+//             const res = await fetch(`/api/users/${id}/parties/save`)
+//             if (res.ok) {
+//                 const {savedParties} = await res.json()
+//                 dispatch(loadSavedParties(savedParties))
+//             }
+//         } catch (e) {
+//             console.log(e)
+//         }
+//     }
+// }
+
+
+export const loadSaved = (savedParties) => ({ type: LOAD_SAVED, savedParties })
+
+export const getSavedParties = (id) => async (dispatch) => {
+    try {
+    const res = await fetch(`/api/users/${id}/parties/save`)
+    if (res.ok) {
+        const { savedParties } = await res.json()
+        if(savedParties) {
+            dispatch(loadSaved(savedParties)) 
+            console.log('YASSS')   
             }
-        } catch (e) {
-            console.log(e)
-        }
     }
+} catch (e) {
+    console.log(e)
 }
+} 
 
 
 export const removeSavedParty = (user_id, party_id) => {

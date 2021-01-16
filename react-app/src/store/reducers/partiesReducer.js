@@ -2,7 +2,7 @@ import merge from 'lodash/merge'
 export const LOAD_PARTIES = 'LOAD_PARTIES';
 
 
-export default function reducer(state = [], action) {
+export default function reducer(state = {}, action) {
     Object.freeze(state)
 
     switch (action.type) {

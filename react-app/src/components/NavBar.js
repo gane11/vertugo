@@ -97,7 +97,7 @@ const NavBar = ({setAuthenticated, user }) => {
                 searchValue:{searchValue}
               }
             }}>
-            <Button variant="contained" color="primary" className="user__name"
+            <Button type="submit" variant="contained" color="primary" className="user__name"
               >SEARCH</Button>
             </NavLink>
           </div>

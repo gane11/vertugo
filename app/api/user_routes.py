@@ -78,9 +78,10 @@ def save_party(userId, partyId):
 def saved_party(id):
     saved_parties = SavedParty.query.filter(SavedParty.user_id == id).all()
     if len(saved_parties) > 0:
-        return {'saved_parties':[saved_party.to_dict() for saved_party in saved_parties] }
+        return {"savedParties": [save_party.to_dict() for save_party in saved_parties]}
     else:
-        return jsonify(error='There is no saved parties')
+        return jsonify(error='no saved parties')
+
 
 
 @user_routes.route('/<int:user_id>/parties/<int:party_id>/save', methods=["DELETE"])
