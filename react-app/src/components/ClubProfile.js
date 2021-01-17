@@ -172,7 +172,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                             )}
                                         <div className="party__container">
                                                 {parties.map((party) => {
-                                                    if (party.club_id === club.id) {
+                                                    if (party.club_id === club.id && new Date(party.start_date) >= new Date())  {
                                                         return (
                                                             <Card party={party} club={club} />
                                                         )
