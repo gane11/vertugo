@@ -10,6 +10,7 @@ export const buyTicket = (ticket) => {
 
             if (res.ok) {
                 const data = await res.json();
+                console.log(data)
                 dispatch({
                     type: BUY_TICKET,
                     ...data

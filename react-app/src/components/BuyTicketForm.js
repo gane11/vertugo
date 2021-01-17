@@ -44,22 +44,28 @@ const BuyTicketForm = ({ party, user_id}) => {
     const dispatch = useDispatch();
     const classes = useStyles();
     const [expired, setExpired] = useState(false);
-    const [end_date, setEndDate] = useState(new Date());
+    // const [end_date, setEndDate] = useState(new Date());
     const [qr_code, setQrCode] = useState('https://gane11.github.io/Aleksandar-Dordevic/');
 
     const history = useHistory();
 
+    let startDate = new Date(party.start_date)
+
+    let start_date = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-" + startDate.getDate()
+
+    
+    console.log(start_date)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (party && userIdString) {
             let ticket = new FormData();
             ticket.append('expired', expired);
-            ticket.append('start_date', party.start_date);
-            ticket.append('end_date', party.start_date);
+            ticket.append('start_date', start_date);
+            ticket.append('end_date', start_date);
             ticket.append('qr_code', qr_code);
             ticket.append('party_id', party.id);
-            ticket.append('user_id', user_id);
+            ticket.append('user_id', user_id);            
             await dispatch(buyTicket(ticket));
             history.push(`/users/${user_id}`)
             alert('Thanks for buying a ticket!')
