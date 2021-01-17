@@ -12,7 +12,8 @@ export default function reducer(state = {}, action) {
         }
 
         case REMOVE_SAVED_PARTY: {
-            return state.filter(savedParties => savedParties.id !== action.id);
+            console.log('did it')
+            return state.savedParties.filter(savedParty => savedParty.id !== action.id);
         }
         default: return state;
     }

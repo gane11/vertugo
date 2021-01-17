@@ -97,20 +97,18 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
 
 
 
-
     if(savedParties) {
-        if(savedParties.saved_parties) {
-            savedParties.saved_parties.map((savedParty) => {
-            let partyId = savedParty.party_id
-            if (party.id === partyId) partySaved = true
+        savedParties.map((savedParty) => {
+            console.log(party.id, savedParty.party_id)
+            if (party.id === savedParty.party_id) {
+                partySaved = true
+                
+            }
                 
         })
     }
-    }
 
    
-
-
     return (
         <>
         
@@ -129,7 +127,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                         )}
                     </div>
                     <div className="card__buttons">
-                        {saved || partySaved ? (
+                        {partySaved || saved? (
                         <Button size="large" variant="contained" color="primary" onClick={handleRemove}
                         >REMOVE</Button>
                         ):(

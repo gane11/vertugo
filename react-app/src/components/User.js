@@ -51,10 +51,6 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   let id = Number(userId)
-  if(savedParties) {
-
-    console.log(savedParties)
-  }
 
   const [savedPartiesButton, setSavedPartiesButton] = useState(false)
   const [ownerParties, setOwnerParties] = useState(false)
@@ -236,7 +232,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                           <div className="party__container">
                             {savedParties.map((savedParty) => {
                               let partyId = savedParty.party_id
-                              let party = parties[partyId]
+                              let party = parties[partyId - 1]
                               return (
                                 <Card clubs={clubs} party={party}/>
 

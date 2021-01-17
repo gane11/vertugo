@@ -26,7 +26,6 @@ export const getSavedParties = (id) => async (dispatch) => {
         const { savedParties } = await res.json()
         if(savedParties) {
             dispatch(loadSaved(savedParties)) 
-            console.log('YASSS')   
             }
     }
 } catch (e) {
