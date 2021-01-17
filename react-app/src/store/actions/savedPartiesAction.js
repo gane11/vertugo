@@ -46,10 +46,9 @@ export const removeSavedParty = (user_id, party_id) => {
             });
             if (res.ok) {
                 const data = await res.json()
-                const saved_party_id = data.id
                 return dispatch({
                     type: REMOVE_SAVED_PARTY,
-                    id: saved_party_id
+                    id: data.id
                 })
             }
         } catch (e) {

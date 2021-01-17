@@ -99,7 +99,6 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
 
     if(savedParties) {
         savedParties.map((savedParty) => {
-            console.log(party.id, savedParty.party_id)
             if (party.id === savedParty.party_id) {
                 partySaved = true
                 
