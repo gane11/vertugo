@@ -9,6 +9,7 @@ export const getAllTickets = (id) => async (dispatch) => {
         const res = await fetch(`/api/users/${id}/tickets`)
         if (res.ok) {
             const { tickets} = await res.json()
+            console.log(tickets)
             if (tickets) {
                 dispatch(loadTickets(tickets))
             }

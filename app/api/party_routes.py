@@ -32,15 +32,8 @@ def parties():
 def new_party():
     try:
         form = NewPartyForm()
-        print(form.data['club_id'])
-        print(form.data['description'])
-        print(form.data['start_date'])
-        print(form.data['end_date'])
-        print(form.data['ticket_count'])
-        print(form.data["party_cover_pic"])
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
-            print('VALIDATED')
             key_list = request.files.keys()
             if request.files:
                 if "party_cover_pic" in key_list:

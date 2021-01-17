@@ -3,7 +3,8 @@ from flask_login import login_required
 from app.models import db, User, Club, Ticket, Party
 from app.forms import NewTicketForm
 import json
-
+import binascii
+import os
 
 ticket_routes = Blueprint('tickets', __name__)
 
@@ -17,8 +18,13 @@ def tickets():
 @ticket_routes.route('/', methods=['POST'])
 def buy_ticket():
     try:
-        print('HIII')
         form = NewTicketForm()
+        print(form.data['expired'])
+        print(form.data['start_date'])
+        print(form.data['end_date'])
+        print(form.data['qr_code'])
+        print(form.data['party_id'])
+        print(form.data['user_id'])
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
             ticket = Ticket(

@@ -62,7 +62,7 @@ const CreatePartyForm = () => {
             party.append('ticket_count', ticket_count);
             party.append('party_cover_pic', party_cover_pic);
             await dispatch(createParty(party));
-            history.push('/')
+            history.push(`/clubs/${id}`)
             alert('Party Was Created')
         }
     }

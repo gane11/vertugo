@@ -74,7 +74,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
   }, [])
 
 
-
+  console.log(tickets)
 
   useEffect(() => {
     if (!userId) {

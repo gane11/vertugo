@@ -48,7 +48,6 @@ def owner_clubs(id):
 
 
 @user_routes.route('/<int:id>/tickets', methods=['GET'])
-# @login_required
 def all_tickets(id):
     tickets = Ticket.query.filter(Ticket.user_id == id).all()
     if len(tickets) > 0:

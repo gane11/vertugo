@@ -14,14 +14,3 @@ export const getAllClubs = () => async(dispatch) => {
 } 
 
 
-
-// export const loadSearchClubs = (clubs) => ({ type: LOAD_CLUBS, clubs })
-
-
-// export const getAllSearchClubs = (searchValue) => async (dispatch) => {
-//     const res = await fetch(`/api/clubs/${searchValue}`)
-//     if (res.ok) {
-//         const { clubs } = await res.json()
-//         dispatch(loadClubs(clubs))
-//     }
-// } 

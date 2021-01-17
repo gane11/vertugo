@@ -7,13 +7,12 @@ class Ticket(db.Model):
     __tablename__ = 'tickets'
 
     id = Column(Integer, primary_key=True)
-    expired = (Boolean)
+    expired = Column(Boolean)
     start_date = Column(Date, nullable=False)
     end_date = Column(Date, nullable=False)
     qr_code = Column(String)
     party_id = Column(Integer, ForeignKey("parties.id"), nullable=False)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-
 
     def to_dict(self):
         return {
@@ -25,3 +24,4 @@ class Ticket(db.Model):
             "party_id": self.party_id,
             "user_id": self.user_id
         }
+

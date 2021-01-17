@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 //material-ui
 
 
-const BuyTicketForm = ({start_date, party, user_id}) => {
+const BuyTicketForm = ({ party, user_id}) => {
     let userIdString = localStorage.getItem("user_id");
     let userId = Number(userIdString)
 
@@ -49,13 +49,14 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
 
     const history = useHistory();
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (party && userIdString) {
             let ticket = new FormData();
             ticket.append('expired', expired);
-            ticket.append('start_date', start_date);
-            ticket.append('end_date', start_date);
+            ticket.append('start_date', party.start_date);
+            ticket.append('end_date', party.start_date);
             ticket.append('qr_code', qr_code);
             ticket.append('party_id', party.id);
             ticket.append('user_id', user_id);
@@ -88,7 +89,7 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={16}>
-                            {start_date}
+                            {party.start_date}
                         </Grid>
                         <Grid item xs={12} sm={15}>
                             {party.description}

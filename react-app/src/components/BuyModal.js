@@ -97,7 +97,7 @@ export default function SpringModal({party, user_id}) {
                         <p>San Francisco</p>
                         <p>Priec: Free </p>
                         <Button variant="contained" color="primary">Buy</Button> */}
-                        <BuyTicketForm party={party} user_id={user_id} start_date={party.start_date}/>
+                        <BuyTicketForm party={party} user_id={user_id} />
                     </div>
                 </Fade>
             </Modal>
