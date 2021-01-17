@@ -60,7 +60,7 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
             ticket.append('party_id', party.id);
             ticket.append('user_id', user_id);
             await dispatch(buyTicket(ticket));
-            history.push('/')
+            history.push(`/users/${user_id}`)
             alert('Thanks for buying a ticket!')
         } else {
             history.push("/login")
@@ -95,6 +95,7 @@ const BuyTicketForm = ({start_date, party, user_id}) => {
                         </Grid>
                     </Grid>
                     <Button
+                        type="submit"
                        onClick={handleSubmit}
                         fullWidth
                         variant="contained"

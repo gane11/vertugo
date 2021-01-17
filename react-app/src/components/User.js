@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import { getSavedParties } from "../store/actions/savedPartiesAction";
 import { getAllParties } from '../store/actions/partiesAction'
+import {getAllTickets} from '../store/actions/ticketsAction'
 import Card from './Card'
 import userCover from './images/userCover1.jpg'
 import ownerCover from './images/ownerCover.jpg'
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getAllParties,}) {
+function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getAllParties, tickets, getAllTickets}) {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   let id = Number(userId)
@@ -58,6 +59,10 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
 
   useEffect(() => {
     getSavedParties(userId)
+  }, [userId])
+
+  useEffect(() => {
+    getAllTickets(userId)
   }, [userId])
 
   useEffect(() => {
@@ -243,8 +248,13 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                       ) : (
                           <div className="party__container">
                             <div className="party__section">
-                              <TicketCard ticket={parties[1]}/>
-                              <TicketCard ticket={parties[2]}/>
+                              {tickets.map((ticket) => {
+                                  return (
+                                    <TicketCard ticket={ticket}/>
+                                    
+                                  )
+                                }
+                              )}
                             </div>
                           </div>
 
@@ -284,6 +294,7 @@ const UserContainer = () => {
   const parties = useSelector((state) => Object.values(state.parties))
   const clubs = useSelector((state) => Object.values(state.clubs))
   const savedParties = useSelector((state) => Object.values(state.savedParties))
+  const tickets = useSelector((state) => Object.values(state.tickets))
   const dispatch = useDispatch()
   return (
     <User 
@@ -293,6 +304,8 @@ const UserContainer = () => {
       getAllParties={() => dispatch(getAllParties())}
       savedParties={savedParties}
       getSavedParties={(userId) => dispatch(getSavedParties(userId))}
+      tickets={tickets}
+      getAllTickets={(userId)=> dispatch(getAllTickets(userId))}
     />
   )
 

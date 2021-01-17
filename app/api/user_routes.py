@@ -48,13 +48,13 @@ def owner_clubs(id):
 
 
 @user_routes.route('/<int:id>/tickets', methods=['GET'])
-@login_required
+# @login_required
 def all_tickets(id):
     tickets = Ticket.query.filter(Ticket.user_id == id).all()
-    if len(tickets > 0):
-        return jsonify([ticket.to_dict() for ticket in tickets])
+    if len(tickets) > 0:
+        return {"tickets": [ticket.to_dict() for ticket in tickets]}
     else:
-        return jsonify(error='No Clubs yet')
+        return jsonify(error='No tickets yet')
 
 
 @user_routes.route('/<int:userId>/parties/<int:partyId>/save', methods=['POST'])

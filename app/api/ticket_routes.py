@@ -7,16 +7,19 @@ import json
 
 ticket_routes = Blueprint('tickets', __name__)
 
-@ticket_routes.route('/')
+
+@ticket_routes.route('/', methods=['GET'])
 def tickets():
     tickets = Ticket.query.all()
     return {"tickets": [ticket.to_dict() for ticket in tickets]}
 
 
-@ticket_routes.route('/')
+@ticket_routes.route('/', methods=['POST'])
 def buy_ticket():
     try:
+        print('HIII')
         form = NewTicketForm()
+        form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit():
             ticket = Ticket(
                 expired=form.data['expired'],
@@ -30,5 +33,5 @@ def buy_ticket():
             db.session.commit()
             return ticket.to_dict()
         return jsonify({'test': 'test'})
-     except Exception as error:
+    except Exception as error:
         return jsonify(error=repr(error))

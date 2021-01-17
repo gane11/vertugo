@@ -8,7 +8,7 @@ Create Date: 2020-12-03 19:10:53.065534
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.sql import table
-from datetime import datetime
+from datetime import date
 
 
 # revision identifiers, used by Alembic.
@@ -32,24 +32,24 @@ def upgrade():
     op.bulk_insert(ticket,
     [{
         'expired': False,
-        'start_date': datetime(2020, 12, 10),
-        'end_date': datetime(2020, 12, 11),
+        'start_date': date(2020, 12, 10),
+        'end_date': date(2020, 12, 11),
         'qr_code': 'sdad',
         'party_id': 1,
         'user_id': 1
     },
         {
         'expired': False,
-        'start_date': datetime(2020, 12, 10),
-        'end_date': datetime(2020, 12, 11),
+        'start_date': date(2020, 12, 10),
+        'end_date': date(2020, 12, 11),
         'qr_code': 'sdad',
         'party_id': 2,
         'user_id': 1
     },
         {
         'expired': False,
-        'start_date': datetime(2020, 12, 10),
-        'end_date': datetime(2020, 12, 11),
+        'start_date': date(2020, 12, 10),
+        'end_date': date(2020, 12, 11),
         'qr_code': 'sdad',
         'party_id': 3,
         'user_id': 1
