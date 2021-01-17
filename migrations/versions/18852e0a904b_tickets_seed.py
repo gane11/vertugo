@@ -32,24 +32,24 @@ def upgrade():
     op.bulk_insert(ticket,
     [{
         'expired': False,
-        'start_date': date(2020, 12, 10),
-        'end_date': date(2020, 12, 11),
+        'start_date': date(2020, 1, 30),
+        'end_date': date(2020, 1, 30),
         'qr_code': 'sdad',
         'party_id': 1,
         'user_id': 1
     },
         {
         'expired': False,
-        'start_date': date(2020, 12, 10),
-        'end_date': date(2020, 12, 11),
+        'start_date': date(2020,1, 31),
+        'end_date': date(2020, 1, 31),
         'qr_code': 'sdad',
         'party_id': 2,
         'user_id': 1
     },
         {
         'expired': False,
-        'start_date': date(2020, 12, 10),
-        'end_date': date(2020, 12, 11),
+        'start_date': date(2020, 2, 6),
+        'end_date': date(2020, 2, 6),
         'qr_code': 'sdad',
         'party_id': 3,
         'user_id': 1
