@@ -6,7 +6,7 @@ Check out the app: 🥳 <a href="https://vertugo.herokuapp.com/" target="_blank"
 
 ![Vertugo main image](https://raw.githubusercontent.com/gane11/vertugo/main/react-app/public/vertugo.png)
 
-### 🎹  Technologies Used
+### 🦄 Technologies Used
 
 * HTML5
 * CSS3
