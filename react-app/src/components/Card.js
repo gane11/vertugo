@@ -64,8 +64,23 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const history = useHistory();
 
     let partySaved
+    let owner 
 
+    
     let user_id = localStorage.getItem("user_id");
+    if(club) {
+
+        if (club.owner_id === user_id) {
+            owner = true
+        }
+    }
+
+    if(clubs) {
+
+        if (clubs[party.club_id - 1] === user_id) {
+            owner= true
+        }
+    }
     const dispatch = useDispatch()
 
     const classes = useStyles()
@@ -125,7 +140,9 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                         <h4>{clubs[party.club_id - 1].name}</h4>
                         )}
                     </div>
+                    {owner? (
                     <div className="card__buttons">
+                        
                         {partySaved || saved? (
                         <Button size="large" variant="contained" color="primary" onClick={handleRemove}
                         >REMOVE</Button>
@@ -136,6 +153,10 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                         <BuyModal  party={party} user_id={user_id}/>
                            
                     </div>
+
+                    ): (
+                        null
+                    )}
                 </div>
             </NavLink>
         </>
