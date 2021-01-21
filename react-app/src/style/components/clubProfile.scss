@@ -135,3 +135,45 @@ background-position: center center;
    max-height: 100%;
    width: 100%;
 }
+
+//clubs
+
+.create-party__button {
+   padding-left: -30rem;
+}
+
+.club-parties__container {
+   width: 100%;
+   position: absolute;
+   left: 0;
+}
+
+.club-party__container {
+   display: flex;
+   justify-content: baseline;
+   flex-wrap: wrap;
+   // padding: 2rem -1rem;
+   padding-right: 62rem;
+   padding-top: 5rem;
+   // width: 100%;
+   // max-width: 60%;
+
+   .left-container {
+      // padding-left: 50rem;
+
+   }
+
+   .right-container {
+      position: relative;
+      width: 60rem;
+      // right: 12rem;
+      padding-right: 1rem;
+   }
+}
+
+
+.club-pictures__container {
+   padding-top: 3rem;
+   padding-right: 30rem;
+   width: 50rem;
+}

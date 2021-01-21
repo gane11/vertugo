@@ -69,8 +69,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-        width: 1260,
-        height: 800,
+        width: '60rem',
+        height: '60rem',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
     },
@@ -150,7 +150,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                     </div>
 
                     <div className="profile__body">
-                        <div className="parties__container">
+                        <div className="club-parties__container">
                             <div className={classes.root}>
                                 <AppBar position="static">
                                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
@@ -160,9 +160,9 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                 </AppBar>
                                 <TabPanel value={value} index={0}>
                                         {owner ? (
-                                            <div className="upload-picture__button">
+                                            <div className="create-party__button">
                                                 <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
-                                                    <Button variant="contained" color="primary"
+                                                    <Button variant="contained" color="primary" size="large"
                                                     >Create Party</Button>
                                                 </NavLink>
                                             </div>
@@ -170,7 +170,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                         ) : (
                                                 null
                                             )}
-                                        <div className="party__container">
+                                        <div className="club-party__container">
                                                 {parties.map((party) => {
                                                     if (party.club_id === club.id && new Date(party.start_date) >= new Date())  {
                                                         return (
@@ -183,16 +183,16 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                 <TabPanel value={value} index={1}>
                                     <>
                                         {owner ? (
-                                            <div className="upload-picture__button">
-                                                <Button variant="contained" color="primary" >Add Pictures</Button>
+                                            <div className="create-party__button">
+                                                <Button variant="contained" color="primary" size="large">Add Pictures</Button>
                                             </div>
 
                                         ) : (
                                                 null
                                             )}
-                                        <div className="party__container">
+                                        <div className="club-pictures__container">
                                             <div className={classes.root}>
-                                                <GridList cellHeight={400} spacing={1} className={classes.gridList}>
+                                                <GridList cellHeight={400} spacing={0.5} className={classes.gridList}>
                                                     {clubPictures.map((clubPicture) => (
                                                         <GridListTile key={clubPicture.picture_url} cols={1} rows={1}>
                                                             <a href={clubPicture.picture_url}>
