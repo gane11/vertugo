@@ -78,9 +78,9 @@ const TicketCard = ({ ticket }) => {
     return (
         <>
             <NavLink className="user__name" to={`/clubs/${ticket.id}`}>
-                <div className="card">
+                <div className="ticket-card">
                     <img src={qr.toDataURL('image/jpeg')} alt=""></img>
-                    <div className="card__info">
+                    <div className="ticket-card__info">
     
                         <h2>{ticket.start_date}</h2>
                         {/* <h4>{home.description}</h4> */}

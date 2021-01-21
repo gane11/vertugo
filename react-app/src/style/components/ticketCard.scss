@@ -1,48 +1,48 @@
-.card {
-  margin: 10px;
-  border-radius: 10px;
+.ticket-card {
+  margin: 1rem;
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
   transition: transform 100ms ease-in;
   cursor: pointer;
   color:black;
-  width: 20rem;
-  height: 26.4rem;
+  width: 15rem;
 }
 
-.card:hover {
+.ticket-card:hover {
   transform: scale(1.01);
 }
 
-.card > img {
+
+.ticket-card > img {
   object-fit: fill;
   max-width: 100%;
   width: 20rem;
-  height: 14rem;
+  height: 15rem;
   /* width: 100%; */
 }
 
-.card__info {
+.ticket-card__info {
     margin-top: -9px;
-    border-radius: 10px;
-    padding: 20px;
-    padding-top: 20px;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: 1rem;
     border: 1;
   }
 
-  .card__info > h2 {
+  .ticket-card__info > h2 {
     font-size: 18px;
     font-weight: 600;
   }
   
-  .card__info > h4 {
+  .ticket-card__info > h4 {
     font-size: 14px;
     font-weight: 300;
     margin-top: 8px;
     margin-bottom: 8px;
   }
 
-  .card__buttons {
+  .ticket-card__buttons {
     display: flex;
     justify-content: space-between;
   }
