@@ -39,7 +39,9 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
     return (
         <>
             <Banner searchValue={searchValue}/>
-            <div>
+            <div className="banner-main__container">
+                <div className="banner__main ">
+                    <div>
                 <div className="party__section">
                     {parties.map((party) => {
                         if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
@@ -48,6 +50,8 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
                             )
                         }
                     })}
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

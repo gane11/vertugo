@@ -16,6 +16,7 @@ import CreateClubForm from './components/CreateClubForm'
 import Banner from './components/Banner'
 import CreatePartyForm from "./components/CreatePartyForm";
 import Foter from "./components/Footer";
+import My404Component from "./components/My404Component"
 
 
 function App() {
@@ -106,6 +107,7 @@ function App() {
         <User />
         <Foter />
       </ProtectedRoute>
+        <Route path='*' exact={true} component={My404Component} />
       </Switch>
     </BrowserRouter>
   );

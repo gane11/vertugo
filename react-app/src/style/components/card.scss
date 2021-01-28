@@ -6,8 +6,8 @@
   transition: transform 100ms ease-in;
   cursor: pointer;
   color:black;
-  width: 20rem;
-  height: 26.4rem;
+  width: 17rem;
+  height: 23.5rem;
 }
 
 .card:hover {
@@ -17,8 +17,8 @@
 .card > img {
   object-fit: fill;
   max-width: 100%;
-  width: 20rem;
-  height: 14rem;
+  width: 17rem;
+  height: 10rem;
   /* width: 100%; */
 }
 
@@ -39,10 +39,11 @@
     font-size: 14px;
     font-weight: 300;
     margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 
   .card__buttons {
+    margin-bottom: 40rem;
     display: flex;
     justify-content: space-between;
   }

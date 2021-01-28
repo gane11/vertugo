@@ -48,15 +48,19 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
     return(
         <>
             <Banner searchValue={searchValue}/>
-        <div>
-            <div className="party__section">
-                {parties.map((party) => {
-                    if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
-                        console.log(new Date(party.start_date).toISOString().split('T')[0], new Date(selectedDate).toISOString().split('T')[0])
-                    return(
-                    <Card party={party} clubs={clubs}/>
-                    )
-                }})}
+            <div className="banner-main__container">
+                <div className="banner__main ">
+                <div>
+                    <div className="party__section">
+                        {parties.map((party) => {
+                        if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
+                        // console.log(new Date(party.start_date).toISOString().split('T')[0], new Date(selectedDate).toISOString().split('T')[0])
+                            return(
+                        < Card party={party} clubs={clubs}/>
+                        )
+                    }})}
+                    </div>
+                </div>
             </div>
         </div>
         </>

@@ -145,21 +145,20 @@ background-position: center center;
 .club-parties__container {
    width: 100%;
    position: absolute;
-   left: 0;
+   
 }
 
 .club-party__container {
    display: flex;
-   justify-content: baseline;
-   flex-wrap: wrap;
-   // padding: 2rem -1rem;
-   padding-right: 62rem;
-   padding-top: 5rem;
-   // width: 100%;
-   // max-width: 60%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 30px;
+    max-width: 100%;
+    margin-right: 30rem;
+        height: 46rem;
 
    .left-container {
-      // padding-left: 50rem;
+      // margin-right: 30rem;
 
    }
 

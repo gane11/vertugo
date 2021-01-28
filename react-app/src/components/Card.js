@@ -132,7 +132,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                     <div className="card__info">
                         <h2>{party.description}</h2>
                         {/* <h4>{home.description}</h4> */}
-                        <h3>{party.start_date}</h3>
+                        <h3>{party.start_date.split('00:')[0]}</h3>
                         {club? (
                             <h4>{club.name}</h4>
                         ): (
@@ -140,7 +140,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                         <h4>{clubs[party.club_id - 1].name}</h4>
                         )}
                     </div>
-                    {owner? (
+                    {!owner? (
                     <div className="card__buttons">
                         
                         {partySaved || saved? (
