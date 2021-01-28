@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         width: '60rem',
-        height: '60rem',
+        height: '50rem',
         // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
         transform: 'translateZ(0)',
     },
@@ -82,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: 'white',
     },
+    tabPannel: {
+        marginRight: '35rem'
+    }
 }));
 
 
@@ -158,7 +161,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                         <Tab label="Pictures" {...a11yProps(1)} />
                                     </Tabs>
                                 </AppBar>
-                                <TabPanel value={value} index={0}>
+                                <TabPanel value={value} index={0} className={classes.tabPannel}>
                                         {owner ? (
                                             <div className="create-party__button">
                                                 <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
@@ -212,62 +215,6 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                     </>
                                 </TabPanel>
                             </div>
-                            {/* {picturesSelected ? (
-                            <>
-                                {owner ?(
-                                <div>
-                                    <Button variant="contained" color="primary" >Add Pictures</Button>
-                                </div>
-
-                                ): (
-                                    null
-                                )}
-                                <div className="party__container">
-                                    <div className={classes.root}>
-                                        <GridList cellHeight={400} spacing={1} className={classes.gridList}>
-                                            {clubPictures[0].map((clubPicture) => (
-                                                <GridListTile key={clubPicture.picture_url} cols={1} rows={1}>
-                                                    <a href={clubPicture.picture_url}>
-                                                        <img className="club-profile__image" src={clubPicture.picture_url} alt={clubPicture.club_id} href={clubPicture.picture_url} />
-                                                   </a>
-                                                    <GridListTileBar
-                                                        title={clubPicture.club_id}
-                                                        titlePosition="top"
-                                                        actionPosition="left"
-                                                        className={classes.titleBar}
-                                                    />
-                                                </GridListTile>
-                                            ))}
-                                        </GridList>
-                                    </div>
-                                </div>
-                            </>                          
-                            ) : (
-                                <>
-                                {owner?(
-                                <div>
-                                    <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
-                                        <Button variant="contained" color="primary"
-                                        >Create Party</Button>
-                                    </NavLink>
-                                </div>
-
-                                ): (
-                                    null
-                                )}  
-                            <div className="party__container">
-                                <div className="party__section"> 
-                                {parties.map((party) => {
-                                    if (party.club_id === club.id) {
-                                        return (
-                                            <Card party={party} club={club} />
-                                        )
-                                    }
-                                })}
-                            </div>
-                            </div>
-                                </>
-                            )} */}
                         </div>
 
                         <div className="club-info__container">
