@@ -56,7 +56,6 @@ const HomeParties = ({getAllParties, parties, clubs, getAllClubs, savedParties,g
                         {parties.map((party) => {
                         if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
                         // console.log(new Date(party.start_date).toISOString().split('T')[0], new Date(selectedDate).toISOString().split('T')[0])
-                            count += 1
                             console.log(count)
                             return(
                         < Card party={party} clubs={clubs}/>

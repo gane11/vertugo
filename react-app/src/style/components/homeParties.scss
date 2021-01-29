@@ -8,7 +8,7 @@
 
 .no-parties {
   margin-left: 0rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   font-size: large;
   color: rgba(25, 59, 144, 0.8);
 }
@@ -20,4 +20,10 @@
 
 .no-parties > h2 {
   font-size: 4rem;
+}
+
+.create-club__button {
+  padding-left: 1rem;
+  margin-top: 1rem;
+
 }

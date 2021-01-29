@@ -25,6 +25,7 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
         getAllClubs()
     }, [])
 
+    let count = 0
     let ids = []
     for (let i = 0; i < clubs.length; i++) {
         let currentClub = clubs[i]
@@ -45,11 +46,20 @@ const SearchResult = ({ getAllParties, parties, clubs, getAllClubs}) => {
                 <div className="party__section">
                     {parties.map((party) => {
                         if (ids.includes(party.club_id) && new Date(party.start_date).toISOString().split('T')[0] === new Date(selectedDate).toISOString().split('T')[0]) {
+                            count += 1
                             return (
                                 <Card party={party} clubs={clubs} />
                             )
                         }
                     })}
+                        {count === 0 ? (
+                            <div className="no-parties">
+                                <h1>Sorry, no parties on this date</h1>
+                                <h2>Try some other date</h2>
+                            </div>
+                        ) : (
+                                null
+                            )}
                         </div>
                     </div>
                 </div>

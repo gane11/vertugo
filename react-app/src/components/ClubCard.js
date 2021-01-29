@@ -60,13 +60,14 @@ const ClubCard = ({ club }) => {
     return (
         <>
             <NavLink className="user__name" to={`/clubs/${club.id}`}>
-                <div className="card">
-                    <img src={club.club_cover_pic} alt=""></img>
-                    <div className="card__info">
-                        <h2>{club.name}</h2>
-                        {/* <h4>{home.description}</h4> */}
-                        <h3>{club.city}</h3>
-                            <h4>{club.state}</h4>
+                <div className="club-card">
+                    <img src="https://media.giphy.com/media/YktPdM6gEPljGU0Agi/giphy.gif" alt=""></img>
+                    <div className="club-card__info">
+                        <h2>Name: {club.name}</h2>
+                        <h2>City: {club.city}</h2>
+                        <h2>State: {club.state}</h2>
+                        <h3>Address: {club.address}</h3>
+                        <h3>Description: {club.description}</h3>
                     </div>
 
                 </div>

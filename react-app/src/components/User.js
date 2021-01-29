@@ -173,8 +173,9 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                         </>
                     ) : (
                       <>
+                       <div className="create-club__button">
                           <NavLink className="user__name" to={`/users/${user.id}/clubs`} exact={true} activeClassName="active">
-                            <Button variant="contained" color="primary"
+                            <Button variant="contained" color="primary" size="large"
                             >Create a new club page</Button>
                           </NavLink>
                         {clubs.map((club) => {
@@ -185,6 +186,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                               </>
                             )
                         })}
+                          </div>
                       </>
 
                       )}
