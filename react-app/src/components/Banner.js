@@ -35,7 +35,7 @@ const Banner = ({searchValue}) => {
 
     if(!coverPic) {
         return(
-            <div>
+            <div className="banner-error">
                 <h1>Not there yet, try San francisco, Miami, Austin, New York or Los Angeles</h1>
             </div>
         )

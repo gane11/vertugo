@@ -76,8 +76,11 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     }
 
     if(clubs) {
-        if (clubs[party.club_id].owner_id === Number(user_id)) {
-            owner= true
+        if(party) {
+
+            if (clubs[party.club_id - 1].owner_id === Number(user_id)) {
+                owner= true
+            }
         }
     }
     const dispatch = useDispatch()

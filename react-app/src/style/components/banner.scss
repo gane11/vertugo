@@ -34,14 +34,23 @@ width: 85rem;
 
 .banner_info {
   text-align: center;
-  background: rgba(25, 59, 144, 0.8);
+  background: rgba(25, 59, 144, 0.9);
   color: black;
   padding-top:6rem;
-  padding-right: 10rem;
-  padding-left: 9rem;
-  padding-bottom: 1rem;
+  // padding-right: 10rem;
+  // padding-left: 9rem;
+  // padding-bottom: 1rem;
   /* box-sizing: border-box; */
-width: 10rem;
+width: 20rem;
+height: 26em;
   border-radius: 20rem;
 }
 
+.banner_info > h1{
+  
+}
+
+.banner-error {
+  color: red;
+  margin-left: 25%;
+}
