@@ -1,4 +1,4 @@
-import {LOAD_TICKETS} from '../reducers/ticketsReducer'
+import {LOAD_TICKETS, REMOVE_TICKET} from '../reducers/ticketsReducer'
 
 
 
@@ -18,3 +18,28 @@ export const getAllTickets = (id) => async (dispatch) => {
         console.log(e)
     }
 } 
+
+
+export const removeTicket = (id) => {
+    return async (dispatch) => {
+        try {
+            const res = await fetch(`/api/tickets/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (res.ok) {
+                const data = await res.json()
+                console.log(data)
+                return dispatch({
+                    type: REMOVE_TICKET,
+                    id: data.id
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    }
+}

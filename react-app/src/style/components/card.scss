@@ -9,12 +9,16 @@
   width: 17rem;
   height: 22.4rem;
 }
+.carda {
+  text-decoration: none;
+  color: black;
+}
 
 .card:hover {
   transform: scale(1.01);
 }
 
-.card > img {
+.carda > img {
   object-fit: fill;
   max-width: 100%;
   width: 17rem;

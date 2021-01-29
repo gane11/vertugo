@@ -8,6 +8,7 @@ import { Button } from '@material-ui/core';
 import { NavLink } from 'react-router-dom'
 import Card from './Card'
 import Map from './Map'
+import {clearAllClubPictures} from '../store/reducers/clubPicturesReducer'
 
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -94,6 +95,7 @@ const useStyles = makeStyles((theme) => ({
 const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getAllClubPictures }) => {
     const { id } = useParams();
     const clubId = Number.parseInt(id);
+    const dispatch = useDispatch()
     let userIdString = localStorage.getItem("user_id");
     let userId = Number(userIdString)
 
@@ -119,6 +121,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     }, [])
 
     useEffect(() => {
+        dispatch(clearAllClubPictures())
         getAllClubPictures(clubId)
     }, [clubId])
 

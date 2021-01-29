@@ -74,8 +74,6 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
   }, [])
 
 
-  console.log(tickets)
-
   useEffect(() => {
     if (!userId) {
       return
@@ -251,6 +249,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                           <div className="party__container">
                             <div className="party__section">
                               {tickets.map((ticket) => {
+                                if(new Date (ticket.start_date) <= new Date() )
                                   return (
                                     <TicketCard ticket={ticket}/>
                                     

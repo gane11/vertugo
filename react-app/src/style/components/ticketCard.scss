@@ -1,4 +1,4 @@
-.ticket-card {
+.ticket-card{
   margin: 1rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -7,14 +7,17 @@
   cursor: pointer;
   color:black;
   width: 15rem;
+  height: 24rem;
 }
 
 .ticket-card:hover {
   transform: scale(1.01);
 }
 
-
-.ticket-card > img {
+.ticket-carda {
+  text-decoration: none;
+}
+.ticket-carda > img {
   object-fit: fill;
   max-width: 100%;
   width: 20rem;
@@ -33,6 +36,7 @@
   .ticket-card__info > h2 {
     font-size: 18px;
     font-weight: 600;
+    color: black;
   }
   
   .ticket-card__info > h4 {
@@ -47,4 +51,7 @@
     justify-content: space-between;
   }
 
-  
+  .cancel-party__button {
+    margin-left: 30%;
+    z-index: 99999;
+  }

@@ -125,8 +125,8 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     return (
         <>
         
-            <NavLink className="user__name" to={`/clubs/${party.club_id}`}>
                 <div className="card">
+                <a className="carda" href={`/clubs/${party.club_id}`}>
                     <img src="https://media.giphy.com/media/1pA5jtbM2YkKCaibkX/giphy.gif" alt=""></img>
                     <div className="card__info">
                         <h2>{party.description}</h2>
@@ -139,6 +139,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                         <h4>{clubs[party.club_id - 1].name}</h4>
                         )}
                     </div>
+                </a>
                     {!owner? (
                     <div className="card__buttons">
                         
@@ -157,7 +158,6 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                         null
                     )}
                 </div>
-            </NavLink>
         </>
 
     )

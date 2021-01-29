@@ -5,9 +5,8 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
 import { Button } from '@material-ui/core'
-import { buyTicket } from "../store/actions/buyTicketAction";
 import { useSelector, useDispatch } from 'react-redux';
-import BuyTicketForm from './BuyTicketForm';
+import { removeTicket } from '../store/actions/ticketsAction'
 
 
 
@@ -57,11 +56,15 @@ Fade.propTypes = {
     onExited: PropTypes.func,
 };
 
-export default function BuyModal({party, user_id}) {
+export default function CancelModal({ ticket}) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const dispatch = useDispatch()
 
+    const handleRemove = async (e) => {
+        e.preventDefault();
+        await dispatch(removeTicket(ticket.id))
+    }
 
     const handleOpen = () => {
         setOpen(true);
@@ -76,7 +79,7 @@ export default function BuyModal({party, user_id}) {
     return (
         <div>
             <Button size="large" variant="contained" color="primary" type="button" onClick={handleOpen}>
-                BUY
+                Cancel
             </Button>
             <Modal
                 aria-labelledby="spring-modal-title"
@@ -92,12 +95,12 @@ export default function BuyModal({party, user_id}) {
             >
                 <Fade in={open}>
                     <div className={classes.paper}>
-                        {/* <h2 id="spring-modal-title">1015 Folsom</h2>
-                        <h4>10/20/2020</h4>
-                        <p>San Francisco</p>
+                        <h2 id="spring-modal-title">Are you sure?</h2>
+                        <h4>{ticket.start_date.split('00:')[0]}</h4>
+                        <p>*Tickets are non-refundable*</p>
                         <p>Priec: Free </p>
-                        <Button variant="contained" color="primary">Buy</Button> */}
-                        <BuyTicketForm party={party} user_id={user_id} />
+                        <Button size="large" variant="contained" color="primary" onClick={handleRemove}
+                        >Confirm Cancelation</Button>
                     </div>
                 </Fade>
             </Modal>
