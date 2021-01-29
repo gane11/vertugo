@@ -20,16 +20,11 @@ const Banner = ({searchValue}) => {
     }  
     
     let divStyle = {
-        background: `url(${coverPic})` ,
-        backgroundSize: '100% 100%',
+        background: `no-repeat center/100% url(${coverPic})`,
+        borderadius: '1rem',
         width: '85rem',
         height: '35rem'
-        // objectFit: 'contain'
-        // // backgroundPosition: 'center center',
-        // // backgroundRepeat: 'no-repeat',
-        // // width: '100%',
-        // // height: '40rem',
-        // // position: 'relative',
+
     }
 
 
@@ -43,7 +38,7 @@ const Banner = ({searchValue}) => {
     return (
         <div className="banner-main__container">
             <div className="banner__main">
-                <div className="banner" style={divStyle} >
+                <div  style={divStyle} className="banner">
                     <div className="banner_info">
                         <h1>Pick a date</h1>
                         <h2>
