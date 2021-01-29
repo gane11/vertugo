@@ -47,9 +47,12 @@
   }
 
   .card__buttons {
-    margin-bottom: 40rem;
+  margin-top: -1rem;
     display: flex;
     justify-content: space-between;
   }
 
-  
+.user-club {
+  padding-left: 1.4rem;
+  color:  $color-blue;
+}

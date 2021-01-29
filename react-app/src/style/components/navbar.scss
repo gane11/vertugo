@@ -18,6 +18,10 @@
   /* margin-left: 0.2rem; */
 }
 
+.header__icon:hover {
+  transform: scale(1.2);
+}
+
 .header__center {
   display: flex;
   flex: 1;
@@ -57,4 +61,14 @@
 .user__name {
   color: rgb(25, 59, 144);
   text-decoration:none;
+}
+
+
+.user-name {
+   color: rgb(25, 59, 144);
+  text-decoration:none;
+}
+
+.user-name:hover{
+  color: black;
 }

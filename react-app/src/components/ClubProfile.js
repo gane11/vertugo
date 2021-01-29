@@ -99,6 +99,10 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
     let userIdString = localStorage.getItem("user_id");
     let userId = Number(userIdString)
 
+    let date = new Date();
+    let yesterday = date.setDate(date.getDate() - 1);
+
+
     let owner
 
 
@@ -178,7 +182,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                             )}
                                         <div className="club-party__container">
                                                 {parties.map((party) => {
-                                                    if (party.club_id === club.id && new Date(party.start_date) >= new Date())  {
+                                                    if (party.club_id === club.id && new Date(party.start_date) > yesterday)  {
                                                         return (
                                                             <Card party={party} club={club} />
                                                         )

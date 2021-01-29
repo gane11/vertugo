@@ -1,14 +1,23 @@
 .footer {
     border-top: 1px solid #F3F3F3;
     // padding: 40px;
-    // height: 6rem;
     background-color: #F3F3F3;
     text-align: center;
     z-index: 999;
 }
 
 .footer > p {
+    text-decoration: none;
     padding: 5px;
     font-size: 14px;
 }
 
+
+.link {
+    text-decoration: none;
+    color: $color-blue;
+}
+
+.link:hover {
+   color:black;
+}

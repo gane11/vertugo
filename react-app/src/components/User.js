@@ -53,6 +53,9 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
   const { userId }  = useParams();
   let id = Number(userId)
 
+  let date = new Date();
+  let yesterday = date.setDate(date.getDate() - 1);
+
   const [savedPartiesButton, setSavedPartiesButton] = useState(false)
   const [ownerParties, setOwnerParties] = useState(false)
   const classes = useStyles();
@@ -160,7 +163,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                         <div className="party__container">
                           <div className="party__section">
                             {parties.map((party) => {
-                              if (party.club_id === id) {
+                              if (party.club_id === id && new Date(party.start_date) > yesterday) {
                                 return (
                                   <Card party={party} clubs={clubs}/>
                                 )

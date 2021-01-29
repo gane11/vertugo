@@ -158,7 +158,9 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                     </div>
 
                     ): (
-                        null
+                       <div>
+                           <h3 className="user-club">click to go to your club page</h3>
+                       </div>
                     )}
                 </div>
         </>
