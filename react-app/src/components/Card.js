@@ -70,14 +70,13 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     let user_id = localStorage.getItem("user_id");
     if(club) {
 
-        if (club.owner_id === user_id) {
+        if (club.owner_id === Number(user_id)) {
             owner = true
         }
     }
 
     if(clubs) {
-
-        if (clubs[party.club_id - 1] === user_id) {
+        if (clubs[party.club_id].owner_id === Number(user_id)) {
             owner= true
         }
     }
@@ -128,7 +127,7 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
         
             <NavLink className="user__name" to={`/clubs/${party.club_id}`}>
                 <div className="card">
-                    <img src={party.party_cover_pic} alt=""></img>
+                    <img src="https://media.giphy.com/media/1pA5jtbM2YkKCaibkX/giphy.gif" alt=""></img>
                     <div className="card__info">
                         <h2>{party.description}</h2>
                         {/* <h4>{home.description}</h4> */}

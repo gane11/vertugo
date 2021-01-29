@@ -15,6 +15,7 @@ export const signupUser = (user) => {
                     type: LOAD_USER,
                     ...data
                 });
+                localStorage.removeItem('user_id')
                 localStorage.setItem("user_id", data.id);
                 return data;
             }

@@ -78,6 +78,7 @@ const signInDemoOwner = async (e) => {
   e.preventDefault();
   const user = await login('demo@owner.com', 'password')
   if (!user.error) {
+    localStorage.removeItem('user_id')
     localStorage.setItem('user_id', user.id)
     dispatch(loadUser(user.id))
     setAuthenticated(true)

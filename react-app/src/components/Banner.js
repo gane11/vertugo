@@ -22,7 +22,7 @@ const Banner = ({searchValue}) => {
     let divStyle = {
         background: `url(${coverPic})` ,
         backgroundSize: '100% 100%',
-        width: '100rem',
+        width: '85rem',
         height: '35rem'
         // objectFit: 'contain'
         // // backgroundPosition: 'center center',

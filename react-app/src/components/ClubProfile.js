@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
         // flexGrow: 1,
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         overflow: 'hidden',
         backgroundColor: theme.palette.background.paper,
     },
