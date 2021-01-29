@@ -41,3 +41,14 @@ def buy_ticket():
         return jsonify({'test': 'test'})
     except Exception as error:
         return jsonify(error=repr(error))
+
+
+@ticket_routes.route('/<int:id>', methods=["DELETE"])
+def delete_ticket(id):
+    try:
+        ticket = Ticket.query.get(id)
+        db.session.delete(ticket)
+        db.session.commit()
+        return ticket.to_dict()
+    except Exception as error:
+        return jsonify(error=repr(error))
