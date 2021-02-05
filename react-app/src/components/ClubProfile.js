@@ -61,6 +61,13 @@ function a11yProps(index) {
 
 
 const useStyles = makeStyles((theme) => ({
+    overrides: {
+        MuiButton: {
+            root: {
+                borderRadius: 8,
+            },
+        },
+    }, 
     root: {
         // flexGrow: 1,
         display: 'flex',

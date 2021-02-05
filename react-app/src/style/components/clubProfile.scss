@@ -97,8 +97,12 @@ background-position: center center;
    height: 90%;
    border-radius: 2rem;
    margin-top: 2rem;
+   ul {
+      padding-left: 1rem;
+   }
    li {
       color: #fff;
+      padding-left: 1rem;
    }
 }
 .party__container {
@@ -120,7 +124,7 @@ background-position: center center;
       position: relative;
       width: 60rem;
       // right: 12rem;
-      padding-right: 1rem;
+      padding-right: 2rem;
    }
 }
 
