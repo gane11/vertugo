@@ -1,5 +1,6 @@
 .banner-main__container {
-   background-color: #F3F3F3;
+  padding-top: 2rem;
+   background-color: rgb(240,242,245);
    display: grid;
    grid-template-columns: minmax(0, 1fr) 85rem minmax(0, 1fr);   
 
@@ -8,7 +9,7 @@
 .banner__main {
    width: 100%;
    margin: 0, auto;
-   background-color: #fff;
+   background-color:rgb(240,242,245);
    grid-column: 2 / span 1;
    // width: 89.4rem;
 }

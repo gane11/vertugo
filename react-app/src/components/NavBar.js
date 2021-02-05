@@ -10,22 +10,22 @@ import InputBase from '@material-ui/core/InputBase';
 // import { Avatar } from "@material-ui/core";
 import Button from '@material-ui/core/Button';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import vertugologo from './images/vertugologo.jpg'
+import vertugologo from './images/vertugologo.png'
 
 const useStyles = makeStyles((theme) => ({
 
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: 'rgb(240,242,245)',
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(10),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(1),
       width: 'auto',
     },
   },
