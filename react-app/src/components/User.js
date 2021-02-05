@@ -25,6 +25,9 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import TicketCard from "./TicketCard";
 
 const useStyles = makeStyles((theme) => ({
+  shape: {
+    borderRadius: '2rem'
+  },
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -155,8 +158,8 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                 <div className="profile__body">
                   <div className="parties__container">
                     <div className="album-track__btns">
-                      <Button variant="contained" color="primary" onClick={() => showClubs()}>Clubs</Button>
-                      <Button variant="contained" color="primary" onClick={() => showParties()}>Parties</Button>
+                      <Button className={classes.shape} variant="contained" color="primary" onClick={() => showClubs()}>Clubs</Button>
+                      <Button className={classes.shape} variant="contained" color="primary" onClick={() => showParties()}>Parties</Button>
                     </div>
                     {ownerParties ? (
                       <>
@@ -176,7 +179,7 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                       <>
                        <div className="create-club__button">
                           <NavLink className="user__name" to={`/users/${user.id}/clubs`} exact={true} activeClassName="active">
-                            <Button variant="contained" color="primary" size="large"
+                              <Button className={classes.shape} variant="contained" color="primary" size="large"
                             >Create a new club page</Button>
                           </NavLink>
                         {clubs.map((club) => {

@@ -13,15 +13,18 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import vertugologo from './images/vertugologo.png'
 
 const useStyles = makeStyles((theme) => ({
-
+  shape: {
+    borderRadius: '2rem'
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: 'rgb(240,242,245)',
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      // backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: 'white'
     },
-    marginRight: theme.spacing(10),
+    marginRight: theme.spacing(5),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -97,7 +100,7 @@ const NavBar = ({setAuthenticated, user }) => {
                 searchValue:{searchValue}
               }
             }}>
-            <Button classes={{ borderRadius: '2rem' }}type="submit" variant="contained" color="primary" className="search-button"
+            <Button className={classes.shape} type="submit" variant="contained" color="primary" 
               >SEARCH</Button>
             </NavLink>
           </div>
@@ -109,18 +112,18 @@ const NavBar = ({setAuthenticated, user }) => {
           <NavLink className="user-name" to={`/users/${user.id}`}>
             {user.firstName}
           </NavLink>
-          <LogoutButton setAuthenticated={setAuthenticated}>
+          <LogoutButton className={classes.shape} setAuthenticated={setAuthenticated}>
             Logout
           </LogoutButton>
         </div>
       ) : (
           <div className='header__right'>
             <NavLink to="/login" exact={true} activeClassName="active">
-              <Button variant="contained" color="primary"
+              <Button className={classes.shape} variant="contained" color="primary"
               >Login</Button>
             </NavLink>
             <NavLink to="/sign-up" exact={true} activeClassName="active">
-              <Button variant="contained" color="primary"
+              <Button className={classes.shape} variant="contained" color="primary"
               >Sign Up</Button>
             </NavLink>
           </div>

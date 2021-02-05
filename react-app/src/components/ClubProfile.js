@@ -61,13 +61,10 @@ function a11yProps(index) {
 
 
 const useStyles = makeStyles((theme) => ({
-    overrides: {
-        MuiButton: {
-            root: {
-                borderRadius: 8,
-            },
-        },
-    }, 
+    shape: {
+        borderRadius: '2rem'
+    },
+    
     root: {
         // flexGrow: 1,
         display: 'flex',
@@ -180,7 +177,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                         {owner ? (
                                             <div className="create-party__button">
                                                 <NavLink className="user__name" to={`/clubs/${club.id}/parties`} exact={true} activeClassName="active">
-                                                    <Button variant="contained" color="primary" size="large"
+                                                <Button className={classes.shape} variant="contained" color="primary" size="large"
                                                     >Create Party</Button>
                                                 </NavLink>
                                             </div>
@@ -202,7 +199,7 @@ const ClubProfile = ({ club, getClub, parties, getAllParties, clubPictures, getA
                                     <>
                                         {owner ? (
                                             <div className="create-party__button">
-                                                <Button variant="contained" color="primary" size="large">Add Pictures</Button>
+                                                <Button className={classes.shape} variant="contained" color="primary" size="large">Add Pictures</Button>
                                             </div>
 
                                         ) : (

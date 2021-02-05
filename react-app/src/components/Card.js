@@ -11,6 +11,9 @@ import BuyModal from './BuyModal'
 import { fade, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+    shape: {
+        borderRadius: '2rem'
+    },
 
     search: {
         position: 'relative',
@@ -147,10 +150,10 @@ const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
                     <div className="card__buttons">
                         
                         {partySaved || saved? (
-                        <Button size="large" variant="contained" color="primary" onClick={handleRemove}
+                            <Button className={classes.shape} size="large" variant="contained" color="primary" onClick={handleRemove}
                         >REMOVE</Button>
                         ):(
-                            <Button size="large" variant="contained" color="primary" onClick={handleSave}
+                                <Button className={classes.shape} size="large" variant="contained" color="primary" onClick={handleSave}
                             >SAVE</Button>
                         ) } 
                         <BuyModal  party={party} user_id={user_id}/>

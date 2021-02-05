@@ -13,6 +13,9 @@ import BuyTicketForm from './BuyTicketForm';
 
 
 const useStyles = makeStyles((theme) => ({
+    shape: {
+        borderRadius: '2rem'
+    },
     modal: {
         display: 'flex',
         alignItems: 'center',
@@ -75,7 +78,7 @@ export default function BuyModal({party, user_id}) {
 
     return (
         <div>
-            <Button size="large" variant="contained" color="primary" type="button" onClick={handleOpen}>
+            <Button className={classes.shape} size="large" variant="contained" color="primary" type="button" onClick={handleOpen}>
                 BUY
             </Button>
             <Modal
