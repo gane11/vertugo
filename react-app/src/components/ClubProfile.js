@@ -84,7 +84,8 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
     },
     tabPannel: {
-        marginRight: '35rem'
+        marginRight: '35rem',
+        borderRadius: '2rem'
     }
 }));
 
