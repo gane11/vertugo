@@ -2,8 +2,8 @@
   padding-top: 2rem;
    background-color: rgb(240,242,245);
    display: grid;
-   grid-template-columns: minmax(0, 1fr) 85rem minmax(0, 1fr);   
-
+   grid-template-columns: minmax(0, 1fr) 85rem minmax(0, 1fr);  
+  
 }
 
 .banner__main {
@@ -11,6 +11,7 @@
    margin: 0, auto;
    background-color:rgb(240,242,245);
    grid-column: 2 / span 1;
+
    // width: 89.4rem;
 }
 
@@ -27,6 +28,7 @@
   // height: 35rem;
 //   position: relative;
   border-radius: 2rem;
+  box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
 // background-size:100% 100%;
 // border-radius: 1rem;
 // width: 85rem;
@@ -43,8 +45,10 @@
   // padding-bottom: 1rem;
   /* box-sizing: border-box; */
 width: 20rem;
-height: 26em;
+height: 24em;
   border-radius: 20rem;
+  margin-left: 2rem;
+  box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
 }
 
 .banner_info > h1{

@@ -23,7 +23,7 @@ const Banner = ({searchValue}) => {
         background: `no-repeat center/100% url(${coverPic})`,
         borderadius: '1rem',
         width: '85rem',
-        height: '35rem'
+        height: '35rem',
 
     }
 
@@ -39,7 +39,7 @@ const Banner = ({searchValue}) => {
         <div className="banner-main__container">
             <div className="banner__main">
                 <div  style={divStyle} className="banner">
-                    <div className="banner_info">
+                    <div className="banner_info" >
                         <h1>Pick a date</h1>
                         <h2>
                         <DatePicker />

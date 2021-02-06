@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    borderRadius: '2rem'
   },
 }));
 
@@ -94,7 +95,9 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
           <Grid container spacing={2}>
           <Grid>
             <Grid item xs={16} sm={16}>
+                <div className="TextField-without-border-radius">
                 <Checkbox
+                
                 color="primary"
                   autoComplete="fname"
                   name="owener"
@@ -106,10 +109,11 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                   type="checkbox"
                   value={owner}
                   onClick={()=>setOwner(!owner)}
-                  /> Night Club Owner
+                  /> Night Club Owner </div>
             </Grid>
             </Grid>
-            <Grid item xs={12} sm={20}>
+            <Grid item xs={12} sm={20} >
+              <div className="TextField-without-border-radius">
               <TextField
                 autoComplete="fname"
                 name="firstName"
@@ -122,13 +126,15 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                 type="text"
                 value={firstName}
                 onChange={updateProperty(setFirstName)}
-              />
+                /></div>
             </Grid>
             <Grid item xs={12} sm={20}>
+              <div className="TextField-without-border-radius">
               <TextField
                 variant="outlined"
                 required
                 fullWidth
+                borderRadius="2rem"
                 id="lastName"
                 label="Last Name"
                 name="lastName"
@@ -136,9 +142,10 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                 type="text"
                 value={lastName}
                 onChange={updateProperty(setLastName)}
-              />
+              /></div>
             </Grid>
             <Grid item xs={12}>
+              <div className="TextField-without-border-radius">
               <TextField
                 variant="outlined"
                 required
@@ -150,9 +157,10 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                 type="text"
                 value={email}
                 onChange={updateProperty(setEmail)}
-              />
+              /></div>
             </Grid>
             <Grid item xs={12}>
+              <div className="TextField-without-border-radius">
               <TextField
                 variant="outlined"
                 required
@@ -164,9 +172,10 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                 autoComplete="current-password"
                 value={password}
                 onChange={updateProperty(setPassword)}
-              />
+              /></div>
             </Grid>
             <Grid item xs={12}>
+              <div className="TextField-without-border-radius">
               <TextField
                 variant="outlined"
                 required
@@ -178,7 +187,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                 autoComplete="current-password"
                 value={confirmPassword}
                 onChange={updateProperty(setConfirmPassword)}
-              />
+              /></div>
             </Grid>
             <Grid item xs={12}>
             </Grid>
@@ -195,7 +204,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <NavLink to='login' variant="body2">
+              <NavLink to='login' variant="body2" style={{ textDecoration: 'none', color: 'rgba(25, 59, 144, 0.9)' }}>
                 Already have an account? Sign in
                 </NavLink>
             </Grid>

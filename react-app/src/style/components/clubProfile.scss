@@ -32,7 +32,7 @@ background-position: center center;
    padding: 2rem;
    border-radius: 2rem;
    margin-bottom: 1rem;
-
+box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
 }
 
 // .profile_image {
@@ -97,6 +97,7 @@ background-position: center center;
    height: 90%;
    border-radius: 2rem;
    margin-top: 2rem;
+       box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
    ul {
       padding-left: 1rem;
    }
@@ -197,8 +198,10 @@ background-position: center center;
 
 .MuiAppBar-colorPrimary {
    border-radius: 2rem;
+   box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
 }
 
 .MuiButton-containedPrimary  {
    border-radius: 2rem;
+   box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
 }

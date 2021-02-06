@@ -17,7 +17,7 @@ const LogoutButton = ({setAuthenticated}) => {
   
   };
 
-  return <Button variant="contained" color="primary" onClick={onLogout}>Logout</Button>;
+  return <Button style={{borderRadius: '2rem'}}variant="contained" color="primary" onClick={onLogout}>Logout</Button>;
 };
 
 export default LogoutButton;

@@ -17,6 +17,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
+  shape: {
+    borderRadius: '2rem'
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -30,9 +33,11 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+    borderRadius: '2rem'
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    borderRadius: '2rem'
   },
 }));
 
@@ -117,7 +122,9 @@ const signInDemoOwner = async (e) => {
           ))}
         </div>
         <form className={classes.form} onSubmit={onLogin}>
+          <div className="TextField-without-border-radius">
           <TextField
+          className={classes.shape}
             variant="outlined"
             margin="normal"
             required
@@ -130,7 +137,8 @@ const signInDemoOwner = async (e) => {
             type="text"
             value={email}
             onChange={updateEmail}
-          />
+          /></div>
+          <div className="TextField-without-border-radius">
           <TextField
             variant="outlined"
             margin="normal"
@@ -144,7 +152,7 @@ const signInDemoOwner = async (e) => {
             type="password"
             value={password}
             onChange={updatePassword}
-          />
+            /></div>
           <Button
             size="large"
             type="submit"
@@ -186,7 +194,7 @@ const signInDemoOwner = async (e) => {
                 onClick={handleClik}
                 > Sign Up
                 </Button> */}
-              <NavLink to="/sign-up" exact={true} activeClassName="active" variant="body2">
+              <NavLink to="/sign-up" exact={true} activeClassName="active" variant="body2" style={{ textDecoration: 'none', color:'rgba(25, 59, 144, 0.9)'}}>
                 {"Don't have an account? Sign Up"}
               </NavLink>
             </Grid>

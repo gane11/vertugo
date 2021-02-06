@@ -56,3 +56,16 @@
     margin-left: 30%;
     z-index: 99999;
   }
+
+  
+///for input fields on Login and Signup
+.TextField-without-border-radius fieldset {
+  border-radius: 2rem;
+}
+
+
+
+
+.TextField-without-border-radius checkbox{
+  border-radius: 2rem;
+}

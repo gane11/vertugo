@@ -67,6 +67,7 @@ export default function CancelModal({ ticket}) {
     const handleRemove = async (e) => {
         e.preventDefault();
         await dispatch(removeTicket(ticket.id))
+        setOpen(false)
     }
 
     const handleOpen = () => {
@@ -100,8 +101,8 @@ export default function CancelModal({ ticket}) {
                     <div className={classes.paper}>
                         <h2 id="spring-modal-title">Are you sure?</h2>
                         <h4>{ticket.start_date.split('00:')[0]}</h4>
-                        <p>*Tickets are non-refundable*</p>
-                        <p>Priec: Free </p>
+                        <h4>*Tickets are non-refundable*</h4>
+                        <p>Price: Free </p>
                         <Button size="large" variant="contained" color="primary" onClick={handleRemove}
                         >Confirm Cancelation</Button>
                     </div>

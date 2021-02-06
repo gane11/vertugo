@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
+        border: '0.3rem solid #000',
+        boxShadow: theme.shadows['5rem'],
         padding: theme.spacing(2, 4, 3),
     },
 }));
@@ -100,7 +100,7 @@ export default function BuyModal({party, user_id}) {
                         <p>San Francisco</p>
                         <p>Priec: Free </p>
                         <Button variant="contained" color="primary">Buy</Button> */}
-                        <BuyTicketForm party={party} user_id={user_id} />
+                        <BuyTicketForm party={party} user_id={user_id} partyStart={party.start_date} />
                     </div>
                 </Fade>
             </Modal>

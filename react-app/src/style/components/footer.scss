@@ -4,18 +4,22 @@
     background-color: #F3F3F3;
     text-align: center;
     z-index: 999;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer > p {
     text-decoration: none;
     padding: 5px;
     font-size: 14px;
+    font-weight: bolder;
 }
 
 
 .link {
     text-decoration: none;
     color: $color-blue;
+    
 }
 
 .link:hover {

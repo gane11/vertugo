@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 //material-ui
 
 
-const BuyTicketForm = ({ party, user_id}) => {
+const BuyTicketForm = ({ party, user_id, partyStart}) => {
     let userIdString = localStorage.getItem("user_id");
     let userId = Number(userIdString)
 
@@ -48,13 +48,15 @@ const BuyTicketForm = ({ party, user_id}) => {
     const [qr_code, setQrCode] = useState('https://gane11.github.io/Aleksandar-Dordevic/');
 
     const history = useHistory();
-
-    let startDate = new Date(party.start_date)
-
-    let start_date = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-" + startDate.getDate()
+  
+    let startDate = new Date(partyStart)
+    
+    let nextDay = new Date(new Date(partyStart).getTime() + 24 * 60 * 60 * 1000)
+    let tomorrow = nextDay.getDay()
+  
+    let start_date = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-" + tomorrow
 
     
-    console.log(start_date)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
