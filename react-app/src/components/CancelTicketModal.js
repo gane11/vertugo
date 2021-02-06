@@ -103,7 +103,7 @@ export default function CancelModal({ ticket}) {
                         <h4>{ticket.start_date.split('00:')[0]}</h4>
                         <h4>*Tickets are non-refundable*</h4>
                         <p>Price: Free </p>
-                        <Button size="large" variant="contained" color="primary" onClick={handleRemove}
+                        <Button className={classes.shape}size="large" variant="contained" color="primary" onClick={handleRemove}
                         >Confirm Cancelation</Button>
                     </div>
                 </Fade>

@@ -20,12 +20,21 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        // borderRadius: '2rem',
+        // '&:focus': {
+        //     outline: "none",
+        //     borderColor: 'blue',
+        //     boxShadow: 'none'
+
+        // },
     },
     paper: {
         backgroundColor: theme.palette.background.paper,
         border: '0.3rem solid #000',
         boxShadow: theme.shadows['5rem'],
         padding: theme.spacing(2, 4, 3),
+
+        
     },
 }));
 
