@@ -235,8 +235,8 @@ function User({ clubs, getAllClubs, savedParties, getSavedParties, parties, getA
                   <div className="profile__body">
                     <div className="parties__container">
                       <div className="album-track__btns">
-                        <Button variant="contained" color="primary" onClick={() => showTickets()}>Tickets</Button>
-                        <Button variant="contained" color="primary" onClick={() => showSavedParties()}>Saved Parties</Button>
+                        <Button className={classes.shape} variant="contained" color="primary" onClick={() => showTickets()}>Tickets</Button>
+                        <Button className={classes.shape} variant="contained" color="primary" onClick={() => showSavedParties()}>Saved Parties</Button>
                       </div>
                       {savedPartiesButton ? (
                         <>
