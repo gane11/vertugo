@@ -12,6 +12,9 @@ import { removeTicket } from '../store/actions/ticketsAction'
 
 
 const useStyles = makeStyles((theme) => ({
+    shape: {
+        borderRadius: '2rem'
+    },
     modal: {
         display: 'flex',
         alignItems: 'center',
@@ -78,7 +81,7 @@ export default function CancelModal({ ticket}) {
 
     return (
         <div>
-            <Button size="large" variant="contained" color="primary" type="button" onClick={handleOpen}>
+            <Button className={classes.shape} size="large" variant="contained" color="primary" type="button" onClick={handleOpen}>
                 Cancel
             </Button>
             <Modal

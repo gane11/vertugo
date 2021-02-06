@@ -13,7 +13,6 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
