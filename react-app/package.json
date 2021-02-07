@@ -19,7 +19,6 @@
     "http-proxy-middleware": "^1.0.5",
     "luxon": "^1.25.0",
     "moment": "^2.29.1",
-    "node-sass": "^4.14.1",
     "qrious": "^4.0.2",
     "react": "^16.13.1",
     "react-day-picker": "^7.4.8",
@@ -58,6 +57,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
-    "sass": "^1.29.0"
+    "sass": "^1.32.6",
+    "sass-loader": "^11.0.0"
   }
 }
