@@ -3,7 +3,7 @@ import React from 'react';
 import DatePicker from './DatePicker'
 import sanFran from './images/sanFran.jpg'
 import la from './images/la2.jpg'
-import austin from './images/austin.jpg'
+import austin from './images/austin.jpeg'
 import miami from './images/miami.jpg'
 import newYork from './images/newYork.jpg'
 
