@@ -17,6 +17,7 @@ import Banner from './components/Banner'
 import CreatePartyForm from "./components/CreatePartyForm";
 import Foter from "./components/Footer";
 import My404Component from "./components/My404Component"
+import Splash from "./components/splash/Splash"
 
 
 function App() {
@@ -68,6 +69,9 @@ function App() {
   return (
     <BrowserRouter>
     <Switch>
+      <Route path="/splash" exact={true}>
+        <Splash />
+      </Route>
       <Route path="/" exact={true}>
           <NavBar authenticate={authenticate} setAuthenticated={setAuthenticated} />
           <Home/>
