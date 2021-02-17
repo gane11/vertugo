@@ -42,8 +42,12 @@ const Splash = () => {
                     <div className="splash-header__home">
                     Home
                 </div>
+                
                     <div className="splash-header__club-owner">
                     Club Owner
+                </div>
+                    <div className="splash-header__club-owner">
+                        How to
                 </div>
                 </div>
 
@@ -57,7 +61,7 @@ const Splash = () => {
                     Welcome to Vertugo
                 </div >
                 <div className="splash-second__text">
-                    Easiest way to find a party close to you. Just click on one of the cities and find your party.
+                    Easiest way to find a party close to you. Just click on one of the cities and find your next party.
                 </div>
                 <div className="splash-cities__container">
                     <NavLink className="splash-city" to={`/search/Miami`} exact={true} activeClassName="active">
