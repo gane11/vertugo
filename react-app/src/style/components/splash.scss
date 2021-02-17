@@ -2,7 +2,7 @@
     // width: 200rem;
     // height: 100%;
     // background-color: $color-blue;
-     background-image: linear-gradient(125deg,#0732A7 6%,#6CE7FF 55%,#5DFDCB 100%);
+     background-image: linear-gradient(125deg,#0732A7 6%,rgb(108, 213, 255) 55%,lightblue 100%);
     position:fixed;
     top:0;
     left: 0;
@@ -105,4 +105,13 @@ font-family: 'Bungee', cursive;
     font-family: 'Bungee', cursive;
     display: flex;
     justify-content: space-between;
+
+}
+
+.splash-city {
+    color: white;
+    text-decoration: none;
+     &:hover{
+                transform: scale(1.1);
+            }
 }

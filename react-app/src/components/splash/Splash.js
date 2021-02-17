@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -56,11 +57,26 @@ const Splash = () => {
                     Welcome to Vertugo
                 </div>
                 <div className="splash-cities__container">
+                    <NavLink className="splash-city" to={`/search/Miami`} exact={true} activeClassName="active">
                     <div data-aos="fade-right" >Miami</div>
+
+                    </NavLink>
+                    <NavLink className="splash-city" to={`/search/Austin`}  exact={true} activeClassName="active">
                     <div data-aos="fade-right" data-aos-delay="200">Austin</div>
+
+                    </NavLink>
+                    <NavLink className="splash-city" to={`/search/San%20Francisco`}  exact={true} activeClassName="active">
                     <div data-aos="fade-right" data-aos-delay="400">San Francisco</div>
+
+                    </NavLink>
+                    <NavLink className="splash-city" to={`/search/Los%20Angeles`} exact={true} activeClassName="active">
                     <div data-aos="fade-right" data-aos-delay="600">Los Angeles</div>
+
+                    </NavLink>
+                    <NavLink className="splash-city" to={`/search/New%20York`}  exact={true} activeClassName="active">
+
                     <div data-aos="fade-right" data-aos-delay="800">New York</div>
+                    </NavLink>
                 </div>
                 
             </div>

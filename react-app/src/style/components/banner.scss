@@ -3,6 +3,7 @@
    background-color: rgb(240,242,245);
    display: grid;
    grid-template-columns: minmax(0, 1fr) 85rem minmax(0, 1fr);  
+   z-index: 1000;
   
 }
 
@@ -11,6 +12,7 @@
    margin: 0, auto;
    background-color:rgb(240,242,245);
    grid-column: 2 / span 1;
+   z-index: 1001;
 
    // width: 89.4rem;
 }
@@ -37,7 +39,8 @@
 
 .banner_info {
   text-align: center;
-  background: rgba(25, 59, 144, 0.9);
+  // background: rgba(25, 59, 144, 0.9);
+  background-color: rgba(25, 59, 144, 0.9);
   color: black;
   padding-top:6rem;
   // padding-right: 10rem;
@@ -45,7 +48,7 @@
   // padding-bottom: 1rem;
   /* box-sizing: border-box; */
 width: 20rem;
-height: 24em;
+height: 25em;
   border-radius: 20rem;
   margin-left: 2rem;
   box-shadow: 2px 0 8px rgb(0 2 4 / 6%), 0 8px 12px rgb(1 1 1 / 50%);
