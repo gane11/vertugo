@@ -55,6 +55,9 @@ const Splash = () => {
 
                 <div className="splash-main__text">
                     Welcome to Vertugo
+                </div >
+                <div className="splash-second__text">
+                    Easiest way to find a party close to you. Just click on one of the cities and find your party.
                 </div>
                 <div className="splash-cities__container">
                     <NavLink className="splash-city" to={`/search/Miami`} exact={true} activeClassName="active">
