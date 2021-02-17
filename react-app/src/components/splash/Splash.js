@@ -21,7 +21,9 @@ const Splash = () => {
 
             </div>
             <div className="splash-top__container" >
-
+                <div className="splash-circle-1"></div>
+                <div className="splash-circle-2"></div>
+                <div className="splash-circle-3"></div>
             </div>
         </div>
     )

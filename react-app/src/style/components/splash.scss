@@ -57,3 +57,22 @@
     height: 40rem;
     background-image: linear-gradient(to right, $color-blue, lightblue);
 }
+
+.splash-circle-1 {
+    margin-left: 2rem;
+    z-index: 2;
+    width: 10rem;
+    height: 10rem;
+    background-image: radial-gradient(50% 50%,#6CE7FF 50%,#19BFF1 100%);
+    border-radius: 50%;
+    -webkit-animation: action 1s infinite  alternate;
+        animation: action 1s infinite  alternate;
+    }
+    @-webkit-keyframes action {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+    }
+    @keyframes action {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+}
