@@ -21,13 +21,14 @@ const Splash = () => {
 
             </div>
             <div className="splash-top__container" >
-                <div className="splash-circle-1"></div>
+                {/* <div className="splash-circle-1"></div>
                 <div className="splash-circle-2"></div>
-                <div className="splash-circle-3"></div>
+                <div className="splash-circle-3"></div> */}
 
                 <div className="splash-main__text">
                     Welcome to Vertugo
                 </div>
+                <div data-aos="fade-right">Miami</div>
             </div>
         </div>
     )
