@@ -24,6 +24,10 @@ const Splash = () => {
                 <div className="splash-circle-1"></div>
                 <div className="splash-circle-2"></div>
                 <div className="splash-circle-3"></div>
+
+                <div className="splash-main__text">
+                    Welcome to Vertugo
+                </div>
             </div>
         </div>
     )

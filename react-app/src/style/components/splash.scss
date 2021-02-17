@@ -3,6 +3,12 @@
     // height: 100%;
     // background-color: $color-blue;
      background-image: linear-gradient(125deg,#0732A7 6%,#6CE7FF 55%,#5DFDCB 100%);
+    position:fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+
 }
 
 .splash-header__container {
@@ -22,8 +28,8 @@
         background-image: url("../../components/images/vertugoLogoWhite.png");
         background-size: contain;
         background-repeat: no-repeat;
-        height: 13rem;
-        width: 12rem;
+        height: 20rem;
+        width: 15rem;
 
         &:hover {
             transform: scale(1.1);
@@ -79,4 +85,13 @@
     //     100% { transform: translateY(8rem); }
     //    50% { transform: translateX(10); }
     //     100% { transform: translateX(8rem); }
+}
+
+
+.splash-main__text {
+color: white;
+font-size: 6rem;
+font-weight: bolder;
+margin-left: 20rem;
+margin-top: 14rem;
 }
