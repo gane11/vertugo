@@ -87,6 +87,18 @@ const Splash = () => {
                 </div>
                 
             </div>
+            <div className="splash-middle__container">
+                <div className="splash-middle__first">
+                    <div data-aos="fade-right" data-aos-delay="900" className="splash-middle__text">
+                        1. Search for a party 
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="900" className="splash-middle__picture">
+                        computer here
+                    </div>
+
+                </div>
+
+            </div>
         </div>
     )
 }

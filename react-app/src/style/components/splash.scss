@@ -22,7 +22,6 @@
 }
 
   .splash-header__logo{
-        // align-self: flex-start;
         margin-left: 2rem;
         background-image: url("../../components/images/vertugoLogoWhite.png");
         background-size: contain;
@@ -123,4 +122,31 @@ font-family: 'Bungee', cursive;
      &:hover{
                 transform: scale(1.1);
             }
+}
+
+
+///middle
+
+.splash-middle__container {
+
+}
+
+.splash-middle__first {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.splash-middle__text {
+    color: white;
+    margin-left: 6rem;
+    font-size: 2rem;
+    font-family: 'Bungee', cursive;
+}
+
+.splash-middle__picture {
+   color: white;
+    margin-right: 10rem;
+    font-size: 2rem;
+    font-family: 'Bungee', cursive;
 }
