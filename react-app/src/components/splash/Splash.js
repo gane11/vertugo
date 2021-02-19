@@ -5,7 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import gif1 from '../images/vertugo1.gif'
 AOS.init();
-
 AOS.init({
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -24,7 +23,7 @@ AOS.init({
     duration: 400, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
     once: false, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
+    mirror: true, // whether elements should animate out while scrolling past them
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
@@ -90,7 +89,8 @@ const Splash = () => {
             </div>
             <div className="splash-middle__container">
                 <div className="splash-middle__first">
-                    <div data-aos="fade-right" data-aos-delay="900" className="splash-middle__text">
+                    <div data-aos="fade-right" data-aos-delay="900" 
+                        data-aos-easing="ease-in-sine" className="splash-middle__text">
                         1. Search for a party 
                     </div>
                     <div data-aos="fade-left" data-aos-delay="900" className="splash-middle__picture">
@@ -99,11 +99,11 @@ const Splash = () => {
 
                 </div>
 
-                <div className="splash-middle__first">
-                    <div data-aos="fade-right" data-aos-delay="900" className="splash-middle__text">
+                <div className="splash-middle__second">
+                    <div data-aos="fade-in" className="splash-middle__picture2">
                         <img src={gif1} />
                     </div>
-                    <div data-aos="fade-left" data-aos-delay="900"  className="splash-middle__picture">
+                    <div data-aos="flip-right" className="splash-middle__text2">
                         2. Buy a ticket
                     </div>
 
