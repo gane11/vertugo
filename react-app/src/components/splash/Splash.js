@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import video1 from '../images/vertugo1.gif'
+import gif1 from '../images/vertugo1.gif'
 AOS.init();
 
 AOS.init({
@@ -94,7 +94,7 @@ const Splash = () => {
                         1. Search for a party 
                     </div>
                     <div data-aos="fade-left" data-aos-delay="900" className="splash-middle__picture">
-                        <img src={video1} />
+                        <img src={gif1} />
                     </div>
 
                 </div>
