@@ -132,17 +132,19 @@ font-family: 'Bungee', cursive;
 }
 
 .splash-middle__first {
-    margin-top: 2rem;
+    margin-top: 4rem;
     display: flex;
     justify-content: space-between;
+    height: 20rem;
 }
 
 .splash-middle__text {
     color: white;
-    margin-top: 5rem;
+    padding-top: 6rem;
     margin-left: 13rem;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
+    z-index: 200;
 }
 
 .splash-middle__picture {
@@ -150,4 +152,5 @@ font-family: 'Bungee', cursive;
     margin-right: 13rem;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
+    z-index: 100;
 }
