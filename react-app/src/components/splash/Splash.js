@@ -108,11 +108,11 @@ const Splash = () => {
                     </div>
 
                 </div>
-                <div className="splash-middle__second">
-                    <div data-aos="fade-in" className="splash-middle__picture2">
+                <div className="splash-middle__third">
+                    <div data-aos="fade-in" className="splash-middle__picture3">
                         <img src={gif1} />
                     </div>
-                    <div data-aos="flip-right" className="splash-middle__text2">
+                    <div data-aos="flip-right" className="splash-middle__text3">
                         2. Buy a ticket
                     </div>
 
