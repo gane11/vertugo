@@ -3,4 +3,14 @@
 
 body {
 font-family: $font-main
+
+}
+
+body[data-aos-easing=ease-out-back] [data-aos] {
+    transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+}
+
+body[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translateZ(0);
 }

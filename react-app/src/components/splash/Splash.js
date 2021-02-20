@@ -11,7 +11,7 @@ AOS.init({
     startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
     initClassName: 'aos-init', // class applied after initialization
     animatedClassName: 'aos-animate', // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
     disableMutationObserver: false, // disables automatic mutations' detections (advanced)
     debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
@@ -100,19 +100,19 @@ const Splash = () => {
                 </div>
 
                 <div className="splash-middle__second">
-                    <div data-aos="fade-in" className="splash-middle__picture2">
+                    <div  className="splash-middle__picture2">
                         <img src={gif1} />
                     </div>
-                    <div data-aos="flip-right" className="splash-middle__text2">
+                    <div data-aos="fade-right" data-aos-delay="600" className="splash-middle__text2">
                         2. Buy a ticket
                     </div>
 
                 </div>
-                <div className="splash-middle__third">
-                    <div data-aos="fade-in" className="splash-middle__text3">
+                <div className="splash-middle__third" >
+                    <div data-aos="fade-in" className="splash-middle__text3" >
                         3. Show your QR code
                     </div>
-                    <div data-aos="flip-right" className="splash-middle__picture3" >
+                    <div className="splash-middle__picture3" >
                         <img src={gif1} />
                     </div>
 
