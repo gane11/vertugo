@@ -177,3 +177,24 @@ font-family: 'Bungee', cursive;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
 }
+
+.splash-middle__third {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.splash-middle__picture3 {
+   color: white;
+    margin-left: 12rem;
+    z-index: 100;
+    margin-top: -5rem;
+}
+
+.splash-middle__text3 {
+    color: white;
+     margin-right: 20rem;
+    font-size: 2rem;
+    font-family: 'Bungee', cursive;
+}
