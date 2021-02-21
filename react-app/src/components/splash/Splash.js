@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import AOS from 'aos';
@@ -9,10 +9,9 @@ import gif1 from '../images/vertugo1.gif'
 
 
 const Splash = () => {
-    useEffect (() => {
-        AOS.init({ startEvent: 'DOMContentLoaded', dataAosOnce: false})
-        AOS.refreshHard()
-    }, [])
+
+    AOS.init({ startEvent: 'DOMContentLoaded', dataAosOnce: false, duration: 1000 })
+
     return(
         <div className="splash__container">
             <div className="splash-header__container">
@@ -91,8 +90,9 @@ const Splash = () => {
 
                 </div>
                 <div className="splash-middle__third" >
-                    <div data-aos="fade-in" className="splash-middle__text3" >
+                    <div data-aos="fade-right" className="splash-middle__text3" >
                         3. Show your QR code
+                        {/* <div className="splash-smallprint">Just </div> */}
                     </div>
                     <div className="splash-middle__picture3" >
                         <img src={gif1} />

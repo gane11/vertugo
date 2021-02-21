@@ -176,7 +176,7 @@ font-family: 'Bungee', cursive;
 
 .splash-middle__text2 {
     color: white;
-    padding-top: 6rem;
+    padding-top: 0rem;
      margin-right: 20rem;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
@@ -201,10 +201,16 @@ font-family: 'Bungee', cursive;
 
 .splash-middle__text3 {
      color: white;
-    padding-top: 2rem;
+    padding-top: 4rem;
     margin-left: 13rem;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
     z-index: 200;
     overflow: hidden;
+}
+
+.splash-smallprint{
+    margin-top: 0.2rem;
+    margin-left: 2.5rem;
+    font-size: 1rem;
 }
