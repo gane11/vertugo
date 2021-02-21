@@ -10,7 +10,8 @@ import gif1 from '../images/vertugo1.gif'
 
 const Splash = () => {
     useEffect (() => {
-        AOS.init({})
+        AOS.init({ startEvent: 'DOMContentLoaded', dataAosOnce: false})
+        AOS.refreshHard()
     }, [])
     return(
         <div className="splash__container">
@@ -84,7 +85,7 @@ const Splash = () => {
                     <div  className="splash-middle__picture2">
                         <img src={gif1} />
                     </div>
-                    <div data-aos="fade-in" className="splash-middle__text2">
+                    <div  className="splash-middle__text2">
                         2. Buy a ticket
                     </div>
 
