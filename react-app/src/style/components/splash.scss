@@ -128,13 +128,14 @@ font-family: 'Bungee', cursive;
 ///middle
 
 .splash-middle__container {
-
+    overflow: hidden;
 }
 
 .splash-middle__first {
     margin-top: 4rem;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .splash-middle__text {
@@ -144,6 +145,7 @@ font-family: 'Bungee', cursive;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
     z-index: 200;
+    overflow: hidden;
 }
 
 .splash-middle__picture {
@@ -153,6 +155,7 @@ font-family: 'Bungee', cursive;
     font-family: 'Bungee', cursive;
     z-index: 80;
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    overflow: hidden;
 }
 
 
@@ -161,6 +164,7 @@ font-family: 'Bungee', cursive;
     margin-top: 4rem;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 
@@ -170,18 +174,22 @@ font-family: 'Bungee', cursive;
     margin-left: 12rem;
     z-index: 100;
     margin-top: -5rem;
+    overflow: hidden;
 }
 
 .splash-middle__text2 {
     color: white;
+    padding-top: 6rem;
      margin-right: 20rem;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
+    overflow: hidden;
 }
 
 .splash-middle__third {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 
@@ -191,13 +199,15 @@ font-family: 'Bungee', cursive;
     margin-right: 13rem;
     z-index: 80;
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    overflow: hidden;
 }
 
 .splash-middle__text3 {
      color: white;
-    padding-top: 6rem;
+    padding-top: 2rem;
     margin-left: 13rem;
     font-size: 2rem;
     font-family: 'Bungee', cursive;
     z-index: 200;
+    overflow: hidden;
 }

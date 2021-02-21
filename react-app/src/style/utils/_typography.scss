@@ -1,16 +1,16 @@
 
 
-
 body {
-font-family: $font-main
+font-family: $font-main;
+
 
 }
 
 body[data-aos-easing=ease-out-back] [data-aos] {
-    transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.27);
 }
 
-body[data-aos^=fade][data-aos^=fade].aos-animate {
-    opacity: 1;
-    transform: translateZ(0);
-}
+// body[data-aos^=fade][data-aos^=fade].aos-animate {
+//     opacity: 1;
+//     transform: translateZ(0);
+// }
