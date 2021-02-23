@@ -86,6 +86,7 @@ const Splash = () => {
                     </div>
                     <div  className="splash-middle__text2">
                         2. Buy a ticket
+                        {/* <div className="splash-smallprint">Just </div> */}
                     </div>
 
                 </div>
