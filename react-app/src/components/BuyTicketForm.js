@@ -77,9 +77,6 @@ const BuyTicketForm = ({ party, user_id, partyStart}) => {
     }
 
 
-    // const updateProperty = (callback) => (e) => {
-    //     callback(e.target.value);
-    // }
 
     if (!userId) {
         return <Redirect to="/login" />
