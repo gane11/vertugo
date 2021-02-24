@@ -38,7 +38,7 @@ import { getDate } from '../store/actions/dateAction';
                 new Date(Date.now() - 864e5),
                 {
                     before: today
-                    // new Date(Date.now() - 864e5)
+                   
                 }
             
             ]}
