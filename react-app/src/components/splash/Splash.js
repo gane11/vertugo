@@ -94,7 +94,7 @@ const Splash = () => {
                 <div className="splash-middle__third" >
                     <div data-aos="fade-right" className="splash-middle__text3" >
                         3. Show your QR code
-                        {/* <div className="splash-smallprint">Just </div> */}
+                        <div className="splash-smallprint">Just </div>
                     </div>
                     <div className="splash-middle__picture3" >
                         <img src={gif1} />
