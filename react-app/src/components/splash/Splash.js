@@ -73,7 +73,7 @@ const Splash = () => {
                     <div data-aos="fade-right" data-aos-easing="ease-out-back"data-aos-delay="900" 
                       className="splash-middle__text">
                         1. Search for a party 
-                        {/* <div className="splash-smallprint">Just </div> */}
+                        <div className="splash-smallprint">Just </div>
                     </div>
                     <div data-aos-easing="ease-out-back"data-aos="fade-left" data-aos-delay="900" className="splash-middle__picture">
                         <img src={gif1} />
