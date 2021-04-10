@@ -190,4 +190,3 @@ const CardContainer = ({ party, clubs, club }) => {
 export default CardContainer
 
 
-//make it smaller
