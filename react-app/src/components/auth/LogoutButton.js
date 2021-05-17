@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { logout } from "../../services/auth";
-import {logoutUser} from '../../store/actions/signupAction'
 import Button from '@material-ui/core/Button';
 import { destroySessionAction } from '../../store/reducers/rootReducer';
 
