@@ -40,7 +40,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 1,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg'
@@ -73,7 +73,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 2,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -97,7 +97,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 3,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -137,7 +137,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 4,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -161,7 +161,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 5,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -201,7 +201,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 6,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -225,7 +225,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 7,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -265,7 +265,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 8,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -289,7 +289,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 9,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -321,7 +321,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 10,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -353,7 +353,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 11,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -394,7 +394,7 @@ def upgrade():
     {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 12,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -418,7 +418,7 @@ def upgrade():
     {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 13,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -450,7 +450,7 @@ def upgrade():
     {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 14,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -482,7 +482,7 @@ def upgrade():
     {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 15,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -514,7 +514,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 16,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -546,7 +546,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 17,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -578,7 +578,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 18,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -610,7 +610,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 19,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
@@ -642,7 +642,7 @@ def upgrade():
         {
         'description': 'Hotest Party in the City',
         'start_date': date(2021, 5, 31),
-        'end_date': date(2021, 5, 29),
+        'end_date': date(2021, 5, 31),
         'club_id': 20,
         'ticket_count': 100,
         'party_cover_pic': 'https://vertugo.s3.amazonaws.com/partyDefault.jpeg',
