@@ -6,6 +6,7 @@ import { Button } from '@material-ui/core'
 import {saveParty} from '../store/actions/savePartyAction'
 import { getSavedParties, removeSavedParty } from "../store/actions/savedPartiesAction";
 import BuyModal from './BuyModal'
+import { fade, makeStyles } from '@material-ui/core/styles';
 
 const Card = ({ party, clubs, club, savedParties, getSavedParties}) => {
     const [saved, setSaved] = useState()
@@ -136,7 +137,6 @@ export default CardContainer
 
 
 ///material UI
-import { fade, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     shape: {
